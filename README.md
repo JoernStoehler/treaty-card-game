@@ -79,15 +79,26 @@ Categories and border colors:
 - monitoring: #27ae60 (green)
 - legal: #d4a017 (gold)
 
-**Event/crisis card** (`event-2`, two-tier variant):
+**Event card, flat** (`event-1`, always a crisis regardless of failure count):
+```json
+{
+  "type": "event-1",
+  "name": "Chip Smuggling Ring",
+  "text": "AI chips were diverted through shell companies to undeclared buyers. The chips surfaced in a facility in a non-signatory nation. A training run is underway.",
+  "image-prompt": "...",
+  "image": "images/chip-smuggling.png"
+}
+```
+
+**Event card, tiered** (`event-2`, tier determined by failure count):
 ```json
 {
   "type": "event-2",
   "name": "Garage Cluster",
-  "label1": "0–1 failures",
-  "text1": "Local police investigate.",
-  "label2": "2+ failures",
-  "text2": "They've been training for months undetected.",
+  "label1": "1–2 failures",
+  "text1": "A frontier model was trained in a makeshift garage data center. The results are on the dark web.",
+  "label2": "3+ failures",
+  "text2": "Consumer gaming hardware is being repurposed for AI training in garages and basements across the country. Several groups claim to have trained capable models.",
   "image-prompt": "...",
   "image": "images/garage-cluster.png"
 }
@@ -99,10 +110,9 @@ Tier display: each tier box shows its label and text. The currently active tier 
 ```json
 {
   "type": "safety",
-  "name": "Interpretability Solved",
-  "description": "Researchers can now fully read model intentions before deployment.",
+  "name": "Safety Breakthrough",
   "image-prompt": "...",
-  "image": "images/interpretability-solved.png"
+  "image": "images/safety-1.png"
 }
 ```
 
@@ -119,15 +129,29 @@ Tier display: each tier box shows its label and text. The currently active tier 
 - No background texture for playtesting
 - Target deck size: 20-55 cards total across all types (4-10 A4 pages at 6 cards/page)
 
-### Demo Cards
+### Current Deck (27 cards)
 
-| ID | Type | Category |
-|---|---|---|
-| swat-raid | treaty | enforcement |
-| research-ban | treaty | legal |
-| garage-cluster | event-2 | -- |
-| rogue-researcher | event-2 | -- |
-| interpretability-solved | safety | -- |
-| formal-verification | safety | -- |
+**Treaty cards (12):** Chip Registry, Chip Seizure, Challenge Inspection, Export Controls, FLOP Threshold, On-Site Inspectors, Research Ban, Satellite Surveillance, Supply Chain Audit, SWAT Raid, Whistleblower Network, Withdrawal Penalty
+
+**Event-1 cards (6):** Chip Smuggling Ring, Corporate Lobbying Blitz, Fake Compliance Report, Insider Sabotage, Nation Exits Treaty, Rogue Researcher
+
+**Event-2 cards (6):** Algorithmic Breakthrough, Cyber Attack, Distributed Training, Garage Cluster, Open-Source Weights Leak, Underground Datacenter
+
+**Safety cards (3):** Safety Breakthrough x3 (different art)
 
 Card definitions are authored by hand (not generated). Image prompts require human iteration.
+
+### Writing Good Event Cards
+
+Event card text describes a **past-tense chain of events** where each sentence is a point the treaty could have intercepted. Players argue where their treaty would have broken the chain — either by preventing a step ("Chip Registry catches this at step 1") or by responding after the fact ("Challenge Inspection discovers it at step 3").
+
+**Principles:**
+
+1. **Event chains, not situations.** Each sentence is a step that happened. "AI chips were diverted through shell companies. The chips surfaced in a non-signatory nation. A training run is underway." — three interception points.
+2. **Never prescribe responses or outcomes.** Don't write "police investigate" or "defenses hold." The card describes what went wrong; players decide how their treaty handles it.
+3. **Standalone tiers.** Each tier must be readable without the others. Don't reference other tiers or assume they were read.
+4. **Tiers differ in difficulty, not relevance.** Every drawn card is a real decision. Tier 1 at low failures is an easier challenge (most treaties handle it). Tier 2 at high failures is harder because leaked capabilities compound the threat.
+5. **No negative statements.** Say what IS happening, not what ISN'T. "Not enough leaked methods" confuses readers.
+6. **No slop.** Impressive-sounding details ("500 nodes across 30 countries") that don't help players argue are filler. Every word must earn its place.
+7. **Ambiguity is a feature.** "Underground Datacenter" being possibly literal opens creative play. Don't over-specify when vagueness invites interesting arguments.
+8. **Failure count = leaked capability.** The narrative meaning of failures: more compute, algorithms, and research are in the wild outside treaty control. Event-2 tiers reflect this — higher failures mean the same category of threat is compounded by prior leaks.

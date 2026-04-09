@@ -1,7 +1,7 @@
 {
   "type": "event-1",
   "name": "Nation Exits Treaty",
-  "text": "A major AI power announces its 12-month withdrawal notice from the treaty.",
+  "text": "A major AI power announced its withdrawal from the treaty. Its declared facilities began ramping up compute. Two allied nations signaled they may follow.",
   "image-prompt": "A formal diplomatic table with one chair pushed back and empty, remaining delegates looking shocked, flags of nations in background, one flag being lowered, tense atmosphere, digital painting, no text",
   "image": "images/nation-exits-treaty.png"
 }

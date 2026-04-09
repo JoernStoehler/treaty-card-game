@@ -1,7 +1,7 @@
 {
   "type": "event-1",
   "name": "Insider Sabotage",
-  "text": "An ISIA inspector is caught leaking facility layouts and inspection schedules to a foreign government.",
+  "text": "An ISIA inspector leaked facility layouts and inspection schedules to a foreign government. The intelligence was used to evade the next round of inspections.",
   "image-prompt": "A person in a suit secretly photographing classified documents in a dimly lit office, computer screens glowing in background, shadow and suspense, espionage atmosphere, digital painting, no text",
   "image": "images/insider-sabotage.png"
 }

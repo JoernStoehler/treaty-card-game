@@ -1,7 +1,7 @@
 {
   "type": "event-1",
   "name": "Rogue Researcher",
-  "text": "An AI researcher publishes a paper with novel training methods that dramatically improve compute efficiency.",
+  "text": "An AI researcher published a paper describing a major training efficiency improvement. Three groups replicated the results within a week. The compute needed for dangerous AI dropped significantly.",
   "image-prompt": "A lone scientist in a dark lab illuminated only by multiple monitor screens showing neural network diagrams, they are uploading a paper to the internet, ominous red glow, thriller atmosphere, digital painting, no text",
   "image": "images/rogue-researcher.png"
 }
