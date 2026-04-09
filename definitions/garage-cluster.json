@@ -2,9 +2,9 @@
   "type": "event-2",
   "name": "Garage Cluster",
   "label1": "0–1 failures",
-  "text1": "Local police investigate.",
+  "text1": "A hobbyist with consumer GPUs. Not enough algorithmic know-how in the wild to be dangerous.",
   "label2": "2+ failures",
-  "text2": "They've been training for months undetected.",
+  "text2": "With leaked training methods circulating, even a garage cluster can run dangerous experiments.",
   "image-prompt": "A messy suburban garage filled with racks of GPU servers, blinking green LEDs, tangled ethernet cables, warm orange light from a bare bulb overhead, a concerned neighbor peering through the window, digital painting, no text",
   "image": "images/garage-cluster.png"
 }

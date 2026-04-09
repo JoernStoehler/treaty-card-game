@@ -1,0 +1,10 @@
+{
+  "type": "event-2",
+  "name": "AI Cyber Offense",
+  "label1": "0–1 failures",
+  "text1": "Leaked AI isn't capable enough for novel exploits. Standard cybersecurity holds.",
+  "label2": "2+ failures",
+  "text2": "Advanced AI probes network software faster than defenders can patch. Treaty monitoring systems are breached.",
+  "image-prompt": "Multiple computer screens showing cascading security breach warnings and red alerts, digital locks shattering, an AI visualization overwhelming network defenses like water through cracks, dark cyberpunk atmosphere, digital painting, no text",
+  "image": "images/ai-cyber-offense.png"
+}

@@ -2,9 +2,9 @@
   "type": "event-2",
   "name": "Open-Source Weights Leak",
   "label1": "0 failures",
-  "text1": "Older model, limited capabilities. Takedown mostly successful.",
+  "text1": "Old model, limited capabilities. Not dangerous on its own.",
   "label2": "1+ failures",
-  "text2": "Near-frontier model. Thousands download before takedown. Fine-tuning begins worldwide.",
+  "text2": "Near-frontier model. With leaked fine-tuning methods, thousands begin capability elicitation.",
   "image-prompt": "A laptop screen showing a download progress bar at 99% with model weight files, surrounded by dozens of other screens in a dark room all showing the same download, viral spread feeling, digital painting, no text",
   "image": "images/open-source-leak.png"
 }

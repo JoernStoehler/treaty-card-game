@@ -2,9 +2,9 @@
   "type": "event-2",
   "name": "Algorithmic Breakthrough",
   "label1": "0 failures",
-  "text1": "Paper is preprint only. Institutions voluntarily retract before peer review.",
+  "text1": "A 10x efficiency gain is published as a preprint. Still retractable.",
   "label2": "1+ failures",
-  "text2": "Code is open-source. The FLOP thresholds are now 10x too high.",
+  "text2": "Combined with previously leaked research, ASI is now trainable below current FLOP thresholds.",
   "image-prompt": "A scientific paper on a desk with mathematical equations glowing bright red, casting alarming light across a researcher's worried face, dramatic lighting, digital painting, no text",
   "image": "images/algorithmic-breakthrough.png"
 }

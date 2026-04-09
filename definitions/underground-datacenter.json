@@ -2,9 +2,9 @@
   "type": "event-2",
   "name": "Underground Datacenter",
   "label1": "0–1 failures",
-  "text1": "Small facility, one country. Satellite thermal imaging flagged it early.",
+  "text1": "They have hardware but not the algorithms. Illegal but not yet dangerous.",
   "label2": "2+ failures",
-  "text2": "Network of hidden facilities across multiple non-cooperative nations.",
+  "text2": "With leaked research available, this facility could be weeks from ASI.",
   "image-prompt": "A massive underground cavern filled with rows of server racks, cables snaking along rock walls, industrial cooling fans, dim blue LED lighting, oppressive atmosphere, digital painting, no text",
   "image": "images/underground-datacenter.png"
 }

@@ -1,10 +1,7 @@
 {
-  "type": "event-2",
+  "type": "event-1",
   "name": "Fake Compliance Report",
-  "label1": "0–1 failures",
-  "text1": "Small discrepancy, likely a bookkeeping error. Facility cooperates with re-audit.",
-  "label2": "2+ failures",
-  "text2": "Systematic fraud. Hundreds of chips unaccounted for across multiple facilities.",
+  "text": "A routine audit reveals a declared facility has been falsifying its chip inventory reports.",
   "image-prompt": "An auditor discovering falsified records, spreadsheets with red highlighted discrepancies, stacks of paperwork on a desk, a rubber stamp reading APPROVED on fraudulent documents, investigative atmosphere, digital painting, no text",
   "image": "images/fake-compliance.png"
 }
