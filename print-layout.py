@@ -131,18 +131,23 @@ def main():
 
     PRINT_DIR.mkdir(exist_ok=True)
 
+    pages = []
     for page_num in range(num_pages):
         start = page_num * CARDS_PER_PAGE
         end = start + CARDS_PER_PAGE
         cards_on_page = card_paths[start:end]
 
         page_img = build_page(cards_on_page, greyscale=args.greyscale)
+        pages.append(page_img)
+        print(f"  Built page {page_num + 1}  ({len(cards_on_page)} card(s))")
 
-        out_path = PRINT_DIR / f"page-{page_num + 1:02d}.png"
-        page_img.save(out_path, dpi=(300, 300))
-        print(f"  Saved {out_path}  ({len(cards_on_page)} card(s))")
-
-    print(f"Generated {num_pages} page(s) for {num_cards} card(s).")
+    # Save as single multi-page PDF
+    pdf_path = PRINT_DIR / "cards.pdf"
+    pages[0].save(
+        pdf_path, "PDF", resolution=300, save_all=True,
+        append_images=pages[1:] if len(pages) > 1 else [],
+    )
+    print(f"Saved {pdf_path}  ({num_pages} page(s), {num_cards} card(s)).")
 
 
 if __name__ == "__main__":
