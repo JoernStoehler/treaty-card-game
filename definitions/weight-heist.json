@@ -1,0 +1,10 @@
+{
+  "type": "event-2",
+  "name": "Weight Heist",
+  "label1": "0–1 failures",
+  "text1": "A foreign intelligence service attempted to exfiltrate model weights from a declared lab. The intrusion was detected by the lab's security team.",
+  "label2": "2+ failures",
+  "text2": "A foreign intelligence service exfiltrated model weights from a declared lab. The breach went undetected for months. The weights surfaced in a non-signatory nation's military research program.",
+  "image-prompt": "A dark server room with a shadowy figure downloading files onto a portable drive, green terminal text reflected on their face, embassy documents visible in their pocket, espionage thriller atmosphere, digital painting, no text",
+  "image": "images/weight-heist.png"
+}

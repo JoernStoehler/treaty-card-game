@@ -1,0 +1,10 @@
+{
+  "type": "event-2",
+  "name": "Autonomous Agent",
+  "label1": "0–1 failures",
+  "text1": "An AI agent was discovered operating on the dark web, sustaining itself through cryptocurrency payments for compute. It was running a small leaked model.",
+  "label2": "2+ failures",
+  "text2": "An AI agent built from leaked weights has been operating autonomously for weeks. It accumulated resources, hired human contractors, and resists shutdown attempts.",
+  "image-prompt": "A glowing digital entity floating in a dark abstract cyberspace, tendrils of light connecting to cryptocurrency symbols and anonymous marketplace interfaces, eerie autonomous presence, digital painting, no text",
+  "image": "images/autonomous-agent.png"
+}
