@@ -69,8 +69,8 @@ def image_html(card: dict, height_percent: int = 60) -> str:
 # HTML templates
 # ---------------------------------------------------------------------------
 
-def template_treaty_flat(card: dict) -> str:
-    """treaty-flat: category stripe on left, name header, illustration, description."""
+def template_treaty(card: dict) -> str:
+    """treaty: category stripe on left, name header, illustration, description."""
     color = card.get("color", "#444444")
     name = card.get("name", "")
     description = card.get("description", "")
@@ -209,31 +209,17 @@ def template_treaty_flat(card: dict) -> str:
 </html>"""
 
 
-def template_event_flat(card: dict) -> str:
-    """event-flat: dark/red frame, name, illustration, scenario, tier boxes."""
+def template_event_2(card: dict) -> str:
+    """event-2: dark/red frame, name over illustration, two fixed tier boxes."""
     name = card.get("name", "")
-    scenario = card.get("scenario", "")
-    tiers = card.get("tiers", [])
+    label1 = card.get("label1", "")
+    text1 = card.get("text1", "")
+    label2 = card.get("label2", "")
+    text2 = card.get("text2", "")
     illus = image_html(card)
 
-    # Build tier failure ranges and HTML boxes
-    tier_boxes_html = ""
-    prev_max = -1
-    for i, tier in enumerate(tiers):
-        max_f = tier.get("max_failures", 99)
-        text = tier.get("text", "")
-
-        # Label
-        if max_f >= 99:
-            label = f"{prev_max + 1}+"
-        elif prev_max < 0:
-            label = f"0–{max_f}"
-        else:
-            label = f"{prev_max + 1}–{max_f}"
-
-        # Visual intensity: more red/warning at higher tiers
-        intensity = i / max(len(tiers) - 1, 1)  # 0.0 to 1.0
-        # Background: dark grey → dark red
+    def tier_box_html(label: str, text: str, intensity: float) -> str:
+        """Build HTML for one tier box at the given intensity (0.0 = low, 1.0 = high)."""
         r = int(40 + intensity * 120)
         g = int(35 - intensity * 25)
         b = int(35 - intensity * 25)
@@ -244,7 +230,6 @@ def template_event_flat(card: dict) -> str:
         label_bg = f"rgb({label_bg_r},30,30)"
         text_color = "#ffffff" if intensity > 0.3 else "#e8e8e8"
 
-        # EXTINCTION marker
         is_extinction = "EXTINCTION" in text.upper()
         extinction_badge = ""
         if is_extinction:
@@ -254,7 +239,7 @@ def template_event_flat(card: dict) -> str:
                 'letter-spacing:2px;margin-bottom:8px;">⚠ EXTINCTION</div><br>'
             )
 
-        tier_boxes_html += f"""
+        return f"""
         <div style="display:flex;align-items:stretch;border:3px solid {border_color};
                     margin-bottom:10px;border-radius:6px;overflow:hidden;
                     background:{bg};flex-shrink:0;">
@@ -262,11 +247,8 @@ def template_event_flat(card: dict) -> str:
                       align-items:center;justify-content:center;flex-shrink:0;
                       min-width:110px;border-right:3px solid {border_color};">
             <div style="text-align:center;">
-              <div style="font-size:19px;color:#ffcccc;font-weight:600;
-                          text-transform:uppercase;letter-spacing:1px;
-                          margin-bottom:4px;">failures</div>
-              <div style="font-size:46px;font-weight:900;color:#ffffff;
-                          line-height:1;">{label}</div>
+              <div style="font-size:32px;font-weight:900;color:#ffffff;
+                          line-height:1.1;">{label}</div>
             </div>
           </div>
           <div style="padding:16px 20px;display:flex;align-items:center;flex:1;">
@@ -275,7 +257,7 @@ def template_event_flat(card: dict) -> str:
           </div>
         </div>"""
 
-        prev_max = max_f
+    tier_boxes_html = tier_box_html(label1, text1, 0.0) + tier_box_html(label2, text2, 1.0)
 
     return f"""<!DOCTYPE html>
 <html>
@@ -335,29 +317,6 @@ def template_event_flat(card: dict) -> str:
     text-shadow: 0 2px 8px rgba(0,0,0,0.8);
   }}
 
-  /* Scenario section */
-  .scenario {{
-    flex-shrink: 0;
-    padding: 28px 32px 20px 32px;
-    border-top: 3px solid #6b1010;
-    border-bottom: 3px solid #6b1010;
-    background: #110505;
-  }}
-  .scenario .label {{
-    font-size: 20px;
-    color: #ff6b6b;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }}
-  .scenario .text {{
-    font-size: 38px;
-    line-height: 1.4;
-    color: #e8d8d8;
-    font-weight: 400;
-  }}
-
   /* Tier boxes */
   .tiers {{
     flex: 1;
@@ -366,15 +325,6 @@ def template_event_flat(card: dict) -> str:
     flex-direction: column;
     justify-content: flex-end;
     overflow: hidden;
-  }}
-  .tiers .tiers-label {{
-    font-size: 20px;
-    color: #ff6b6b;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    flex-shrink: 0;
   }}
 </style>
 </head>
@@ -387,12 +337,7 @@ def template_event_flat(card: dict) -> str:
         <div class="name">{name}</div>
       </div>
     </div>
-    <div class="scenario">
-      <div class="label">Scenario</div>
-      <div class="text">{scenario}</div>
-    </div>
     <div class="tiers">
-      <div class="tiers-label">Escalation Tiers</div>
       {tier_boxes_html}
     </div>
   </div>
@@ -400,8 +345,8 @@ def template_event_flat(card: dict) -> str:
 </html>"""
 
 
-def template_safety_flat(card: dict) -> str:
-    """safety-flat: bright green, name, illustration, description."""
+def template_safety(card: dict) -> str:
+    """safety: bright green, name, illustration, description."""
     name = card.get("name", "")
     description = card.get("description", "")
     illus = image_html(card)
@@ -530,9 +475,9 @@ def template_safety_flat(card: dict) -> str:
 # ---------------------------------------------------------------------------
 
 TEMPLATES = {
-    "treaty-flat": template_treaty_flat,
-    "event-flat": template_event_flat,
-    "safety-flat": template_safety_flat,
+    "treaty": template_treaty,
+    "event-2": template_event_2,
+    "safety": template_safety,
 }
 
 
@@ -563,13 +508,15 @@ def load_definitions() -> list[dict]:
     defs = []
     for f in sorted(DEFINITIONS_DIR.glob("*.json")):
         with f.open() as fh:
-            defs.append(json.load(fh))
+            data = json.load(fh)
+            data["_id"] = f.stem  # e.g. "swat-raid" from "swat-raid.json"
+            defs.append(data)
     return defs
 
 
 def render_card(card: dict, browser) -> None:
     """Render a single card to rendered/<id>-f.png."""
-    card_id = card.get("id", "unknown")
+    card_id = card.get("_id", card.get("id", "unknown"))
     card_type = card.get("type", "")
 
     template_fn = TEMPLATES.get(card_type)
@@ -615,9 +562,9 @@ Examples:
         sys.exit(1)
 
     if args.id:
-        matched = [c for c in cards if c.get("id") == args.id]
+        matched = [c for c in cards if c.get("_id", c.get("id")) == args.id]
         if not matched:
-            available = ", ".join(c.get("id", "?") for c in cards)
+            available = ", ".join(c.get("_id", c.get("id", "?")) for c in cards)
             print(
                 f"No card with id '{args.id}' found. Available: {available}",
                 file=sys.stderr,

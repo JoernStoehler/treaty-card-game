@@ -58,16 +58,15 @@ A verbal card game for 1-5 players where players collectively defend a global ba
 
 ### Card Types and Schemas
 
-**Treaty clause card** (`treaty-flat`):
+**Treaty clause card** (`treaty`):
 ```json
 {
-  "type": "treaty-flat",
-  "id": "swat-raid",
+  "type": "treaty",
   "name": "SWAT Raid",
   "description": "Armed law enforcement raids suspected sites",
   "category": "enforcement",
   "color": "#c0392b",
-  "prompt": "...",
+  "image-prompt": "...",
   "image": "images/swat-raid.png"
 }
 ```
@@ -79,41 +78,40 @@ Categories and border colors:
 - monitoring: #27ae60 (green)
 - legal: #d4a017 (gold)
 
-**Event/crisis card** (`event-flat`):
+**Event/crisis card** (`event-2`, two-tier variant):
 ```json
 {
-  "type": "event-flat",
-  "id": "garage-cluster",
+  "type": "event-2",
   "name": "Garage Cluster",
-  "scenario": "A private citizen builds a 20-GPU cluster in their basement. Neighbors report unusual power bills.",
-  "tiers": [
-    { "max_failures": 1, "text": "Local police investigate." },
-    { "max_failures": 99, "text": "They've been training for months undetected." }
-  ],
-  "prompt": "...",
+  "label1": "0–1 failures",
+  "text1": "Local police investigate.",
+  "label2": "2+ failures",
+  "text2": "They've been training for months undetected.",
+  "image-prompt": "...",
   "image": "images/garage-cluster.png"
 }
 ```
 
-Tier display: each tier box shows its failure-range label and text. The currently active tier must be instantly identifiable during play. Design the boxes so a player glancing at the card knows which to read without counting.
+`event-1` (single-tier events) is a planned type but not yet implemented.
 
-**Safety breakthrough card** (`safety-flat`):
+Tier display: each tier box shows its label and text. The currently active tier must be instantly identifiable during play. Design the boxes so a player glancing at the card knows which to read without counting.
+
+**Safety breakthrough card** (`safety`):
 ```json
 {
-  "type": "safety-flat",
-  "id": "interpretability-solved",
+  "type": "safety",
   "name": "Interpretability Solved",
   "description": "Researchers can now fully read model intentions before deployment.",
-  "prompt": "...",
+  "image-prompt": "...",
   "image": "images/interpretability-solved.png"
 }
 ```
 
 ### Layout Per Card Type
 
-- **treaty-flat:** Category color as left border stripe (wide, ~5mm). Name in bold at top. Illustration fills upper ~60%. Description below illustration. Category label small at bottom corner.
-- **event-flat:** Dark/red-tinted frame. Name at top over illustration. Scenario text in middle section. Tier boxes stacked at bottom -- each box has failure-range label on the left and escalation text on the right. Boxes must be visually distinct from each other (e.g. increasing intensity of red/warning styling at higher failure counts).
-- **safety-flat:** Green-tinted card, visually distinct from other types (players should spot these instantly when drawn from the deck). Name at top. Illustration fills upper portion. Description below.
+- **treaty:** Category color as left border stripe (wide, ~5mm). Name in bold at top. Illustration fills upper ~60%. Description below illustration. Category label small at bottom corner.
+- **event-2:** Dark/red-tinted frame. Name at top over illustration. Tier boxes stacked at bottom -- each box has its label on the left and escalation text on the right. Boxes must be visually distinct from each other (e.g. increasing intensity of red/warning styling at higher failure counts).
+- **safety:** Green-tinted card, visually distinct from other types (players should spot these instantly when drawn from the deck). Name at top. Illustration fills upper portion. Description below.
 
 ### Print Notes
 
@@ -126,11 +124,11 @@ Tier display: each tier box shows its failure-range label and text. The currentl
 
 | ID | Type | Category |
 |---|---|---|
-| swat-raid | treaty-flat | enforcement |
-| research-ban | treaty-flat | -- |
-| garage-cluster | event-flat | -- |
-| rogue-researcher | event-flat | -- |
-| interpretability-solved | safety-flat | -- |
-| formal-verification | safety-flat | -- |
+| swat-raid | treaty | enforcement |
+| research-ban | treaty | -- |
+| garage-cluster | event-2 | -- |
+| rogue-researcher | event-2 | -- |
+| interpretability-solved | safety | -- |
+| formal-verification | safety | -- |
 
 Card definitions are authored by hand (not generated). Image prompts require human iteration.

@@ -1,0 +1,7 @@
+{
+  "type": "safety",
+  "name": "Interpretability Solved",
+  "description": "Researchers can now fully read model intentions before deployment.",
+  "image-prompt": "...",
+  "image": "images/interpretability-solved.png"
+}

@@ -75,7 +75,7 @@ def generate_image(card_id, prompt, image_path):
     img = Image.open(tmp_path)
     meta = PngImagePlugin.PngInfo()
     meta.add_text("card_id", card_id)
-    meta.add_text("prompt", prompt)
+    meta.add_text("image_prompt", prompt)
     meta.add_text("model", MODEL)
     if seed is not None:
         meta.add_text("seed", str(seed))
@@ -94,9 +94,9 @@ def process_card(defn, force=False):
     """
     card_id = card_id_from_def(defn)
 
-    prompt = defn.get("prompt")
+    prompt = defn.get("image-prompt")
     if not prompt:
-        print(f"Warning: '{card_id}' has no 'prompt' field — skipping.")
+        print(f"Warning: '{card_id}' has no 'image-prompt' field — skipping.")
         return "skipped"
 
     image_field = defn.get("image")

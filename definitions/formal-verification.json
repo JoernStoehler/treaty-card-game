@@ -1,0 +1,7 @@
+{
+  "type": "safety",
+  "name": "Formal Verification",
+  "description": "Mathematical proof that constrained models cannot pursue unapproved goals.",
+  "image-prompt": "...",
+  "image": "images/formal-verification.png"
+}

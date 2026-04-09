@@ -1,0 +1,10 @@
+{
+  "type": "event-2",
+  "name": "Rogue Researcher",
+  "label1": "0 failures",
+  "text1": "Paper is theoretical, hard to reproduce.",
+  "label2": "1+ failures",
+  "text2": "Paper includes working code. Three groups replicate within a week.",
+  "image-prompt": "...",
+  "image": "images/rogue-researcher.png"
+}

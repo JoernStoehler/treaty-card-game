@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Research Ban",
+  "description": "Criminalize research advancing toward ASI",
+  "category": "legal",
+  "color": "#d4a017",
+  "image-prompt": "...",
+  "image": "images/research-ban.png"
+}
