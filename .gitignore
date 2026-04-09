@@ -1,0 +1,5 @@
+# Build artifacts (cheap to regenerate)
+rendered/*.png
+print/
+__pycache__/
+

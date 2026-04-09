@@ -1,0 +1,7 @@
+{
+  "type": "safety",
+  "name": "Formal Verification",
+  "description": "Mathematical proof that constrained models cannot pursue unapproved goals.",
+  "image-prompt": "An elegant mathematical proof written on a glowing holographic blackboard, green checkmarks cascading down the equations, a shield emblem formed by the proof lines, bright clean aesthetic, digital painting, no text",
+  "image": "images/formal-verification.png"
+}
