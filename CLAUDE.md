@@ -31,5 +31,5 @@ Never write the `FAL_KEY` secret envvar down anywhere in the repository.
 ```bash
 python3 generate-image.py --help    # Generate missing card illustrations via FAL API
 python3 render-card.py --help       # Render card definitions to print-ready PNGs
-python3 print-layout.py --help      # Arrange rendered cards onto A4 pages
+python3 print-layout.py --help      # Arrange rendered cards into print-ready PDF
 ```

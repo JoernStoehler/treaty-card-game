@@ -6,9 +6,9 @@ A verbal card game for 1-5 players where players collectively defend a global ba
 
 | Component | Purpose |
 |---|---|
-| `generate-image.py` | Generate card illustrations via FAL API (flux-dev model). Reads `definitions/`, checks which `images/` are missing, generates them. |
+| `generate-image.py` | Generate card illustrations via FAL API (flux-schnell). Reads `definitions/`, checks which `images/` are missing, generates them. |
 | `render-card.py` | Render card definitions into print-ready front PNGs. Reads `definitions/*.json` + `images/`, outputs `rendered/<id>-f.png`. |
-| `print-layout.py` | Arrange rendered cards onto A4 pages for printing. Requires `--color` or `--greyscale` (no default). |
+| `print-layout.py` | Arrange rendered cards into a print-ready PDF. Requires `--color` or `--greyscale` (no default). Outputs `print/cards.pdf`. |
 
 ## Directory Layout
 
@@ -16,6 +16,7 @@ A verbal card game for 1-5 players where players collectively defend a global ba
 definitions/       Card definition JSON files (e.g. swat-raid.json)
 images/            Generated card illustrations (committed, not regenerated)
 rendered/          Rendered card front PNGs (output of render-card.py)
+print/             Print-ready PDF (output of print-layout.py, gitignored)
 ```
 
 ## Quick Commands
@@ -23,7 +24,7 @@ rendered/          Rendered card front PNGs (output of render-card.py)
 ```bash
 python3 generate-image.py --help    # Generate missing card illustrations
 python3 render-card.py --help       # Render card definitions to PNGs
-python3 print-layout.py --help      # Arrange cards for A4 printing
+python3 print-layout.py --help      # Arrange cards into print-ready PDF
 ```
 
 ---
@@ -92,8 +93,6 @@ Categories and border colors:
 }
 ```
 
-`event-1` (single-tier events) is a planned type but not yet implemented.
-
 Tier display: each tier box shows its label and text. The currently active tier must be instantly identifiable during play. Design the boxes so a player glancing at the card knows which to read without counting.
 
 **Safety breakthrough card** (`safety`):
@@ -125,7 +124,7 @@ Tier display: each tier box shows its label and text. The currently active tier 
 | ID | Type | Category |
 |---|---|---|
 | swat-raid | treaty | enforcement |
-| research-ban | treaty | -- |
+| research-ban | treaty | legal |
 | garage-cluster | event-2 | -- |
 | rogue-researcher | event-2 | -- |
 | interpretability-solved | safety | -- |

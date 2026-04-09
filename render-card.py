@@ -50,7 +50,7 @@ def load_image_as_data_uri(image_path: str) -> str | None:
     return f"data:{mime};base64,{data}"
 
 
-def image_html(card: dict, height_percent: int = 60) -> str:
+def image_html(card: dict) -> str:
     """Return an <img> or placeholder <div> for the card illustration."""
     src = load_image_as_data_uri(card.get("image", ""))
     if src:

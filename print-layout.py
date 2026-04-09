@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Arrange rendered card images onto A4 pages for printing (2 columns x 3 rows)."""
+"""Arrange rendered card images into a print-ready PDF (2 columns x 3 rows per page)."""
 
 import argparse
 import math
@@ -51,7 +51,7 @@ PRINT_DIR = Path("print")
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Arrange rendered card PNGs onto A4 pages for printing."
+        description="Arrange rendered card PNGs into a print-ready PDF (print/cards.pdf)."
     )
 
     color_group = parser.add_mutually_exclusive_group(required=True)
