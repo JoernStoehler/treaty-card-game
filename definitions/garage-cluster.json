@@ -5,6 +5,6 @@
   "text1": "Local police investigate.",
   "label2": "2+ failures",
   "text2": "They've been training for months undetected.",
-  "image-prompt": "...",
+  "image-prompt": "A messy suburban garage filled with racks of GPU servers, blinking green LEDs, tangled ethernet cables, warm orange light from a bare bulb overhead, a concerned neighbor peering through the window, digital painting, no text",
   "image": "images/garage-cluster.png"
 }

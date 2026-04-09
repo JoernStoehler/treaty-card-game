@@ -3,7 +3,7 @@
 Generate card illustrations via FAL AI API.
 
 Reads all definitions/*.json files, checks which images/ PNGs are missing,
-and generates them using the fal-ai/flux/dev model.
+and generates them using the fal-ai/flux/schnell model.
 """
 
 import argparse
@@ -18,11 +18,10 @@ from PIL import Image, PngImagePlugin
 
 SCRIPT_DIR = Path(__file__).parent
 DEFINITIONS_DIR = SCRIPT_DIR / "definitions"
-MODEL = "fal-ai/flux/dev"
+MODEL = "fal-ai/flux/schnell"
 
 FAL_PARAMS = {
-    "num_inference_steps": 28,
-    "guidance_scale": 3.5,
+    "num_inference_steps": 4,
     "num_images": 1,
     "enable_safety_checker": True,
     "image_size": "portrait_4_3",
@@ -120,7 +119,7 @@ def process_card(defn, force=False):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Generate card illustrations via FAL AI (fal-ai/flux/dev).",
+        description="Generate card illustrations via FAL AI (fal-ai/flux/schnell).",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
