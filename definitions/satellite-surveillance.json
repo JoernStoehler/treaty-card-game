@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Satellite Surveillance",
+  "description": "Thermal and power-consumption monitoring from orbit to detect undeclared compute",
+  "category": "intelligence",
+  "color": "#8e44ad",
+  "image-prompt": "A satellite in orbit scanning Earth below with visible thermal imaging beams highlighting heat signatures from data centers, space and technology aesthetic, digital painting, no text",
+  "image": "images/satellite-surveillance.png"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "event-2",
+  "name": "Insider Sabotage",
+  "label1": "0 failures",
+  "text1": "Caught early. Damage limited to one facility's inspection schedule.",
+  "label2": "1+ failures",
+  "text2": "Multiple inspectors compromised. Verification data from the past year is unreliable.",
+  "image-prompt": "A person in a suit secretly photographing classified documents in a dimly lit office, computer screens glowing in background, shadow and suspense, espionage atmosphere, digital painting, no text",
+  "image": "images/insider-sabotage.png"
+}

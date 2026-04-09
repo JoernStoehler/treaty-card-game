@@ -1,0 +1,10 @@
+{
+  "type": "event-2",
+  "name": "Nation Exits Treaty",
+  "label1": "0–1 failures",
+  "text1": "Diplomatic pressure and economic incentives bring them back within weeks.",
+  "label2": "2+ failures",
+  "text2": "Two more nations signal intent to follow. The coalition is fracturing.",
+  "image-prompt": "A formal diplomatic table with one chair pushed back and empty, remaining delegates looking shocked, flags of nations in background, one flag being lowered, tense atmosphere, digital painting, no text",
+  "image": "images/nation-exits-treaty.png"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "event-2",
+  "name": "Chip Smuggling Ring",
+  "label1": "0–1 failures",
+  "text1": "Small batch intercepted at customs. Shell company traced back to source.",
+  "label2": "2+ failures",
+  "text2": "Thousands of chips already delivered through multiple routes. Supply chain is compromised.",
+  "image-prompt": "A dimly lit shipping container being opened to reveal racks of computer hardware hidden among consumer goods, flashlight beam cutting through darkness, suspenseful atmosphere, digital painting, no text",
+  "image": "images/chip-smuggling.png"
+}

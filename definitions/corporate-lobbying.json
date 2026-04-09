@@ -1,0 +1,10 @@
+{
+  "type": "event-2",
+  "name": "Corporate Lobbying Blitz",
+  "label1": "0–1 failures",
+  "text1": "Lobbying fails. Public supports current limits.",
+  "label2": "2+ failures",
+  "text2": "Executive Council vote is split. Proposed amendment would raise FLOP thresholds 100x.",
+  "image-prompt": "A lavish corporate boardroom with executives presenting charts to government officials, dollar signs subtly reflected in glass windows, polished mahogany table, uncomfortable atmosphere, digital painting, no text",
+  "image": "images/corporate-lobbying.png"
+}

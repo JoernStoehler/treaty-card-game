@@ -1,0 +1,10 @@
+{
+  "type": "event-2",
+  "name": "Distributed Training",
+  "label1": "0–1 failures",
+  "text1": "50 nodes, primitive coordination. Traffic patterns give it away.",
+  "label2": "2+ failures",
+  "text2": "500 nodes across 30 countries. They've optimized the protocol to look like normal traffic.",
+  "image-prompt": "A world map with hundreds of small glowing nodes connected by thin red lines forming a web, dark background, data visualization style, ominous feel, digital painting, no text",
+  "image": "images/distributed-training.png"
+}
