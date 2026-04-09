@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Economic Sanctions",
+  "description": "Freeze assets, restrict trade, and sever financial access for entities or nations violating the treaty",
+  "category": "enforcement",
+  "color": "#c0392b",
+  "image-prompt": "A bank vault door being sealed shut with diplomatic seals and chains, frozen accounts displayed on screens behind the vault, cold blue institutional lighting, digital painting, no text",
+  "image": "images/economic-sanctions.png"
+}

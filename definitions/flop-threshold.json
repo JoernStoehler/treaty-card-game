@@ -2,8 +2,8 @@
   "type": "treaty",
   "name": "FLOP Threshold",
   "description": "Hard cap on training compute — any run above 10^24 FLOP is prohibited",
-  "category": "compute",
-  "color": "#2980b9",
+  "category": "legal",
+  "color": "#d4a017",
   "image-prompt": "A giant digital meter showing compute usage with a bright red line marking the maximum allowed threshold, warning indicators flashing, control room monitors, digital painting, no text",
   "image": "images/flop-threshold.png"
 }

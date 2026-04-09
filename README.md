@@ -35,7 +35,7 @@ A verbal card game for 1-5 players where players collectively defend a global ba
 
 ### Components
 
-- **Treaty clause cards** (24): enforcement mechanisms players hold in hand and play onto crises
+- **Treaty clause cards** (34): enforcement mechanisms players hold in hand and play onto crises
 - **Event/crisis cards** (16): scenarios that stress-test the treaty
 - **Safety breakthrough cards** (3-4): interspersed in the event deck; collect 3 to win
 
@@ -73,11 +73,11 @@ A verbal card game for 1-5 players where players collectively defend a global ba
 ```
 
 Categories and border colors:
-- enforcement: #c0392b (red)
-- intelligence: #8e44ad (purple)
-- compute: #2980b9 (blue)
-- monitoring: #27ae60 (green)
-- legal: #d4a017 (gold)
+- enforcement: #c0392b (red) — kinetic and physical responses, from raids to airstrikes
+- intelligence: #8e44ad (purple) — information gathering, surveillance, infiltration
+- monitoring: #27ae60 (green) — institutional oversight, tracking, inspections
+- legal: #d4a017 (gold) — rules and prohibitions. **Note:** legal cards only make activities illegal. This gives enforcement legal cover but doesn't stop determined violators. Players must argue not just that something is illegal, but that the illegality *matters*.
+- institutional: #16a085 (teal) — treaty governance, diplomacy, membership mechanisms
 - consolidation: #e67e22 (orange) — bringing pre-existing hardware, companies, and research under treaty control
 
 **Event card, flat** (`event-1`, always a crisis regardless of failure count):
@@ -132,19 +132,21 @@ Tier display: each tier box shows its label and text. The currently active tier 
 
 ### Current Deck (27 cards)
 
-**Treaty cards (24):**
-- enforcement: Border Interdiction, Chip Seizure, License Revocation, SWAT Raid
-- intelligence: Power Grid Monitoring, Satellite Surveillance, Whistleblower Network
-- compute: Chip Registry, Distributed Compute Cap, Export Controls, Fab Plant Licensing, FLOP Threshold
-- monitoring: Challenge Inspection, Compute Escrow, Network Traffic Analysis, On-Site Inspectors
-- legal: Algorithm Publication License, Research Ban, Supply Chain Audit, Treaty Tribunal, Withdrawal Penalty
-- consolidation: Hardware Amnesty, Legacy Decommission, Research Archive Freeze
+**Treaty cards (34):**
+- enforcement (8): Airstrike, Border Interdiction, Chip Seizure, Covert Sabotage, Economic Sanctions, Nuclear Strike, Offensive Cyber Ops, SWAT Raid
+- intelligence (6): Financial Surveillance, Human Intelligence, Power Grid Monitoring, Satellite Surveillance, Signals Intelligence, Whistleblower Network
+- monitoring (5): Challenge Inspection, Chip Registry, Compute Escrow, Network Traffic Analysis, On-Site Inspectors
+- legal (7): Algorithm Publication License, Distributed Compute Cap, Fab Plant Licensing, FLOP Threshold, License Revocation, Research Ban, Supply Chain Audit
+- institutional (5): Diplomatic Pressure, Export Controls, Membership Incentives, Treaty Tribunal, Withdrawal Penalty
+- consolidation (3): Hardware Amnesty, Legacy Decommission, Research Archive Freeze
 
 **Event-1 cards (8):** Chip Smuggling Ring, Corporate Lobbying Blitz, Failed Raid, Fake Compliance Report, Insider Sabotage, Legacy Hardware, Nation Exits Treaty, Rogue Researcher
 
 **Event-2 cards (8):** Algorithmic Breakthrough, Cyber Attack, Distributed Training, Garage Cluster, Open-Source Weights Leak, Preprint Cascade, Satellite Tip, Underground Datacenter
 
 **Safety cards (4):** Safety Breakthrough x4 (different art, collect 3 to win)
+
+**Event deck:** 16 events + 4 safety = 20 cards. E[game length] ≈ 12.6 turns.
 
 Card definitions are authored by hand (not generated). Image prompts require human iteration.
 

@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Airstrike",
+  "description": "Precision kinetic strike on a non-cooperative facility confirmed to be training dangerous AI",
+  "category": "enforcement",
+  "color": "#c0392b",
+  "image-prompt": "A military drone flying high above an industrial compound at night, a single precision-guided munition falling toward a datacenter building, dramatic lighting from below, digital painting, no text",
+  "image": "images/airstrike.png"
+}

@@ -2,8 +2,8 @@
   "type": "treaty",
   "name": "Withdrawal Penalty",
   "description": "Economic sanctions and chip access revocation for any nation leaving the treaty",
-  "category": "legal",
-  "color": "#d4a017",
+  "category": "institutional",
+  "color": "#16a085",
   "image-prompt": "A symbolic scene of a broken treaty document with economic sanctions symbols like frozen bank accounts and trade barriers forming around a country outline, stern and consequential atmosphere, digital painting, no text",
   "image": "images/withdrawal-penalty.png"
 }

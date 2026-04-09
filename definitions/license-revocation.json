@@ -2,8 +2,8 @@
   "type": "treaty",
   "name": "License Revocation",
   "description": "Strip operating licenses from any AI facility found in violation, triggering immediate shutdown",
-  "category": "enforcement",
-  "color": "#c0392b",
+  "category": "legal",
+  "color": "#d4a017",
   "image-prompt": "An official in a suit affixing a large red REVOKED seal to a framed operating license on a data center wall, server racks visible through glass behind them, stark institutional lighting, digital painting, no text",
   "image": "images/license-revocation.png"
 }

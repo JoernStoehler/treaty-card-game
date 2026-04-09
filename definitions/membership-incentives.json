@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Membership Incentives",
+  "description": "Preferential trade terms, technology sharing, and compute access for nations that join and comply with the treaty",
+  "category": "institutional",
+  "color": "#16a085",
+  "image-prompt": "A signing ceremony with delegates shaking hands over a treaty document, golden light streaming through windows, a display showing shared technology benefits, optimistic diplomatic atmosphere, digital painting, no text",
+  "image": "images/membership-incentives.png"
+}
