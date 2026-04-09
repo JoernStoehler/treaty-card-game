@@ -2,9 +2,9 @@
   "type": "event-2",
   "name": "Distributed Training",
   "label1": "0–1 failures",
-  "text1": "Not enough leaked methods to coordinate across nodes. Not viable yet.",
+  "text1": "A group is coordinating a training run across home computers in several countries. It's slow and not yet producing dangerous capabilities.",
   "label2": "2+ failures",
-  "text2": "Leaked algorithms enable training across 500 nodes in 30 countries, disguised as normal traffic.",
+  "text2": "An AI training run is underway across ordinary computers in dozens of countries. No single country hosts the operation.",
   "image-prompt": "A world map with hundreds of small glowing nodes connected by thin red lines forming a web, dark background, data visualization style, ominous feel, digital painting, no text",
   "image": "images/distributed-training.png"
 }

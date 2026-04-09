@@ -2,9 +2,9 @@
   "type": "event-2",
   "name": "Algorithmic Breakthrough",
   "label1": "0 failures",
-  "text1": "A 10x efficiency gain is published as a preprint. Still retractable.",
+  "text1": "A major lab discovers how to train frontier models with a fraction of the usual hardware.",
   "label2": "1+ failures",
-  "text2": "Combined with previously leaked research, ASI is now trainable below current FLOP thresholds.",
+  "text2": "A major lab discovers how to train frontier models with far less hardware — and the research to exploit this is already in the wild.",
   "image-prompt": "A scientific paper on a desk with mathematical equations glowing bright red, casting alarming light across a researcher's worried face, dramatic lighting, digital painting, no text",
   "image": "images/algorithmic-breakthrough.png"
 }

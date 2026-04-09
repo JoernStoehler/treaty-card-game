@@ -2,9 +2,9 @@
   "type": "event-2",
   "name": "Open-Source Weights Leak",
   "label1": "0 failures",
-  "text1": "Old model, limited capabilities. Not dangerous on its own.",
+  "text1": "Weights from an older AI model appear on a file-sharing site.",
   "label2": "1+ failures",
-  "text2": "Near-frontier model. With leaked fine-tuning methods, thousands begin capability elicitation.",
+  "text2": "Near-frontier model weights are leaked online. Researchers worldwide begin unlocking its full capabilities.",
   "image-prompt": "A laptop screen showing a download progress bar at 99% with model weight files, surrounded by dozens of other screens in a dark room all showing the same download, viral spread feeling, digital painting, no text",
   "image": "images/open-source-leak.png"
 }
