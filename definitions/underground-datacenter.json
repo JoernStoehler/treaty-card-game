@@ -2,9 +2,9 @@
   "type": "event-2",
   "name": "Underground Datacenter",
   "label1": "0–1 failures",
-  "text1": "An undeclared datacenter is discovered operating outside treaty oversight.",
+  "text1": "An undeclared datacenter was discovered operating outside treaty oversight. It had no access to frontier algorithms.",
   "label2": "2+ failures",
-  "text2": "An undeclared datacenter has access to leaked training methods. It may be weeks from a dangerous result.",
+  "text2": "An undeclared datacenter obtained leaked training methods and trained a dangerous model before it was discovered.",
   "image-prompt": "A massive underground cavern filled with rows of server racks, cables snaking along rock walls, industrial cooling fans, dim blue LED lighting, oppressive atmosphere, digital painting, no text",
   "image": "images/underground-datacenter.png"
 }

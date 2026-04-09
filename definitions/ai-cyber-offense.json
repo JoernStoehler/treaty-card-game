@@ -2,9 +2,9 @@
   "type": "event-2",
   "name": "AI Cyber Offense",
   "label1": "0–1 failures",
-  "text1": "A cyberattack targets treaty monitoring infrastructure.",
+  "text1": "A cyberattack targeted treaty monitoring infrastructure. Data integrity was compromised.",
   "label2": "2+ failures",
-  "text2": "An AI-directed cyberattack probes treaty monitoring systems, finding vulnerabilities faster than defenders can patch.",
+  "text2": "An AI-directed cyberattack breached treaty monitoring systems. Vulnerabilities were found and exploited faster than defenders could patch.",
   "image-prompt": "Multiple computer screens showing cascading security breach warnings and red alerts, digital locks shattering, an AI visualization overwhelming network defenses like water through cracks, dark cyberpunk atmosphere, digital painting, no text",
   "image": "images/ai-cyber-offense.png"
 }

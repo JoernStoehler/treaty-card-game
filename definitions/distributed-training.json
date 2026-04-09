@@ -2,9 +2,9 @@
   "type": "event-2",
   "name": "Distributed Training",
   "label1": "0–1 failures",
-  "text1": "A group is coordinating a training run across home computers in several countries. It's slow and not yet producing dangerous capabilities.",
+  "text1": "A group coordinated a training run across home computers in several countries. The run was slow and produced a model with limited capabilities.",
   "label2": "2+ failures",
-  "text2": "An AI training run is underway across ordinary computers in dozens of countries. No single country hosts the operation.",
+  "text2": "A training run was coordinated across ordinary computers in dozens of countries. No single country hosted the operation. The resulting model rivals frontier labs.",
   "image-prompt": "A world map with hundreds of small glowing nodes connected by thin red lines forming a web, dark background, data visualization style, ominous feel, digital painting, no text",
   "image": "images/distributed-training.png"
 }
