@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Algorithm Publication License",
+  "description": "Require a treaty-agency review and license before publishing any AI training method that crosses a defined capability benchmark",
+  "category": "legal",
+  "color": "#d4a017",
+  "image-prompt": "A researcher submitting a thick manuscript at an official government review window, a uniformed agency official stamping an approval form, warm gold and bureaucratic tones, digital painting, no text",
+  "image": "images/algorithm-publication-license.png"
+}

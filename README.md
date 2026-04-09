@@ -35,9 +35,9 @@ A verbal card game for 1-5 players where players collectively defend a global ba
 
 ### Components
 
-- **Treaty clause cards** (~20-32): enforcement mechanisms players hold in hand and play onto crises
-- **Event/crisis cards** (~15-20): scenarios that stress-test the treaty
-- **Safety breakthrough cards** (3): interspersed in the event deck; collect all 3 to win
+- **Treaty clause cards** (24): enforcement mechanisms players hold in hand and play onto crises
+- **Event/crisis cards** (16): scenarios that stress-test the treaty
+- **Safety breakthrough cards** (3-4): interspersed in the event deck; collect 3 to win
 
 **Card dimensions:** 70x120mm (tarot size). Chosen for table visibility -- players flash cards without passing them. Print layout: 6 cards per A4 page (2 columns x 3 rows).
 
@@ -78,6 +78,7 @@ Categories and border colors:
 - compute: #2980b9 (blue)
 - monitoring: #27ae60 (green)
 - legal: #d4a017 (gold)
+- consolidation: #e67e22 (orange) — bringing pre-existing hardware, companies, and research under treaty control
 
 **Event card, flat** (`event-1`, always a crisis regardless of failure count):
 ```json
@@ -131,13 +132,19 @@ Tier display: each tier box shows its label and text. The currently active tier 
 
 ### Current Deck (27 cards)
 
-**Treaty cards (12):** Chip Registry, Chip Seizure, Challenge Inspection, Export Controls, FLOP Threshold, On-Site Inspectors, Research Ban, Satellite Surveillance, Supply Chain Audit, SWAT Raid, Whistleblower Network, Withdrawal Penalty
+**Treaty cards (24):**
+- enforcement: Border Interdiction, Chip Seizure, License Revocation, SWAT Raid
+- intelligence: Power Grid Monitoring, Satellite Surveillance, Whistleblower Network
+- compute: Chip Registry, Distributed Compute Cap, Export Controls, Fab Plant Licensing, FLOP Threshold
+- monitoring: Challenge Inspection, Compute Escrow, Network Traffic Analysis, On-Site Inspectors
+- legal: Algorithm Publication License, Research Ban, Supply Chain Audit, Treaty Tribunal, Withdrawal Penalty
+- consolidation: Hardware Amnesty, Legacy Decommission, Research Archive Freeze
 
-**Event-1 cards (6):** Chip Smuggling Ring, Corporate Lobbying Blitz, Fake Compliance Report, Insider Sabotage, Nation Exits Treaty, Rogue Researcher
+**Event-1 cards (8):** Chip Smuggling Ring, Corporate Lobbying Blitz, Failed Raid, Fake Compliance Report, Insider Sabotage, Legacy Hardware, Nation Exits Treaty, Rogue Researcher
 
-**Event-2 cards (6):** Algorithmic Breakthrough, Cyber Attack, Distributed Training, Garage Cluster, Open-Source Weights Leak, Underground Datacenter
+**Event-2 cards (8):** Algorithmic Breakthrough, Cyber Attack, Distributed Training, Garage Cluster, Open-Source Weights Leak, Preprint Cascade, Satellite Tip, Underground Datacenter
 
-**Safety cards (3):** Safety Breakthrough x3 (different art)
+**Safety cards (4):** Safety Breakthrough x4 (different art, collect 3 to win)
 
 Card definitions are authored by hand (not generated). Image prompts require human iteration.
 

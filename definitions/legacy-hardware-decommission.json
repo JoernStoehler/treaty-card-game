@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Legacy Decommission",
+  "description": "Mandate physical destruction or permanent cryptographic disablement of all pre-treaty compute above the FLOP threshold",
+  "category": "consolidation",
+  "color": "#e67e22",
+  "image-prompt": "Workers in safety gear physically destroying server racks with industrial crushers in a warehouse, treaty inspectors observing and logging each unit, harsh industrial lighting, digital painting, no text",
+  "image": "images/legacy-hardware-decommission.png"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Border Interdiction",
+  "description": "Customs agents scan all cross-border shipments for undeclared AI hardware using X-ray and manifest verification",
+  "category": "enforcement",
+  "color": "#c0392b",
+  "image-prompt": "Customs officers in a cargo inspection bay scanning a shipping container with X-ray equipment, crates open revealing circuit boards, fluorescent warehouse lighting, official and methodical atmosphere, digital painting, no text",
+  "image": "images/border-interdiction.png"
+}

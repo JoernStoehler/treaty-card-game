@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Treaty Tribunal",
+  "description": "Convene an international panel with binding authority to adjudicate treaty violations and impose cross-border penalties",
+  "category": "legal",
+  "color": "#d4a017",
+  "image-prompt": "A formal international courtroom with judges from multiple nations on an elevated bench, flags of member states behind them, serious deliberative atmosphere, gold and wood tones, digital painting, no text",
+  "image": "images/treaty-tribunal.png"
+}
