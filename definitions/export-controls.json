@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Export Controls",
-  "description": "Block AI chip and fab equipment exports to non-signatory nations",
-  "category": "institutional",
-  "color": "#16a085",
-  "image-prompt": "A customs checkpoint with officials inspecting crates of computer hardware, X-ray scan of chips visible on monitor, border control setting, official atmosphere, digital painting, no text",
-  "image": "images/export-controls.png"
-}

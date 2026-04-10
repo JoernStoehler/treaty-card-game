@@ -8,21 +8,17 @@ function shuffle(arr) {
 }
 
 const CATEGORY_ORDER = [
+  "detection",
+  "prevention",
   "enforcement",
-  "intelligence",
-  "monitoring",
-  "legal",
-  "institutional",
-  "consolidation"
+  "governance"
 ];
 
 const CATEGORY_COLORS = {
-  enforcement:   "#c0392b",
-  intelligence:  "#8e44ad",
-  monitoring:    "#27ae60",
-  legal:         "#d4a017",
-  institutional: "#16a085",
-  consolidation: "#e67e22"
+  detection:   "#27ae60",
+  prevention:  "#d4a017",
+  enforcement: "#c0392b",
+  governance:  "#16a085"
 };
 
 let state = {
@@ -47,7 +43,7 @@ function newGame(mode) {
   const safetyCount = mode === '5min' ? 2 : 3;
 
   // Build and shuffle crisis pool
-  const allEvents = [...CARDS.event1, ...CARDS.event2];
+  const allEvents = [...CARDS.threat1, ...CARDS.threat2];
   shuffle(allEvents);
   const crisisCards = allEvents.slice(0, crisisCount);
 
@@ -146,8 +142,8 @@ function handleEvent() {
 
   // Build transcript line
   let typeInfo = card.type;
-  if (card.type === 'event-2') {
-    typeInfo = `event-2, ${activeTierLabel(card, state.failures)}`;
+  if (card.type === 'threat-2') {
+    typeInfo = `threat-2, ${activeTierLabel(card, state.failures)}`;
   }
   let logLine = `Turn ${state.turn}: [${card.name}] (${typeInfo}) → HANDLED`;
   if (selectedCards.length > 0) {
@@ -174,8 +170,8 @@ function failEvent() {
   state.selected = new Set();
 
   let typeInfo = card.type;
-  if (card.type === 'event-2') {
-    typeInfo = `event-2, ${activeTierLabel(card, state.failures - 1)}`;
+  if (card.type === 'threat-2') {
+    typeInfo = `threat-2, ${activeTierLabel(card, state.failures - 1)}`;
   }
   state.log.push(`Turn ${state.turn}: [${card.name}] (${typeInfo}) → FAILED`);
 
@@ -278,32 +274,32 @@ function renderScoreBar() {
 }
 
 function renderEventCard(card) {
-  const typeLabel = card.type === 'event-1' ? 'Crisis — Tier 1' : 'Crisis — Tier 2';
+  const typeLabel = 'Threat';
   const parts = [
-    el('div', {class: 'event-type-badge'}, typeLabel),
-    el('div', {class: 'event-name'}, card.name)
+    el('div', {class: 'threat-type-badge'}, typeLabel),
+    el('div', {class: 'threat-name'}, card.name)
   ];
 
-  if (card.type === 'event-1') {
-    parts.push(el('p', {class: 'event-text'}, card.text));
+  if (card.type === 'threat-1') {
+    parts.push(el('p', {class: 'threat-text'}, card.text));
   } else {
-    // event-2: show both tiers
+    // threat-2: show both tiers
     const active1 = parseLabel(card.label1);
     const isActive1 = state.failures >= active1.min && state.failures <= active1.max;
 
     parts.push(
       el('div', {class: `tier-block${isActive1 ? ' tier-active' : ' tier-inactive'}`},
         el('div', {class: 'tier-label'}, card.label1),
-        el('p', {class: 'event-text'}, card.text1)
+        el('p', {class: 'threat-text'}, card.text1)
       ),
       el('div', {class: `tier-block${!isActive1 ? ' tier-active' : ' tier-inactive'}`},
         el('div', {class: 'tier-label'}, card.label2),
-        el('p', {class: 'event-text'}, card.text2)
+        el('p', {class: 'threat-text'}, card.text2)
       )
     );
   }
 
-  return el('div', {class: 'event-card'}, ...parts);
+  return el('div', {class: 'threat-card'}, ...parts);
 }
 
 function renderTreatyPicker() {
@@ -439,10 +435,10 @@ function renderPlayingScreen() {
   } else if (state.currentCard.type === 'safety') {
     // Safety card
     main.appendChild(
-      el('div', {class: 'event-card safety-card'},
-        el('div', {class: 'event-type-badge safety-badge'}, 'Safety Breakthrough'),
-        el('div', {class: 'event-name'}, state.currentCard.name),
-        el('p', {class: 'event-text'}, state.currentCard.description)
+      el('div', {class: 'threat-card safety-card'},
+        el('div', {class: 'threat-type-badge safety-badge'}, 'Safety Breakthrough'),
+        el('div', {class: 'threat-name'}, state.currentCard.name),
+        el('p', {class: 'threat-text'}, state.currentCard.description)
       )
     );
     main.appendChild(

@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Diplomatic Pressure",
-  "description": "Coordinated diplomatic statements, ambassador recalls, and bilateral negotiations to compel compliance",
-  "category": "institutional",
-  "color": "#16a085",
-  "image-prompt": "A group of ambassadors in a tense meeting room, one standing and gesturing emphatically while others look concerned, flags of many nations on the wall, formal diplomatic atmosphere, digital painting, no text",
-  "image": "images/diplomatic-pressure.png"
-}

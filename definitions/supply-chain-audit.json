@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Supply Chain Audit",
-  "description": "Mandatory reporting and verification of all AI chip transfers between entities",
-  "category": "legal",
-  "color": "#d4a017",
-  "image-prompt": "An auditor tracing connections on a supply chain diagram pinned to a wall, red strings connecting companies and shipments, investigative bulletin board style, digital painting, no text",
-  "image": "images/supply-chain-audit.png"
-}

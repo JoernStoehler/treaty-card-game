@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Power Grid Monitoring",
-  "description": "Flag any grid-connected facility drawing compute-scale power without a treaty declaration on file",
-  "category": "intelligence",
-  "color": "#8e44ad",
-  "image-prompt": "A control room operator watching a real-time national power grid map with anomalous nodes glowing red, streams of data flowing across multiple screens, tense focused atmosphere, digital painting, no text",
-  "image": "images/power-grid-monitoring.png"
-}

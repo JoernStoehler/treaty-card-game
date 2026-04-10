@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Human Intelligence",
-  "description": "Recruit and place undercover agents inside suspect organizations and research labs",
-  "category": "intelligence",
-  "color": "#8e44ad",
-  "image-prompt": "A person in ordinary clothes sitting in a busy tech company cafeteria, subtly photographing a whiteboard with equations through a coffee cup camera, spy thriller atmosphere, digital painting, no text",
-  "image": "images/human-intelligence.png"
-}

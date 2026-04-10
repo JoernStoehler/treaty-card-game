@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Signals Intelligence",
-  "description": "Intercept and analyze all electronic communications from flagged entities, researchers, and facilities",
-  "category": "intelligence",
-  "color": "#8e44ad",
-  "image-prompt": "A vast room of satellite dishes and antenna arrays on a remote hilltop, data streams visualized flowing into a central processing hub, clinical surveillance atmosphere, digital painting, no text",
-  "image": "images/signals-intelligence.png"
-}

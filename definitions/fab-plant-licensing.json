@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Fab Plant Licensing",
-  "description": "License every semiconductor fabrication facility and mandate treaty-agency approval for any AI-capable chip design before production",
-  "category": "legal",
-  "color": "#d4a017",
-  "image-prompt": "Inside a semiconductor cleanroom, workers in full bunny suits near lithography machines, a treaty inspector reviewing digital blueprints on a tablet, sterile white and blue lighting, digital painting, no text",
-  "image": "images/fab-plant-licensing.png"
-}

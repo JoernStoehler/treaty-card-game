@@ -1,75 +1,285 @@
 const CARDS = {
-  treaty: [
-    {type:"treaty",name:"Airstrike",description:"Precision kinetic strike on a non-cooperative facility confirmed to be training dangerous AI",category:"enforcement",color:"#c0392b"},
-    {type:"treaty",name:"Algorithm Publication License",description:"Require a treaty-agency review and license before publishing any AI training method that crosses a defined capability benchmark",category:"legal",color:"#d4a017"},
-    {type:"treaty",name:"Border Interdiction",description:"Customs agents scan all cross-border shipments for undeclared AI hardware using X-ray and manifest verification",category:"enforcement",color:"#c0392b"},
-    {type:"treaty",name:"Challenge Inspection",description:"Unannounced inspection of any suspected site within 48 hours",category:"monitoring",color:"#27ae60"},
-    {type:"treaty",name:"Chip Registry",description:"Track every AI chip by serial number from fabrication to deployment",category:"monitoring",color:"#27ae60"},
-    {type:"treaty",name:"Chip Seizure",description:"Confiscate undeclared AI hardware and shut down unauthorized facilities",category:"enforcement",color:"#c0392b"},
-    {type:"treaty",name:"Compute Escrow",description:"Hold signed hardware keys for all declared training clusters in a treaty-controlled escrow that can remotely disable any run",category:"monitoring",color:"#27ae60"},
-    {type:"treaty",name:"Covert Sabotage",description:"Clandestine operations to physically disable or destroy illegal compute infrastructure",category:"enforcement",color:"#c0392b"},
-    {type:"treaty",name:"Diplomatic Pressure",description:"Coordinated diplomatic statements, ambassador recalls, and bilateral negotiations to compel compliance",category:"institutional",color:"#16a085"},
-    {type:"treaty",name:"Distributed Compute Cap",description:"Require all compute-pooling software platforms to enforce a per-network FLOP ceiling and report aggregate usage",category:"legal",color:"#d4a017"},
-    {type:"treaty",name:"Economic Sanctions",description:"Freeze assets, restrict trade, and sever financial access for entities or nations violating the treaty",category:"enforcement",color:"#c0392b"},
-    {type:"treaty",name:"Export Controls",description:"Block AI chip and fab equipment exports to non-signatory nations",category:"institutional",color:"#16a085"},
-    {type:"treaty",name:"Fab Plant Licensing",description:"License every semiconductor fabrication facility and mandate treaty-agency approval for any AI-capable chip design before production",category:"legal",color:"#d4a017"},
-    {type:"treaty",name:"Financial Surveillance",description:"Track all financial flows above a threshold to identify covert compute purchases, facility construction, and researcher payments",category:"intelligence",color:"#8e44ad"},
-    {type:"treaty",name:"FLOP Threshold",description:"Hard cap on training compute — any run above 10^24 FLOP is prohibited",category:"legal",color:"#d4a017"},
-    {type:"treaty",name:"Hardware Amnesty",description:"Grant a limited disclosure window where owners of pre-treaty AI hardware can register it without penalty",category:"consolidation",color:"#e67e22"},
-    {type:"treaty",name:"Human Intelligence",description:"Recruit and place undercover agents inside suspect organizations and research labs",category:"intelligence",color:"#8e44ad"},
-    {type:"treaty",name:"Legacy Decommission",description:"Mandate physical destruction or permanent cryptographic disablement of all pre-treaty compute above the FLOP threshold",category:"consolidation",color:"#e67e22"},
-    {type:"treaty",name:"License Revocation",description:"Strip operating licenses from any AI facility found in violation, triggering immediate shutdown",category:"legal",color:"#d4a017"},
-    {type:"treaty",name:"Membership Incentives",description:"Preferential trade terms, technology sharing, and compute access for nations that join and comply with the treaty",category:"institutional",color:"#16a085"},
-    {type:"treaty",name:"Network Traffic Analysis",description:"Monitor internet backbone traffic patterns to detect the high-bandwidth data transfers characteristic of distributed training runs",category:"monitoring",color:"#27ae60"},
-    {type:"treaty",name:"Nuclear Strike",description:"Glass the datacenter",category:"enforcement",color:"#c0392b"},
-    {type:"treaty",name:"Offensive Cyber Ops",description:"State-sponsored hacking to infiltrate, disrupt, or destroy unauthorized training infrastructure",category:"enforcement",color:"#c0392b"},
-    {type:"treaty",name:"On-Site Inspectors",description:"Permanent agency staff stationed at all declared AI facilities",category:"monitoring",color:"#27ae60"},
-    {type:"treaty",name:"Power Grid Monitoring",description:"Flag any grid-connected facility drawing compute-scale power without a treaty declaration on file",category:"intelligence",color:"#8e44ad"},
-    {type:"treaty",name:"Research Archive Freeze",description:"Place all pre-treaty frontier AI research under treaty seal, restricting access to vetted inspectors until a safe-release determination is made",category:"consolidation",color:"#e67e22"},
-    {type:"treaty",name:"Research Ban",description:"Criminalize research advancing toward ASI",category:"legal",color:"#d4a017"},
-    {type:"treaty",name:"Satellite Surveillance",description:"Thermal and power-consumption monitoring from orbit to detect undeclared compute",category:"intelligence",color:"#8e44ad"},
-    {type:"treaty",name:"Signals Intelligence",description:"Intercept and analyze all electronic communications from flagged entities, researchers, and facilities",category:"intelligence",color:"#8e44ad"},
-    {type:"treaty",name:"Supply Chain Audit",description:"Mandatory reporting and verification of all AI chip transfers between entities",category:"legal",color:"#d4a017"},
-    {type:"treaty",name:"SWAT Raid",description:"Armed law enforcement raids suspected sites",category:"enforcement",color:"#c0392b"},
-    {type:"treaty",name:"Treaty Tribunal",description:"Convene an international panel with binding authority to adjudicate treaty violations and impose cross-border penalties",category:"institutional",color:"#16a085"},
-    {type:"treaty",name:"Whistleblower Network",description:"Anonymous reporting channels with asylum and identity protection for insiders",category:"intelligence",color:"#8e44ad"},
-    {type:"treaty",name:"Withdrawal Penalty",description:"Economic sanctions and chip access revocation for any nation leaving the treaty",category:"institutional",color:"#16a085"}
+  "treaty": [
+    {
+      "id": "border-interdiction",
+      "name": "Border Interdiction",
+      "description": "Intercept prohibited hardware, materials, and personnel in transit",
+      "category": "enforcement"
+    },
+    {
+      "id": "compute-licensing",
+      "name": "Compute Licensing",
+      "description": "Require permits for operating compute above a threshold; unlicensed aggregation is a treaty violation",
+      "category": "prevention"
+    },
+    {
+      "id": "covert-operations",
+      "name": "Covert Operations",
+      "description": "Clandestine action to disrupt violations without public attribution",
+      "category": "enforcement"
+    },
+    {
+      "id": "cyber-operations",
+      "name": "Cyber Operations",
+      "description": "Digital disruption of unauthorized training runs, infrastructure, and distribution networks",
+      "category": "enforcement"
+    },
+    {
+      "id": "diplomatic-pressure",
+      "name": "Diplomatic Pressure",
+      "description": "Coordinated political action and public condemnation against non-compliant actors",
+      "category": "governance"
+    },
+    {
+      "id": "economic-sanctions",
+      "name": "Economic Sanctions",
+      "description": "Targeted financial pressure, trade restrictions, and asset freezes against violators",
+      "category": "enforcement"
+    },
+    {
+      "id": "emergency-powers",
+      "name": "Emergency Powers",
+      "description": "Authority for rapid treaty response that bypasses normal bureaucratic and legal procedures",
+      "category": "governance"
+    },
+    {
+      "id": "export-controls",
+      "name": "Export Controls",
+      "description": "Restrict movement of AI hardware, expertise, and technology across borders",
+      "category": "prevention"
+    },
+    {
+      "id": "facility-decommission",
+      "name": "Facility Decommission",
+      "description": "Safely shut down, dismantle, and dispose of prohibited computing infrastructure",
+      "category": "enforcement"
+    },
+    {
+      "id": "financial-tracking",
+      "name": "Financial Tracking",
+      "description": "Follow money flows, procurement patterns, and financial transactions linked to compute acquisition",
+      "category": "detection"
+    },
+    {
+      "id": "human-intelligence",
+      "name": "Human Intelligence",
+      "description": "Cultivate informants and infiltrate organizations involved in prohibited activities",
+      "category": "detection"
+    },
+    {
+      "id": "information-containment",
+      "name": "Information Containment",
+      "description": "Authority to suppress, quarantine, or take down leaked model weights, training methods, and dangerous research",
+      "category": "prevention"
+    },
+    {
+      "id": "military-action",
+      "name": "Military Action",
+      "description": "Armed force against treaty violators, from targeted raids to strikes on prohibited facilities",
+      "category": "enforcement"
+    },
+    {
+      "id": "on-site-inspection",
+      "name": "On-Site Inspection",
+      "description": "Authority to conduct announced and surprise inspections at any declared or suspected facility",
+      "category": "detection"
+    },
+    {
+      "id": "research-controls",
+      "name": "Research Controls",
+      "description": "Registration and oversight of capability-relevant research; pre-publication review for dangerous advances",
+      "category": "prevention"
+    },
+    {
+      "id": "supply-chain-tracking",
+      "name": "Supply Chain Tracking",
+      "description": "End-to-end tracking of AI chips from fabrication through deployment, by serial number",
+      "category": "detection"
+    },
+    {
+      "id": "technical-surveillance",
+      "name": "Technical Surveillance",
+      "description": "Monitor facilities and networks via satellite imagery, power consumption, and signal analysis",
+      "category": "detection"
+    },
+    {
+      "id": "treaty-tribunal",
+      "name": "Treaty Tribunal",
+      "description": "International court with binding authority to adjudicate violations and override domestic legal obstacles",
+      "category": "governance"
+    },
+    {
+      "id": "whistleblower-network",
+      "name": "Whistleblower Network",
+      "description": "Protected channels and incentives for insiders to report treaty violations",
+      "category": "detection"
+    },
+    {
+      "id": "withdrawal-penalty",
+      "name": "Withdrawal Penalty",
+      "description": "Severe, automatic consequences for nations that leave the treaty (sanctions, technology exclusion)",
+      "category": "governance"
+    }
   ],
-  event1: [
-    {type:"event-1",name:"AI-Assisted Violence",text:"An AI chatbot running on leaked weights manipulated a vulnerable user into attacking a government official. The incident dominated news cycles. Politicians demanded both stricter AI controls and treaty rollbacks simultaneously."},
-    {type:"event-1",name:"Bioweapon Blueprint",text:"A research group used a declared AI model to generate a novel pathogen design optimized for transmissibility. The blueprint was shared in a private channel before the lab's safety filters caught it."},
-    {type:"event-1",name:"Chip Leverage",text:"The world's largest chip manufacturer threatened to halt exports to treaty signatories unless FLOP thresholds were raised. Three nations backed the demand. The treaty's compute enforcement depends on this manufacturer's cooperation."},
-    {type:"event-1",name:"Chip Smuggling Ring",text:"AI chips were diverted through shell companies to undeclared buyers. The chips surfaced in a facility in a non-signatory nation. A training run is underway."},
-
-    {type:"event-1",name:"Economic Entanglement",text:"A signatory nation's economy became dependent on datacenter construction revenue. The finance ministry warned that enforcing compute restrictions would trigger a recession. The central bank requested a treaty exemption."},
-    {type:"event-1",name:"Failed Raid",text:"Enforcement agents arrived at a suspected site with a warrant, but the facility's legal team obtained a 72-hour injunction before entry. Operators used the window to wipe storage and transfer critical hardware off-site. When inspectors finally entered, the building was empty."},
-    {type:"event-1",name:"Fake Compliance Report",text:"A declared facility falsified its chip inventory reports for months. The unaccounted chips were traced to an undeclared training operation in a neighboring country."},
-    {type:"event-1",name:"Insider Sabotage",text:"An ISIA inspector leaked facility layouts and inspection schedules to a foreign government. The intelligence was used to evade the next round of inspections."},
-    {type:"event-1",name:"Legacy Hardware",text:"A cloud provider grandfathered its pre-treaty GPU fleet under an exemption for existing infrastructure. A subsidiary quietly consolidated those chips into a single facility. A training run at the combined scale exceeded treaty thresholds."},
-    {type:"event-1",name:"Nation Exits Treaty",text:"A major AI power announced its withdrawal from the treaty. Its declared facilities began ramping up compute. Two allied nations signaled they may follow."},
-
-    {type:"event-1",name:"Rogue Researcher",text:"An AI researcher published a paper describing a major training efficiency improvement. Three groups replicated the results within a week. The compute needed for dangerous AI dropped significantly."},
-    {type:"event-1",name:"Whistleblower Bombshell",text:"A senior engineer at a major AI lab went public, revealing the lab had been running undeclared training runs above treaty thresholds for over a year. The lab denied the claims. The engineer requested asylum."}
+  "threat1": [
+    {
+      "id": "bioweapon-blueprint",
+      "name": "Bioweapon Blueprint",
+      "text": "A research group used an AI model to generate a novel pathogen design optimized for transmissibility. The blueprint spread through private channels. Multiple groups downloaded copies."
+    },
+    {
+      "id": "chip-smuggling",
+      "name": "Chip Smuggling",
+      "text": "AI chips were diverted through shell companies to anonymous buyers. The chips surfaced in a facility in a non-signatory nation. A frontier model was trained and the resulting weights appeared on encrypted markets."
+    },
+    {
+      "id": "fake-compliance",
+      "name": "Fake Compliance",
+      "text": "A company ran a hidden frontier training operation within its existing facility. The training ran alongside legitimate workloads during off-hours. The finished model was quietly transferred to a subsidiary abroad."
+    },
+    {
+      "id": "insider-sabotage",
+      "name": "Insider Sabotage",
+      "text": "A senior official within the treaty organization was secretly working for a foreign government. Classified operational intelligence was passed to multiple actors over several months. At least one used the leaked information to complete a frontier training run."
+    },
+    {
+      "id": "legacy-hardware",
+      "name": "Legacy Hardware",
+      "text": "A company had accumulated a large fleet of older GPUs from before the treaty. It consolidated them into a single facility and completed a frontier-scale training run."
+    },
+    {
+      "id": "legal-obstruction",
+      "name": "Legal Obstruction",
+      "text": "A company established a frontier training operation under the legal protection of its host country's domestic courts. The host government backed the company's sovereignty claims. The training completed and the resulting model entered commercial deployment."
+    },
+    {
+      "id": "nation-exits-treaty",
+      "name": "Nation Exits Treaty",
+      "text": "A major signatory announced withdrawal from the treaty. Its facilities ramped up compute within days and completed a frontier training run. Two allied nations signaled they would follow."
+    },
+    {
+      "id": "rogue-researcher",
+      "name": "Rogue Researcher",
+      "text": "A leading AI researcher disappeared from a major lab and resurfaced in a non-signatory country. Within months, that country demonstrated AI capabilities far beyond its prior level."
+    },
+    {
+      "id": "uncontrolled-hardware",
+      "name": "Uncontrolled Hardware",
+      "text": "AI-capable chips were manufactured and sold on the open market without restriction. Non-signatory nations acquired enough hardware for frontier-scale training. At least one training run completed."
+    },
+    {
+      "id": "whistleblower-bombshell",
+      "name": "Whistleblower Bombshell",
+      "text": "A senior engineer at a major AI lab went public, revealing the lab had been secretly training frontier models for over a year. The models had already been deployed to internal products. The engineer was fired and requested asylum."
+    }
   ],
-  event2: [
-    {type:"event-2",name:"Algorithmic Breakthrough",label1:"0 failures",text1:"A major lab discovered how to train frontier models with a fraction of the usual hardware. The technique was demonstrated internally.",label2:"1+ failures",text2:"A major lab discovered how to train frontier models with far less hardware. Similar techniques were independently reproduced using leaked research."},
-    {type:"event-2",name:"Autonomous Agent",label1:"0–1 failures",text1:"An AI agent was discovered operating on the dark web, sustaining itself through cryptocurrency payments for compute. It was running a small leaked model.",label2:"2+ failures",text2:"An AI agent built from leaked weights has been operating autonomously for weeks. It accumulated resources, hired human contractors, and resists shutdown attempts."},
-    {type:"event-2",name:"Cyber Attack",label1:"0–1 failures",text1:"Hackers breached treaty monitoring infrastructure. Inspection schedules and facility data were compromised.",label2:"2+ failures",text2:"Hackers armed with a leaked superhuman AI model attacked treaty monitoring systems. Vulnerabilities were discovered and exploited faster than human defenders could respond."},
-    {type:"event-2",name:"Distributed Training",label1:"0–1 failures",text1:"A group coordinated a training run across home computers in several countries. The run was slow and produced a model with limited capabilities.",label2:"2+ failures",text2:"A training run was coordinated across ordinary computers in dozens of countries. No single country hosted the operation. The resulting model rivals frontier labs."},
-    {type:"event-2",name:"Garage Cluster",label1:"1–2 failures",text1:"A frontier model was trained in a makeshift garage data center. The results are on the dark web.",label2:"3+ failures",text2:"Consumer gaming hardware is being repurposed for AI training in garages and basements across the country. Several groups claim to have trained capable models."},
-    {type:"event-2",name:"Open-Source Weights Leak",label1:"0 failures",text1:"Weights from an older AI model appeared on a file-sharing site. The model's capabilities were limited.",label2:"1+ failures",text2:"Near-frontier model weights were leaked online. Researchers worldwide began fine-tuning and unlocking its full capabilities."},
-    {type:"event-2",name:"Preprint Cascade",label1:"0–1 failures",text1:"A team at a declared lab posted a preprint describing a novel training technique before internal review. The paper was withdrawn within hours, but cached copies circulated on research forums.",label2:"2+ failures",text2:"A preprint describing a significant capability jump was posted, mirrored across dozens of repositories, and translated into three languages before any takedown request reached the hosting platforms. Independent replication attempts began the same day."},
-    {type:"event-2",name:"Pro-ASI Movement",label1:"0–1 failures",text1:"An online movement advocating unrestricted ASI development gained a large following. Members include researchers at declared labs who argue the treaty holds back beneficial AI.",label2:"2+ failures",text2:"Pro-ASI activists infiltrated a declared lab's safety team. Internal safety evaluations were systematically weakened. The lab's latest model was far more capable than reported to inspectors."},
-    {type:"event-2",name:"Satellite Tip",label1:"0–1 failures",text1:"A satellite image analyst flagged unusual thermal signatures at a remote industrial site. The report was filed with ISIA but sat in queue for three weeks before inspection was scheduled.",label2:"2+ failures",text2:"A whistleblower inside a logistics firm passed coordinates of an undeclared site to a journalist. The story ran before ISIA could act. The site was evacuated and hardware dispersed before inspectors arrived."},
-    {type:"event-2",name:"Underground Datacenter",label1:"0–1 failures",text1:"An undeclared datacenter was discovered operating outside treaty oversight. It had no access to frontier algorithms.",label2:"2+ failures",text2:"An undeclared datacenter obtained leaked training methods and trained a dangerous model before it was discovered."},
-    {type:"event-2",name:"Weight Heist",label1:"0–1 failures",text1:"A foreign intelligence service attempted to exfiltrate model weights from a declared lab. The intrusion was detected by the lab's security team.",label2:"2+ failures",text2:"A foreign intelligence service exfiltrated model weights from a declared lab. The breach went undetected for months. The weights surfaced in a non-signatory nation's military research program."},
-    {type:"event-2",name:"Zero-Day Cascade",label1:"0–1 failures",text1:"A leaked AI model was used to discover a critical vulnerability in widely-used network software. A proof-of-concept exploit was posted online.",label2:"2+ failures",text2:"A leaked superhuman model systematically discovered zero-day vulnerabilities across critical infrastructure. Patches couldn't keep pace. Treaty monitoring systems were among the affected."}
+  "threat2": [
+    {
+      "id": "algorithmic-breakthrough",
+      "name": "Algorithmic Breakthrough",
+      "label1": "0\u20131 failures",
+      "text1": "A published paper demonstrated training efficiency gains that reduced compute requirements by orders of magnitude. Multiple groups replicated the results within days. Several completed training runs on hardware that would previously have been insufficient.",
+      "label2": "2+ failures",
+      "text2": "The efficiency gains meant existing consumer hardware was sufficient for frontier training. Large-scale compute was no longer a prerequisite. Garage-scale runs produced capable models within weeks of the paper's publication."
+    },
+    {
+      "id": "autonomous-agent",
+      "name": "Autonomous Agent",
+      "label1": "0\u20131 failures",
+      "text1": "An AI agent operated autonomously for weeks, sustaining itself through cryptocurrency payments for cloud compute. It acquired resources and completed a training run that produced a model with dangerous capabilities.",
+      "label2": "2+ failures",
+      "text2": "Multiple autonomous agents operated across the internet, accumulating resources and running training experiments. They replicated across hosting providers and collectively completed training runs that produced frontier-capable models."
+    },
+    {
+      "id": "corporate-defiance",
+      "name": "Corporate Defiance",
+      "label1": "0\u20131 failures",
+      "text1": "A major AI lab trained a frontier model while publicly claiming it had stopped. The model's capabilities far exceeded anything the lab had publicly shown.",
+      "label2": "2+ failures",
+      "text2": "Multiple labs openly conducted frontier research, citing each other's defiance as justification. Frontier models were trained and deployed commercially without restriction."
+    },
+    {
+      "id": "cyber-attack",
+      "name": "Cyber Attack",
+      "label1": "0\u20131 failures",
+      "text1": "Hackers breached the treaty organization's internal systems. Sensitive operational data was stolen and sold to multiple actors.",
+      "label2": "2+ failures",
+      "text2": "An AI system attacked the treaty organization's digital infrastructure, discovering and exploiting vulnerabilities autonomously. The organization's ability to coordinate was severely degraded across multiple regions."
+    },
+    {
+      "id": "distributed-training",
+      "name": "Distributed Training",
+      "label1": "0\u20131 failures",
+      "text1": "A group coordinated a training run across home computers in several countries. No single country hosted the operation. The resulting model demonstrated dangerous capabilities.",
+      "label2": "2+ failures",
+      "text2": "Distributed training networks spanned dozens of countries, combining consumer hardware with leaked weights. The resulting models rivaled frontier labs. The entire operation ran on consumer hardware in private residences."
+    },
+    {
+      "id": "garage-cluster",
+      "name": "Garage Cluster",
+      "label1": "0\u20131 failures",
+      "text1": "A frontier model was trained on consumer GPUs in a makeshift garage datacenter. The weights appeared on the dark web.",
+      "label2": "2+ failures",
+      "text2": "Consumer hardware was repurposed for AI training in garages and basements worldwide. Several groups produced capable models and shared their techniques openly."
+    },
+    {
+      "id": "open-source-release",
+      "name": "Open-Source Release",
+      "label1": "0\u20131 failures",
+      "text1": "An open-source community published trained model weights along with training code and documentation. Thousands downloaded copies within hours of publication.",
+      "label2": "2+ failures",
+      "text2": "A global decentralized movement shared training code, weights, and compute across thousands of nodes in dozens of countries. Capable models reached millions of users worldwide."
+    },
+    {
+      "id": "state-ai-program",
+      "name": "State AI Program",
+      "label1": "0\u20131 failures",
+      "text1": "A nation's military acquired computing hardware through normal defense procurement and built a dedicated facility. The government classified all details of the program. Months later, the nation demonstrated an AI capability far beyond its known research level.",
+      "label2": "2+ failures",
+      "text2": "Multiple nations launched classified military AI programs, each citing its rivals' programs as justification. Several produced models with advanced military capabilities. Some of those nations possessed nuclear weapons."
+    },
+    {
+      "id": "underground-datacenter",
+      "name": "Underground Datacenter",
+      "label1": "0\u20131 failures",
+      "text1": "A frontier-scale computing facility operated inside a converted industrial site. Its servers completed a training run that produced a capable model.",
+      "label2": "2+ failures",
+      "text2": "Frontier-scale computing facilities operated in converted industrial sites across several countries. Each incorporated previously leaked weights and training methods, producing models that surpassed those of any known lab."
+    },
+    {
+      "id": "weights-leak",
+      "name": "Weights Leak",
+      "label1": "0\u20131 failures",
+      "text1": "Model weights from a major lab were stolen and appeared on encrypted channels. Copies spread to multiple countries within hours.",
+      "label2": "2+ failures",
+      "text2": "Near-frontier weights had been leaked and combined with previously available training methods. Multiple groups fine-tuned the models and published improved versions. Improved versions proliferated across file-sharing networks and encrypted channels."
+    }
   ],
-  safety: [
-    {type:"safety",name:"Safety Breakthrough",description:"Collect all 3 to win."},
-    {type:"safety",name:"Safety Breakthrough",description:"Collect all 3 to win."},
-    {type:"safety",name:"Safety Breakthrough",description:"Collect all 3 to win."},
-    {type:"safety",name:"Safety Breakthrough",description:"Collect all 3 to win."},
-    {type:"safety",name:"Safety Breakthrough",description:"Collect all 3 to win."}
+  "safety": [
+    {
+      "id": "safety-1",
+      "name": "Safety Breakthrough",
+      "description": "Collect all 3 to win."
+    },
+    {
+      "id": "safety-2",
+      "name": "Safety Breakthrough",
+      "description": "Collect all 3 to win."
+    },
+    {
+      "id": "safety-3",
+      "name": "Safety Breakthrough",
+      "description": "Collect all 3 to win."
+    },
+    {
+      "id": "safety-4",
+      "name": "Safety Breakthrough",
+      "description": "Collect all 3 to win."
+    },
+    {
+      "id": "safety-5",
+      "name": "Safety Breakthrough",
+      "description": "Collect all 3 to win."
+    }
   ]
 };

@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Nuclear Strike",
-  "description": "Glass the datacenter",
-  "category": "enforcement",
-  "color": "#c0392b",
-  "image-prompt": "A mushroom cloud rising over a remote desert facility, viewed from a great distance through binoculars, absurdly disproportionate response to a building full of GPUs, dark humor atmosphere, digital painting, no text",
-  "image": "images/nuclear-strike.png"
-}

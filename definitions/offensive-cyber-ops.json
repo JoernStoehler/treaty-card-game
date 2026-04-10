@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Offensive Cyber Ops",
-  "description": "State-sponsored hacking to infiltrate, disrupt, or destroy unauthorized training infrastructure",
-  "category": "enforcement",
-  "color": "#c0392b",
-  "image-prompt": "A military cyber operations center with operators at terminals, screens showing network maps with red attack vectors, green command line text scrolling, tense focused atmosphere, digital painting, no text",
-  "image": "images/offensive-cyber-ops.png"
-}

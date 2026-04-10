@@ -1,7 +1,0 @@
-{
-  "type": "event-1",
-  "name": "Rogue Researcher",
-  "text": "An AI researcher published a paper describing a major training efficiency improvement. Three groups replicated the results within a week. The treaty's FLOP thresholds, calibrated to older methods, no longer capture dangerous training runs.",
-  "image-prompt": "A lone scientist in a dark lab illuminated only by multiple monitor screens showing neural network diagrams, they are uploading a paper to the internet, ominous red glow, thriller atmosphere, digital painting, no text",
-  "image": "images/rogue-researcher.png"
-}

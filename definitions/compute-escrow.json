@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Compute Escrow",
-  "description": "Hold signed hardware keys for all declared training clusters in a treaty-controlled escrow that can remotely disable any run",
-  "category": "monitoring",
-  "color": "#27ae60",
-  "image-prompt": "A secure vault room with rows of physical hardware security modules behind glass, a treaty official at a control panel with a physical key and screen showing cluster status, clinical green-tinted lighting, digital painting, no text",
-  "image": "images/compute-escrow.png"
-}
