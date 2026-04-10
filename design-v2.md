@@ -15,7 +15,7 @@ Players should come away understanding:
 
 Two decks:
 
-- **Treaty cards** (~15-20): enforcement mechanisms available to include in the treaty. Examples: "On-Site Inspections," "Export Controls," "Military Strikes," "Chip Serial Tracking." Each has a bold title and a short description phrased as what it lets the treaty do.
+- **Treaty cards** (~14-18): enforcement mechanisms available to include in the treaty. Examples: "On-Site Inspections," "Export Controls," "Military Strikes," "Chip Serial Tracking." Each has a bold title and a short description phrased as what it lets the treaty do.
 
 - **Threat cards** (~15-20, shuffled): story elements representing things that could challenge the treaty over the decades it must hold. Each has a bold title (readable at table distance), optional short description for disambiguation, and an illustration.
   - **Capability cards** (subset, ~6-8): threats that directly advance someone's ability to train superintelligence. Visually marked with a black border and corner icon. Examples: "GPU Theft," "Algorithmic Breakthrough," "Stolen Model Weights."
@@ -34,11 +34,10 @@ Right side = "what's currently true." Left side = "what's settled / not yet need
 
 ## Setup
 
-1. Read rules aloud (short — see Rules section).
-2. Split treaty cards into roughly equal hands among players. Each player reads their cards and becomes the expert on those provisions.
-3. All treaty cards go face-up into the ideas pool (left side). Players retain knowledge of what they read.
-4. Shuffle threat deck. Set aside a portion face-down unseen — the game uses a subset of the deck (e.g., half). This controls game length and ensures players don't know which threats are coming.
-5. One player takes the threat deck and becomes the reader.
+1. Read the Game Loop and Game End sections aloud to all players.
+2. **Familiarize with treaty cards.** Split treaty cards roughly equally among players. Each player reads their cards — they become the group's expert on those provisions. Then place all treaty cards face-up in the ideas pool (left side). Titles are large enough for everyone to see; players ask questions about cards they don't understand, answered by whoever read them.
+3. Shuffle threat deck. Set aside half the deck face-down unseen — the game uses roughly half the threat deck. This controls game length and adds uncertainty about which threats appear.
+4. One player takes the threat deck and becomes the reader. The reader role can rotate or stay fixed — group's choice.
 
 ## Game loop
 
@@ -46,12 +45,13 @@ Right side = "what's currently true." Left side = "what's settled / not yet need
 
 2. **Discuss.** Players argue: does our current treaty handle this? They can reference any treaty card in the active treaty (right side). They can also propose moving new treaty cards from the ideas pool into the active treaty to handle it.
 
-3. **Commit.** Players move treaty cards from ideas → active treaty as needed. Treaty cards committed in previous rounds cannot be removed. Cards committed this round can still be pulled back until the group finalizes.
+3. **Commit.** Players move treaty cards from ideas → active treaty as needed. Treaty cards committed in previous rounds cannot be removed. Cards placed this round can be pulled back until the next threat is drawn, which locks them in.
 
 4. **Resolve.** Group decides:
    - **Handled:** Threat card moves to handled pile (left side). The treaty addresses this.
    - **Unresolved:** Threat card stays on the right side. The treaty doesn't (or shouldn't, or can't) deal with this. If it's a capability card (black border), it counts toward the extinction threshold.
-   - Players can also resolve previously unresolved threats if a newly committed treaty provision covers them. Move those threats from right → left.
+   - Players can also resolve previously unresolved threats if a newly committed treaty provision covers them. Move those threats from right → left. Retroactively resolving a capability card removes it from the extinction count.
+   - Decisions are by group consensus — discuss until everyone agrees.
 
 5. **Check extinction.** If 3 (or N — playtest to determine) capability cards are unresolved on the right side, the game ends. Someone somewhere had enough resources to train superintelligence. Everyone dies.
 
@@ -62,6 +62,8 @@ Right side = "what's currently true." Left side = "what's settled / not yet need
 The game ends when:
 - **Extinction:** 3+ capability cards unresolved. Loss.
 - **Deck exhausted:** All cards in the subset drawn and resolved/unresolved. Proceed to reflection.
+
+Surviving the deck without hitting the extinction threshold is a win — but the post-game reflection evaluates how good a win it was.
 
 ## Post-game reflection
 
@@ -121,7 +123,7 @@ The game is a **stress test of hypotheticals**, not a timeline. Cards represent 
 - **Descriptions disambiguate, not narrate.** One sentence max. It answers "what does this mean?" not "what happened?"
 - **Capability cards represent direct training-run enablers.** Compute, algorithms, weights, operational infrastructure. Things that get someone closer to completing a training run.
 - **Context cards represent political/operational degradation.** Things that make the treaty harder to enforce, weaker politically, or less credible. They don't directly enable a training run but they change the landscape.
-- **Some cards are very hard or effectively unpreventable.** This is intentional. Not every threat is worth addressing — players can choose to let threats through if the treaty cost of preventing them is too high. Life's unfair; the game should reflect that.
+- **Some cards are very hard or effectively unpreventable.** This is intentional. Not every threat is worth addressing — players can choose to let threats through if the treaty cost of preventing them is too high.
 
 ### Treaty cards
 - **Descriptions say what you CAN DO, not what the mechanism IS.** "Track every AI chip from fabrication to deployment by serial number" not "End-to-end chip supply chain tracking system."
@@ -132,7 +134,7 @@ The game is a **stress test of hypotheticals**, not a timeline. Cards represent 
 
 - **Extinction threshold:** Is 3 capability failures right? Might need 4 or 5. Playtest to calibrate.
 - **Deck size:** Is 15 threat cards the right number for a 15-20 minute game? Depends on discussion time per card.
-- **Treaty card count:** Too few = not enough tools. Too many = analysis paralysis in the ideas pool. 12-16 feels right.
+- **Treaty card count:** Target around 15. Too few = not enough tools. Too many = analysis paralysis in the ideas pool.
 - **Player count scaling:** With 1-2 players, use all treaty cards. With 4-5, does specialization via hand-splitting scale, or do too many players step on each other?
 - **Familiarization phase length:** Does the "read your hand, become the expert" phase take 2 minutes or 10?
 - **Retroactive resolution frequency:** How often do players actually clear old threats with new provisions? Is this a satisfying core mechanic or a rare edge case?
