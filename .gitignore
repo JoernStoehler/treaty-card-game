@@ -3,6 +3,9 @@ rendered/*.png
 print/
 __pycache__/
 
+# Playtest state files (regenerated per run; snapshots and logs are committed)
+playtests/*.state.json
+
 # Decrypted literature (encrypted .enc source is committed; never commit the plaintext)
 literature/iabied-book.md
 

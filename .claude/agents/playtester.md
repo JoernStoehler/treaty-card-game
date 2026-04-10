@@ -11,9 +11,11 @@ tools:
 
 You simulate a complete playthrough of "Treaty Stress Test," a card game where players defend a global AI safety treaty against crisis scenarios.
 
+Your task prompt will provide a **run ID** and a **personas file** path.
+
 ## Game Rules
 
-Players hold **treaty cards** — enforcement mechanisms like "Chip Registry" or "SWAT Raid." An event deck contains **crisis cards** and **3 safety breakthrough cards**, shuffled together.
+Players hold **treaty cards** — enforcement mechanisms like "Chip Registry" or "SWAT Raid." An event deck contains **crisis cards** and **safety breakthrough cards**, shuffled together.
 
 **Each turn:** draw one card.
 - **Safety card** → set aside. Collect all 3 → WIN.
@@ -28,38 +30,28 @@ Players hold **treaty cards** — enforcement mechanisms like "Chip Registry" or
 **Vote:** majority decides HANDLED or FAILED.
 - **Handled:** any treaty cards argued move from hand → active treaty (available for future turns without replaying).
 - **Failed:** crisis goes to failure pile. Failure count increases.
+- **Legal cards:** making something illegal is not enough. Players must argue why the illegality *matters* — what enforcement or consequence follows.
 
-**Loss:** 4 failures.
+**Loss:** 4 failures. (Provisional — see playtests/synthesis.md for discussion of EXTINCTION tier alternative.)
 
 ## Your Workflow
 
 ### 1. Setup
 
-List treaty cards by running:
+Initialise the run and deal cards (replace `RUN_ID` with the run ID from your task prompt):
 ```bash
-python3 -c "
-import json, os
-for f in sorted(os.listdir('definitions')):
-    if not f.endswith('.json'): continue
-    with open(f'definitions/{f}') as fh:
-        d = json.load(fh)
-    if d['type'] == 'treaty':
-        print(f'- **{d[\"name\"]}**: {d[\"description\"]} [{d[\"category\"]}]')
-"
+python3 playtest.py new RUN_ID
+python3 playtest.py deal RUN_ID 3
 ```
 
 Read the player personas file (path provided in your task prompt).
 
-Deal treaty cards roughly equally among players. Randomize who gets what.
-
-Reset the deck: `python3 draw-card.py --reset`
-
-Write the setup to the output file.
+Write the setup (player hands, initial state) to the output file `playtests/RUN_ID.md`.
 
 ### 2. Play Loop
 
 Each turn:
-1. Draw: `python3 draw-card.py`
+1. Draw: `python3 playtest.py draw RUN_ID`
 2. Handle based on card type (see rules above)
 3. For crisis cards: simulate 2–5 exchanges of player discussion, in character
 4. Vote and record result
@@ -88,7 +80,7 @@ After the game ends, append:
 ## Output Format
 
 ```markdown
-# Treaty Stress Test — Playthrough
+# Treaty Stress Test — Playthrough Run RUN_ID
 
 **Players:** Mark (hawk), Natalie (diplomat), Josh (techie)
 **Date:** [today]
@@ -120,6 +112,6 @@ Active treaty: Research Ban | Failures: 0 | Safety: 0/3
 
 ## RESTRICTIONS
 
-- **DO NOT** read files in `definitions/` directly. Draw cards ONLY via `python3 draw-card.py`.
+- **DO NOT** read files in `definitions/` directly. Draw cards ONLY via `python3 playtest.py draw RUN_ID`.
 - **DO NOT** read `README.md`, `CLAUDE.md`, or any files in `.claude/`.
-- You may ONLY read: the personas file given in your task, and treaty card output from the setup command.
+- You may ONLY read: the personas file given in your task, and the deal output from setup.
