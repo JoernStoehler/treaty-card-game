@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treaty Stress Test — Playtest</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #1a1a2e;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-tap-highlight-color: transparent;
+      min-height: 100vh;
+    }
+
+    #app {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 0 60px 0;
+    }
+
+    /* ── Score bar ── */
+    .score-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #0d0d1a;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      padding: 8px 16px;
+      border-bottom: 1px solid #2a2a40;
+    }
+
+    .score-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1px;
+    }
+
+    .score-label {
+      font-size: 0.62em;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #666;
+    }
+
+    .score-value {
+      font-size: 1.05em;
+      font-weight: 700;
+    }
+
+    .score-failures { color: #e74c3c; }
+    .score-safety   { color: #27ae60; }
+
+    /* ── Main content ── */
+    .main-content {
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: block;
+      width: 100%;
+      min-height: 48px;
+      padding: 14px 16px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: opacity 0.12s, transform 0.1s;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+      opacity: 0.8;
+    }
+
+    .btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .btn-draw {
+      background: #3498db;
+      color: #fff;
+      font-size: 1.2em;
+      padding: 18px 16px;
+    }
+
+    .btn-handled {
+      background: #27ae60;
+      color: #fff;
+    }
+
+    .btn-failed {
+      background: #c0392b;
+      color: #fff;
+    }
+
+    .btn-collect {
+      background: #27ae60;
+      color: #fff;
+      font-size: 1.1em;
+    }
+
+    .btn-copy {
+      background: #4a4a5a;
+      color: #e0e0e0;
+    }
+
+    .btn-new-game {
+      background: #3498db;
+      color: #fff;
+    }
+
+    /* Action buttons row */
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .action-buttons .btn {
+      flex: 1;
+    }
+
+    /* ── Event card ── */
+    .event-card {
+      background: #252540;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .event-type-badge {
+      display: inline-block;
+      font-size: 0.68em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 3px 10px;
+      margin-bottom: 8px;
+      color: #bbb;
+    }
+
+    .safety-badge {
+      background: rgba(39, 174, 96, 0.2);
+      color: #27ae60;
+    }
+
+    .event-name {
+      font-size: 1.3em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.3;
+      color: #fff;
+    }
+
+    .event-text {
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .safety-card {
+      border: 1px solid rgba(39, 174, 96, 0.35);
+      background: #1a3028;
+    }
+
+    /* Tier blocks for event-2 */
+    .tier-block {
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 10px;
+      transition: opacity 0.15s;
+    }
+
+    .tier-active {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .tier-inactive {
+      background: rgba(0,0,0,0.2);
+      opacity: 0.5;
+    }
+
+    .tier-label {
+      font-size: 0.7em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin-bottom: 6px;
+    }
+
+    .tier-active .tier-label {
+      color: #aaa;
+    }
+
+    /* ── Treaty picker ── */
+    .treaty-picker {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .picker-heading,
+    .treaty-heading {
+      font-size: 0.78em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #777;
+      margin-bottom: 6px;
+    }
+
+    .category-section {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
+      user-select: none;
+      border-radius: 8px;
+    }
+
+    .category-header:active {
+      opacity: 0.75;
+    }
+
+    .category-name {
+      font-weight: 700;
+      font-size: 0.88em;
+      flex: 1;
+      color: #fff;
+    }
+
+    .category-count {
+      font-size: 0.72em;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .category-chevron {
+      font-size: 0.65em;
+      color: rgba(255,255,255,0.55);
+      min-width: 10px;
+    }
+
+    .category-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .category-body.collapsed {
+      display: none;
+    }
+
+    /* Hand card rows */
+    .hand-card-row {
+      padding: 12px 14px;
+      border-bottom: 1px solid #2a2a40;
+      cursor: pointer;
+      border-left: 4px solid transparent;
+      transition: background-color 0.1s, border-color 0.1s;
+      background: #1e1e38;
+    }
+
+    .hand-card-row:last-child {
+      border-bottom: none;
+    }
+
+    .hand-card-row:active {
+      opacity: 0.7;
+    }
+
+    .hand-card-name {
+      font-weight: 600;
+      font-size: 0.92em;
+      color: #e0e0e0;
+    }
+
+    .hand-card-desc {
+      font-size: 0.78em;
+      color: #888;
+      margin-top: 3px;
+      line-height: 1.4;
+    }
+
+    /* ── Active treaty ── */
+    .active-treaty {
+      background: #1e1e38;
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .treaty-category {
+      margin-bottom: 10px;
+    }
+
+    .treaty-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .treaty-category-label {
+      font-size: 0.68em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 4px;
+    }
+
+    .treaty-card-row {
+      opacity: 0.5;
+      padding: 3px 0 3px 4px;
+      font-size: 0.88em;
+    }
+
+    .treaty-check {
+      color: #27ae60;
+      font-weight: 700;
+    }
+
+    /* ── Start screen ── */
+    .start-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 32px 24px;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .start-title {
+      font-size: 2em;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    .start-subtitle {
+      color: #888;
+      font-size: 0.95em;
+    }
+
+    .start-buttons {
+      width: 100%;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    /* ── Game over ── */
+    .game-over-header {
+      text-align: center;
+      padding: 28px 0 8px;
+    }
+
+    .game-over-result {
+      font-size: 2.6em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .result-win  { color: #27ae60; }
+    .result-loss { color: #c0392b; }
+
+    .game-over-stats {
+      font-size: 0.88em;
+      color: #999;
+      line-height: 1.7;
+    }
+
+    /* Transcript */
+    .transcript-box {
+      background: #0d0d1a;
+      border-radius: 10px;
+      padding: 14px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .transcript-text {
+      font-family: 'SF Mono', 'Fira Mono', 'Menlo', 'Consolas', monospace;
+      font-size: 0.73em;
+      color: #bbb;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.65;
+    }
+
+    /* Game over buttons */
+    .game-over-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="cards.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

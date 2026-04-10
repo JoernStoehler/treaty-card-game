@@ -24,7 +24,7 @@ Escalate whenever something is too surprising to be straightforwardly dealt with
 
 ## Secrets
 
-Never write the `FAL_KEY` secret envvar down anywhere in the repository.
+Never write the `FAL_KEY` or `CLOUDFLARE_API_TOKEN` secret envvars down anywhere in the repository.
 
 ## Quick Commands
 
@@ -33,3 +33,13 @@ python3 generate-image.py --help    # Generate missing card illustrations via FA
 python3 render-card.py --help       # Render card definitions to print-ready PNGs
 python3 print-layout.py --help      # Arrange rendered cards into print-ready PDF
 ```
+
+## Deploying playtest-web
+
+After changing files in `playtest-web/`, redeploy manually:
+
+```bash
+npx wrangler pages deploy playtest-web/ --project-name=treaty-playtest --branch=main
+```
+
+Production: https://treaty-playtest.pages.dev
