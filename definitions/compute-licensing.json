@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Compute Licensing",
-  "description": "Require permits for operating compute above a threshold; unlicensed aggregation is a treaty violation",
-  "category": "prevention",
-  "color": "#d4a017",
-  "image-prompt": "An official stamping a large permit document at a government desk, behind them a wall-sized display showing licensed data center clusters glowing green and flagged unlicensed clusters glowing red, warm bureaucratic office light contrasting with the cold screen glow, digital painting, cinematic lighting, no text",
-  "image": "images/compute-licensing.png"
-}

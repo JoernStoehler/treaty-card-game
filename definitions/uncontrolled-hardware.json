@@ -1,7 +1,0 @@
-{
-  "type": "threat-1",
-  "name": "Uncontrolled Hardware",
-  "text": "AI-capable chips continue to be manufactured and sold on the open market to any buyer. Non-signatory nations have acquired enough hardware for frontier-scale training. At least one training run has completed.",
-  "image-prompt": "Endless rows of boxed AI accelerator chips stacked in an unmarked warehouse, forklifts moving pallets toward waiting trucks at loading docks, anonymous industrial setting under harsh fluorescent lighting, digital painting, no text",
-  "image": "images/uncontrolled-hardware.png"
-}

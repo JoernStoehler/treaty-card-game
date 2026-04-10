@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Whistleblower Network",
-  "description": "Protected channels and incentives for insiders to report treaty violations",
-  "category": "detection",
-  "color": "#27ae60",
-  "image-prompt": "A lone figure silhouetted against a glowing secure terminal in a darkened office, uploading documents through an encrypted channel, green lock icons and anonymous routing nodes visible on the screen, digital painting, cinematic lighting, no text",
-  "image": "images/whistleblower-network.png"
-}

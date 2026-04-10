@@ -2,7 +2,7 @@
 """
 Generate card illustrations via FAL AI API.
 
-Reads all definitions/*.json files, checks which images/ PNGs are missing,
+Reads definitions.jsonl, checks which images/ PNGs are missing,
 and generates them using the fal-ai/flux/schnell model.
 """
 
@@ -17,7 +17,7 @@ import fal_client
 from PIL import Image, PngImagePlugin
 
 SCRIPT_DIR = Path(__file__).parent
-DEFINITIONS_DIR = SCRIPT_DIR / "definitions"
+DEFINITIONS_FILE = SCRIPT_DIR / "definitions.jsonl"
 MODEL = "fal-ai/flux/schnell"
 
 FAL_PARAMS = {
@@ -38,19 +38,21 @@ def check_fal_key():
 
 
 def load_definitions():
-    """Load all card definition JSON files from the definitions directory."""
+    """Load all card definitions from definitions.jsonl."""
     defs = []
-    for path in sorted(DEFINITIONS_DIR.glob("*.json")):
-        with open(path) as f:
-            data = json.load(f)
-        data["_source"] = path
-        defs.append(data)
+    with open(DEFINITIONS_FILE) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            data = json.loads(line)
+            defs.append(data)
     return defs
 
 
 def card_id_from_def(defn):
-    """Return the card id, falling back to the filename stem."""
-    return defn.get("id") or defn["_source"].stem
+    """Return the card id."""
+    return defn["id"]
 
 
 def generate_image(card_id, prompt, image_path):
@@ -144,7 +146,7 @@ Examples:
 
     all_defs = load_definitions()
     if not all_defs:
-        print(f"No definition files found in {DEFINITIONS_DIR}")
+        print(f"No definitions found in {DEFINITIONS_FILE}")
         sys.exit(0)
 
     if args.id:

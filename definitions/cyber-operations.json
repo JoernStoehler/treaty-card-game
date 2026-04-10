@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Cyber Operations",
-  "description": "Digital disruption of unauthorized training runs, infrastructure, and distribution networks",
-  "category": "enforcement",
-  "color": "#c0392b",
-  "image-prompt": "A cyber-operations team working in a blue-lit war room, screens displaying cascading intrusion code as a distant data center's training cluster flatlines on a status board, tense focused faces illuminated by monitor glow, digital painting, cinematic lighting, no text",
-  "image": "images/cyber-operations.png"
-}

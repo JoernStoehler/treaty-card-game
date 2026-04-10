@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Technical Surveillance",
-  "description": "Monitor facilities and networks via satellite imagery, power consumption, and signal analysis",
-  "category": "detection",
-  "color": "#27ae60",
-  "image-prompt": "A spy satellite in low orbit scanning the Earth below, overlaid with heat-map grids and signal-intercept waveforms highlighting industrial facilities, cold blue-green technological glow against the darkness of space, digital painting, cinematic lighting, no text",
-  "image": "images/technical-surveillance.png"
-}

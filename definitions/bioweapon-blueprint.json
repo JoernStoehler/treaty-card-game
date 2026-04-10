@@ -1,7 +1,0 @@
-{
-  "type": "threat-1",
-  "name": "Bioweapon Blueprint",
-  "text": "A research group used an AI model to generate a novel pathogen design optimized for transmissibility. The blueprint was shared in a private channel before safety filters caught it.",
-  "image-prompt": "A glowing computer terminal displaying intricate molecular diagrams and genetic sequences in a dark laboratory, biohazard warning symbols reflected on the researcher's face, ominous teal and red lighting, digital painting, no text",
-  "image": "images/bioweapon-blueprint.png"
-}

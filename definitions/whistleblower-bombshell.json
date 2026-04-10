@@ -1,7 +1,0 @@
-{
-  "type": "threat-1",
-  "name": "Whistleblower Bombshell",
-  "text": "A senior engineer at a major AI lab went public, revealing the lab had been running undeclared training runs for over a year. The lab's models had reached frontier capabilities before the disclosure. The engineer requested asylum.",
-  "image-prompt": "A lone figure at a podium before a bank of press cameras and microphones, holding a thick dossier of documents, harsh flashbulb light illuminating a face etched with exhaustion and resolve, digital painting, no text",
-  "image": "images/whistleblower-bombshell.png"
-}

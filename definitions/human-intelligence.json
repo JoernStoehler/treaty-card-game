@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Human Intelligence",
-  "description": "Cultivate informants and infiltrate organizations involved in prohibited activities",
-  "category": "detection",
-  "color": "#27ae60",
-  "image-prompt": "A clandestine meeting in a rain-slicked alley at night, two figures exchanging a dossier under a flickering streetlamp, fog softening the neon reflections on the pavement, digital painting, cinematic lighting, no text",
-  "image": "images/human-intelligence.png"
-}

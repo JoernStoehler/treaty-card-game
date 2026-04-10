@@ -1,7 +1,0 @@
-{
-  "type": "threat-1",
-  "name": "Fake Compliance",
-  "text": "A company trained a frontier model at a declared facility while maintaining the appearance of compliance. The prohibited training ran alongside legitimate workloads during off-hours. The finished model was quietly transferred to a subsidiary abroad.",
-  "image-prompt": "A split scene showing a clean official compliance report on a desk and, behind a hidden door, a vast humming server hall running at full capacity in a neighboring warehouse, stark contrast between bureaucratic neatness and industrial scale, digital painting, no text",
-  "image": "images/fake-compliance.png"
-}

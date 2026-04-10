@@ -6,8 +6,8 @@ A verbal card game for 1-5 players where players collectively defend a global ba
 
 | Component | Purpose |
 |---|---|
-| `generate-image.py` | Generate card illustrations via FAL API (flux-schnell). Reads `definitions/`, checks which `images/` are missing, generates them. |
-| `render-card.py` | Render card definitions into print-ready front PNGs. Reads `definitions/*.json` + `images/`, outputs `rendered/<id>-f.png`. |
+| `generate-image.py` | Generate card illustrations via FAL API (flux-schnell). Reads `definitions.jsonl`, checks which `images/` are missing, generates them. |
+| `render-card.py` | Render card definitions into print-ready front PNGs. Reads `definitions.jsonl` + `images/`, outputs `rendered/<id>-f.png`. |
 | `print-layout.py` | Arrange rendered cards into a print-ready PDF. Requires `--color` or `--greyscale` (no default). Outputs `print/cards.pdf`. |
 | `playtest.py` | Manage playtest runs with per-run state. Subcommands: `new`, `deal`, `draw`, `status`. Enables parallel playtests. |
 | `playtest-web/` | Mobile-first solo playtest web app. Static site (html + js), deployed to Cloudflare Pages. Draw events, select treaty cards, resolve, copy transcript. |
@@ -15,7 +15,7 @@ A verbal card game for 1-5 players where players collectively defend a global ba
 ## Directory Layout
 
 ```
-definitions/       Card definition JSON files (e.g. swat-raid.json)
+definitions.jsonl  All card definitions (one JSON object per line, keyed by id)
 images/            Generated card illustrations (committed, not regenerated)
 rendered/          Rendered card front PNGs (output of render-card.py)
 print/             Print-ready PDF (output of print-layout.py, gitignored)
@@ -67,17 +67,11 @@ A verbal card game for 1-5 players where players collectively defend a global ba
 
 ### Card Types and Schemas
 
+All definitions live in `definitions.jsonl` (one JSON object per line). Each has an `id` slug used for image filenames and rendering output.
+
 **Treaty clause card** (`treaty`):
 ```json
-{
-  "type": "treaty",
-  "name": "SWAT Raid",
-  "description": "Armed law enforcement raids suspected sites",
-  "category": "enforcement",
-  "color": "#c0392b",
-  "image-prompt": "...",
-  "image": "images/swat-raid.png"
-}
+{"id": "border-interdiction", "type": "treaty", "name": "Border Interdiction", "description": "Intercept prohibited hardware, materials, and personnel in transit", "category": "enforcement", "color": "#c0392b", "image-prompt": "...", "image": "images/border-interdiction.png"}
 ```
 
 Categories and border colors:
@@ -86,41 +80,21 @@ Categories and border colors:
 - enforcement: #c0392b (red) — responding to detected violations, from sanctions to military action
 - governance: #16a085 (teal) — treaty-level mechanisms: courts, penalties, diplomacy, emergency authority
 
-**Threat card, flat** (`threat-1`, always a crisis regardless of failure count):
+**Threat card, flat** (`threat-1`, same challenge regardless of failure count):
 ```json
-{
-  "type": "threat-1",
-  "name": "Chip Smuggling",
-  "text": "AI chips were diverted through shell companies...",
-  "image-prompt": "...",
-  "image": "images/chip-smuggling.png"
-}
+{"id": "chip-smuggling", "type": "threat-1", "name": "Chip Smuggling", "text": "AI chips were diverted through shell companies...", "image-prompt": "...", "image": "images/chip-smuggling.png"}
 ```
 
 **Threat card, tiered** (`threat-2`, tier determined by failure count):
 ```json
-{
-  "type": "threat-2",
-  "name": "Garage Cluster",
-  "label1": "0–1 failures",
-  "text1": "A frontier model was trained on consumer GPUs...",
-  "label2": "2+ failures",
-  "text2": "Consumer hardware is being repurposed...",
-  "image-prompt": "...",
-  "image": "images/garage-cluster.png"
-}
+{"id": "garage-cluster", "type": "threat-2", "name": "Garage Cluster", "label1": "0–1 failures", "text1": "A frontier model was trained on consumer GPUs...", "label2": "2+ failures", "text2": "Consumer hardware was repurposed...", "image-prompt": "...", "image": "images/garage-cluster.png"}
 ```
 
 Tier display: each tier box shows its label and text. The currently active tier must be instantly identifiable during play. Design the boxes so a player glancing at the card knows which to read without counting.
 
 **Safety breakthrough card** (`safety`):
 ```json
-{
-  "type": "safety",
-  "name": "Safety Breakthrough",
-  "image-prompt": "...",
-  "image": "images/safety-1.png"
-}
+{"id": "safety-1", "type": "safety", "name": "Safety Breakthrough", "description": "Collect all 3 to win.", "image-prompt": "...", "image": "images/safety-1.png"}
 ```
 
 ### Layout Per Card Type
@@ -158,13 +132,18 @@ Card definitions are authored by hand (not generated). Image prompts require hum
 
 Threat card text describes a **past-tense chain of events** where each sentence is a point the treaty could have intercepted. Players argue where their treaty would have broken the chain — either by preventing a step ("Export Controls catches this at step 1") or by responding after the fact ("On-Site Inspection discovers it at step 3").
 
-**Principles:**
+**Three invariants (every threat card text must satisfy ALL):**
 
-1. **Threat chains, not situations.** Each sentence is a step that happened. "AI chips were diverted through shell companies. The chips surfaced in a non-signatory nation. A training run is underway." — three interception points.
-2. **Never prescribe responses or outcomes.** Don't write "police investigate" or "defenses hold." The card describes what went wrong; players decide how their treaty handles it.
+1. **Past tense throughout.** Events happened, consequences followed. No present-tense verbs. "A lab continued..." not "A lab continues...".
+2. **Complete story with consequences.** Every card ends with a concrete outcome (model trained, weights leaked, capabilities deployed). Never ends at "it was discovered" without saying what happened next.
+3. **No assumed treaty mechanisms.** The card describes the world situation. It NEVER assumes the treaty has specific capabilities (inspections, warrants, tracking, compliance reports, safety filters). Players argue which of their treaty cards handles it.
+
+**Additional principles:**
+
+1. **Threat chains, not situations.** Each sentence is a step that happened. "AI chips were diverted through shell companies. The chips surfaced in a non-signatory nation. A frontier model was trained." — three interception points.
+2. **Never prescribe responses or outcomes.** Don't write "enforcement agents investigated" or "defenses held." The card describes what went wrong; players decide how their treaty handles it.
 3. **Standalone tiers.** Each tier must be readable without the others. Don't reference other tiers or assume they were read.
 4. **Tiers differ in difficulty, not relevance.** Every threat card is a real decision. Tier 1 at low failures is an easier challenge (most treaties handle it). Tier 2 at high failures is harder because leaked capabilities compound the threat.
-5. **No negative statements.** Say what IS happening, not what ISN'T. "Not enough leaked methods" confuses readers.
-6. **No slop.** Impressive-sounding details ("500 nodes across 30 countries") that don't help players argue are filler. Every word must earn its place.
-7. **Ambiguity is a feature.** "Underground Datacenter" being possibly literal opens creative play. Don't over-specify when vagueness invites interesting arguments.
-8. **Failure count = leaked capability.** The narrative meaning of failures: more compute, algorithms, and research are in the wild outside treaty control. Threat-2 tiers reflect this — higher failures mean the same category of threat is compounded by prior leaks.
+5. **No slop.** Impressive-sounding details ("500 nodes across 30 countries") that don't help players argue are filler. Every word must earn its place.
+6. **Ambiguity is a feature.** "Underground Datacenter" being possibly literal opens creative play. Don't over-specify when vagueness invites interesting arguments.
+7. **Failure count = leaked capability.** The narrative meaning of failures: more compute, algorithms, and research are in the wild outside treaty control. Threat-2 tiers reflect this — higher failures mean the same category of threat is compounded by prior leaks.

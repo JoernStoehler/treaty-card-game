@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Treaty Tribunal",
-  "description": "International court with binding authority to adjudicate violations and override domestic legal obstacles",
-  "category": "governance",
-  "color": "#16a085",
-  "image-prompt": "A grand international courtroom with judges from many nations seated on an elevated semicircular bench, the accused nation's representative standing below facing binding judgment, tall windows casting solemn columns of light, digital painting, cinematic lighting, no text",
-  "image": "images/treaty-tribunal.png"
-}

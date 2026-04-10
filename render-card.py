@@ -2,7 +2,7 @@
 """
 render-card.py — Render card definitions into print-ready PNG images.
 
-Reads definitions/*.json, renders each card using an HTML template via
+Reads definitions.jsonl, renders each card using an HTML template via
 Playwright (headless Chromium), outputs rendered/<id>-f.png.
 
 Card dimensions: 70×120mm at 300 DPI = 827×1417 pixels.
@@ -25,7 +25,7 @@ from playwright.sync_api import sync_playwright
 CARD_WIDTH_PX = 827
 CARD_HEIGHT_PX = 1417
 
-DEFINITIONS_DIR = Path("definitions")
+DEFINITIONS_FILE = Path("definitions.jsonl")
 IMAGES_DIR = Path("images")
 RENDERED_DIR = Path("rendered")
 
@@ -602,12 +602,15 @@ def embed_png_metadata(path: Path, card: dict) -> None:
 # ---------------------------------------------------------------------------
 
 def load_definitions() -> list[dict]:
-    """Load all card JSON files from the definitions directory."""
+    """Load all card definitions from definitions.jsonl."""
     defs = []
-    for f in sorted(DEFINITIONS_DIR.glob("*.json")):
-        with f.open() as fh:
-            data = json.load(fh)
-            data["_id"] = f.stem  # e.g. "swat-raid" from "swat-raid.json"
+    with DEFINITIONS_FILE.open() as fh:
+        for line in fh:
+            line = line.strip()
+            if not line:
+                continue
+            data = json.loads(line)
+            data["_id"] = data.get("id", "unknown")
             defs.append(data)
     return defs
 
@@ -656,7 +659,7 @@ Examples:
 
     cards = load_definitions()
     if not cards:
-        print("No card definitions found in definitions/", file=sys.stderr)
+        print(f"No card definitions found in {DEFINITIONS_FILE}", file=sys.stderr)
         sys.exit(1)
 
     if args.id:

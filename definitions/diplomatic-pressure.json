@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Diplomatic Pressure",
-  "description": "Coordinated political action and public condemnation against non-compliant actors",
-  "category": "governance",
-  "color": "#16a085",
-  "image-prompt": "A packed session of the UN General Assembly with dozens of nations' flags lining the hall, a bloc of delegates delivering a unified statement of condemnation while the accused nation's seat sits visibly empty, cool institutional lighting, digital painting, cinematic lighting, no text",
-  "image": "images/diplomatic-pressure.png"
-}

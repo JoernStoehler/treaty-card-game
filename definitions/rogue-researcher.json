@@ -1,7 +1,0 @@
-{
-  "type": "threat-1",
-  "name": "Rogue Researcher",
-  "text": "A leading AI researcher disappeared from a major lab and resurfaced in a non-signatory country. Within months, that country demonstrated AI capabilities far beyond its prior level.",
-  "image-prompt": "An empty research office at night, personal belongings hastily cleared from a desk, a cleared whiteboard still faintly showing erased equations, a single lamp casting amber light across an abandoned chair, digital painting, no text",
-  "image": "images/rogue-researcher.png"
-}

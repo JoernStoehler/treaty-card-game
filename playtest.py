@@ -16,7 +16,7 @@ import random
 import sys
 
 PLAYTESTS_DIR = os.path.join(os.path.dirname(__file__), "playtests")
-DEFINITIONS_DIR = os.path.join(os.path.dirname(__file__), "definitions")
+DEFINITIONS_FILE = os.path.join(os.path.dirname(__file__), "definitions.jsonl")
 
 
 # ---------------------------------------------------------------------------
@@ -42,10 +42,11 @@ def save_state(run_id, state):
 
 def load_all_definitions():
     cards = []
-    for fname in sorted(os.listdir(DEFINITIONS_DIR)):
-        if fname.endswith(".json"):
-            with open(os.path.join(DEFINITIONS_DIR, fname)) as f:
-                cards.append(json.load(f))
+    with open(DEFINITIONS_FILE) as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                cards.append(json.loads(line))
     return cards
 
 def load_cards_snapshot(run_id):

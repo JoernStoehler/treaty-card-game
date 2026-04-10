@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Facility Decommission",
-  "description": "Safely shut down, dismantle, and dispose of prohibited computing infrastructure",
-  "category": "enforcement",
-  "color": "#c0392b",
-  "image-prompt": "International technicians in hazmat suits methodically dismantling rows of GPU clusters inside a cavernous data center, heavy machinery removing server racks under the supervision of treaty observers with clipboards, harsh industrial lighting, digital painting, no text",
-  "image": "images/facility-decommission.png"
-}

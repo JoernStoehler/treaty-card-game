@@ -1,7 +1,0 @@
-{
-  "type": "threat-1",
-  "name": "Legacy Hardware",
-  "text": "Pre-treaty computing infrastructure was never cataloged. A company consolidated its grandfathered GPU fleet into a single facility and launched a training run that exceeded treaty thresholds.",
-  "image-prompt": "A cavernous facility packed with aging server racks from different eras, mismatched blinking lights and tangled cables, workers reconnecting old hardware to a unified power grid, amber emergency lighting, digital painting, no text",
-  "image": "images/legacy-hardware.png"
-}
