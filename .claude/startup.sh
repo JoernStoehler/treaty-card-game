@@ -16,6 +16,22 @@ fi
 # Install Python dependencies if missing
 pip3 install --quiet fal-client 2>/dev/null || true
 
+# Decrypt literature if LITERATURE_KEY is set and .enc files exist
+if [ -n "${LITERATURE_KEY:-}" ] && command -v age &>/dev/null; then
+    KEY_FILE=$(mktemp)
+    echo "$LITERATURE_KEY" > "$KEY_FILE"
+    for enc in literature/*.md.enc; do
+        [ -f "$enc" ] || continue
+        dec="${enc%.enc}"
+        if [ ! -f "$dec" ]; then
+            echo "[startup] Decrypting $(basename "$enc")..."
+            age -d -i "$KEY_FILE" -o "$dec" "$enc" 2>/dev/null \
+                || echo "[startup] WARNING: Failed to decrypt $(basename "$enc")."
+        fi
+    done
+    rm -f "$KEY_FILE"
+fi
+
 # Check FAL_KEY
 if [ -z "$FAL_KEY" ]; then
     echo ""

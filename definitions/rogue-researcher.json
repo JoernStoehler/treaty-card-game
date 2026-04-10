@@ -1,10 +1,7 @@
 {
-  "type": "event-2",
+  "type": "event-1",
   "name": "Rogue Researcher",
-  "label1": "0 failures",
-  "text1": "Paper is theoretical, hard to reproduce.",
-  "label2": "1+ failures",
-  "text2": "Paper includes working code. Three groups replicate within a week.",
+  "text": "An AI researcher published a paper describing a major training efficiency improvement. Three groups replicated the results within a week. The compute needed for dangerous AI dropped significantly.",
   "image-prompt": "A lone scientist in a dark lab illuminated only by multiple monitor screens showing neural network diagrams, they are uploading a paper to the internet, ominous red glow, thriller atmosphere, digital painting, no text",
   "image": "images/rogue-researcher.png"
 }

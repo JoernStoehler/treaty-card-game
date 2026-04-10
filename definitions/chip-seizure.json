@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Chip Seizure",
+  "description": "Confiscate undeclared AI hardware and shut down unauthorized facilities",
+  "category": "enforcement",
+  "color": "#c0392b",
+  "image-prompt": "Law enforcement agents loading confiscated server racks onto a truck from a raided facility, evidence bags and inventory tags, official atmosphere, digital painting, no text",
+  "image": "images/chip-seizure.png"
+}

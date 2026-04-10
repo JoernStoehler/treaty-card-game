@@ -1,0 +1,7 @@
+{
+  "type": "event-1",
+  "name": "Failed Raid",
+  "text": "Enforcement agents arrived at a suspected site with a warrant, but the facility's legal team obtained a 72-hour injunction before entry. Operators used the window to wipe storage and transfer critical hardware off-site. When inspectors finally entered, the building was empty.",
+  "image-prompt": "Law enforcement officers in tactical gear standing outside a locked industrial building, a lawyer in a suit blocking the entrance holding up documents, tension between the two groups, harsh daylight, digital painting, no text",
+  "image": "images/failed-raid.png"
+}

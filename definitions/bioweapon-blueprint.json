@@ -1,0 +1,7 @@
+{
+  "type": "event-1",
+  "name": "Bioweapon Blueprint",
+  "text": "A research group used a declared AI model to generate a novel pathogen design optimized for transmissibility. The blueprint was shared in a private channel before the lab's safety filters caught it.",
+  "image-prompt": "A biosafety lab with a computer screen showing molecular structures, a researcher looking alarmed at the output, biohazard symbols on the wall, sterile fluorescent lighting with an ominous undertone, digital painting, no text",
+  "image": "images/bioweapon-blueprint.png"
+}

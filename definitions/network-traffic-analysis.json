@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Network Traffic Analysis",
+  "description": "Monitor internet backbone traffic patterns to detect the high-bandwidth data transfers characteristic of distributed training runs",
+  "category": "monitoring",
+  "color": "#27ae60",
+  "image-prompt": "A deep network operations center with walls of screens showing global fiber-optic traffic maps, analysts highlighting anomalous data flow clusters, dark room with green and white data streams, digital painting, no text",
+  "image": "images/network-traffic-analysis.png"
+}

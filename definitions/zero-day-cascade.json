@@ -1,0 +1,10 @@
+{
+  "type": "event-2",
+  "name": "Zero-Day Cascade",
+  "label1": "0–1 failures",
+  "text1": "A leaked AI model was used to discover a critical vulnerability in widely-used network software. A proof-of-concept exploit was posted online.",
+  "label2": "2+ failures",
+  "text2": "A leaked superhuman model systematically discovered zero-day vulnerabilities across critical infrastructure. Patches couldn't keep pace. Treaty monitoring systems were among the affected.",
+  "image-prompt": "Multiple server screens displaying cascading error messages and breach warnings, a vulnerability scanner powered by AI finding exploits faster than they can scroll, red warning lights reflecting off glass walls, digital painting, no text",
+  "image": "images/zero-day-cascade.png"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Hardware Amnesty",
+  "description": "Grant a limited disclosure window where owners of pre-treaty AI hardware can register it without penalty",
+  "category": "consolidation",
+  "color": "#e67e22",
+  "image-prompt": "A line of people and corporate representatives queuing at a government registration desk, handing over hard drives and server boards to officials with clipboards, warm orange-tinted civic office setting, digital painting, no text",
+  "image": "images/hardware-amnesty.png"
+}

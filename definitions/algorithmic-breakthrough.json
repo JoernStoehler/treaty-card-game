@@ -1,0 +1,10 @@
+{
+  "type": "event-2",
+  "name": "Algorithmic Breakthrough",
+  "label1": "0 failures",
+  "text1": "A major lab discovered how to train frontier models with a fraction of the usual hardware. The technique was demonstrated internally.",
+  "label2": "1+ failures",
+  "text2": "A major lab discovered how to train frontier models with far less hardware. Similar techniques were independently reproduced using leaked research.",
+  "image-prompt": "A scientific paper on a desk with mathematical equations glowing bright red, casting alarming light across a researcher's worried face, dramatic lighting, digital painting, no text",
+  "image": "images/algorithmic-breakthrough.png"
+}

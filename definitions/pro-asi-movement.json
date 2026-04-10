@@ -1,0 +1,10 @@
+{
+  "type": "event-2",
+  "name": "Pro-ASI Movement",
+  "label1": "0–1 failures",
+  "text1": "An online movement advocating unrestricted ASI development gained a large following. Members include researchers at declared labs who argue the treaty holds back beneficial AI.",
+  "label2": "2+ failures",
+  "text2": "Pro-ASI activists infiltrated a declared lab's safety team. Internal safety evaluations were systematically weakened. The lab's latest model was far more capable than reported to inspectors.",
+  "image-prompt": "A crowded tech conference with a charismatic speaker on stage, audience members wearing accelerationist symbols, glowing screens showing ASI propaganda, cult-like fervor mixed with Silicon Valley aesthetics, digital painting, no text",
+  "image": "images/pro-asi-movement.png"
+}
