@@ -9,6 +9,7 @@ A verbal card game for 1-5 players where players collectively defend a global ba
 | `generate-image.py` | Generate card illustrations via FAL API (flux-schnell). Reads `definitions/`, checks which `images/` are missing, generates them. |
 | `render-card.py` | Render card definitions into print-ready front PNGs. Reads `definitions/*.json` + `images/`, outputs `rendered/<id>-f.png`. |
 | `print-layout.py` | Arrange rendered cards into a print-ready PDF. Requires `--color` or `--greyscale` (no default). Outputs `print/cards.pdf`. |
+| `playtest.py` | Manage playtest runs with per-run state. Subcommands: `new`, `deal`, `draw`, `status`. Enables parallel playtests. |
 
 ## Directory Layout
 
@@ -17,6 +18,7 @@ definitions/       Card definition JSON files (e.g. swat-raid.json)
 images/            Generated card illustrations (committed, not regenerated)
 rendered/          Rendered card front PNGs (output of render-card.py)
 print/             Print-ready PDF (output of print-layout.py, gitignored)
+playtests/         Playtest run logs, state files, card snapshots, and synthesis
 ```
 
 ## Quick Commands
@@ -25,6 +27,7 @@ print/             Print-ready PDF (output of print-layout.py, gitignored)
 python3 generate-image.py --help    # Generate missing card illustrations
 python3 render-card.py --help       # Render card definitions to PNGs
 python3 print-layout.py --help      # Arrange cards into print-ready PDF
+python3 playtest.py --help          # Manage playtest runs (new/deal/draw/status)
 ```
 
 ---
@@ -130,7 +133,7 @@ Tier display: each tier box shows its label and text. The currently active tier 
 - No background texture for playtesting
 - Target deck size: 20-55 cards total across all types (4-10 A4 pages at 6 cards/page)
 
-### Current Deck (27 cards)
+### Current Deck
 
 **Treaty cards (34):**
 - enforcement (8): Airstrike, Border Interdiction, Chip Seizure, Covert Sabotage, Economic Sanctions, Nuclear Strike, Offensive Cyber Ops, SWAT Raid
@@ -140,13 +143,13 @@ Tier display: each tier box shows its label and text. The currently active tier 
 - institutional (5): Diplomatic Pressure, Export Controls, Membership Incentives, Treaty Tribunal, Withdrawal Penalty
 - consolidation (3): Hardware Amnesty, Legacy Decommission, Research Archive Freeze
 
-**Event-1 cards (8):** Chip Smuggling Ring, Corporate Lobbying Blitz, Failed Raid, Fake Compliance Report, Insider Sabotage, Legacy Hardware, Nation Exits Treaty, Rogue Researcher
+**Event-1 cards (14):** AI-Assisted Violence, Bioweapon Blueprint, Chip Leverage, Chip Smuggling Ring, Corporate Lobbying Blitz, Economic Entanglement, Failed Raid, Fake Compliance Report, Insider Sabotage, Legacy Hardware, Nation Exits Treaty, Public Backlash, Rogue Researcher, Whistleblower Bombshell
 
-**Event-2 cards (8):** Algorithmic Breakthrough, Cyber Attack, Distributed Training, Garage Cluster, Open-Source Weights Leak, Preprint Cascade, Satellite Tip, Underground Datacenter
+**Event-2 cards (12):** Algorithmic Breakthrough, Autonomous Agent, Cyber Attack, Distributed Training, Garage Cluster, Open-Source Weights Leak, Preprint Cascade, Pro-ASI Movement, Satellite Tip, Underground Datacenter, Weight Heist, Zero-Day Cascade
 
-**Safety cards (4):** Safety Breakthrough x4 (different art, collect 3 to win)
+**Safety cards (5):** Safety Breakthrough x5 (different art, collect 3 to win)
 
-**Event deck:** 16 events + 4 safety = 20 cards. E[game length] ≈ 12.6 turns.
+**Event deck:** 26 events + 5 safety = 31 cards.
 
 Card definitions are authored by hand (not generated). Image prompts require human iteration.
 
