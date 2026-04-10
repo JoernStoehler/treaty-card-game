@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Financial Tracking",
+  "description": "Follow money flows, procurement patterns, and financial transactions linked to compute acquisition",
+  "category": "detection",
+  "color": "#27ae60",
+  "image-prompt": "A holographic financial network map filling a dark command center, glowing threads connecting shell companies and bank nodes across a world map, an analyst tracing a highlighted money trail with a laser pointer, digital painting, cinematic lighting, no text",
+  "image": "images/financial-tracking.png"
+}

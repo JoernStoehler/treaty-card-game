@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "On-Site Inspectors",
-  "description": "Permanent agency staff stationed at all declared AI facilities",
-  "category": "monitoring",
-  "color": "#27ae60",
-  "image-prompt": "International inspectors in suits with ID badges walking through a data center, clipboard in hand, checking server racks against inventory lists, professional and thorough atmosphere, digital painting, no text",
-  "image": "images/on-site-inspectors.png"
-}

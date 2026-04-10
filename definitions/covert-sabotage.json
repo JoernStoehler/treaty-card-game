@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Covert Sabotage",
-  "description": "Clandestine operations to physically disable or destroy illegal compute infrastructure",
-  "category": "enforcement",
-  "color": "#c0392b",
-  "image-prompt": "A shadowy figure placing a device on a server rack in a dark datacenter, sparks beginning to fly from damaged equipment, covert operations atmosphere, digital painting, no text",
-  "image": "images/covert-sabotage.png"
-}

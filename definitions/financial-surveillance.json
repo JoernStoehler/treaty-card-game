@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Financial Surveillance",
-  "description": "Track all financial flows above a threshold to identify covert compute purchases, facility construction, and researcher payments",
-  "category": "intelligence",
-  "color": "#8e44ad",
-  "image-prompt": "A wall of financial transaction logs with suspicious patterns highlighted in red, connecting lines drawn between shell companies and hardware purchases, analyst's desk with multiple monitors, digital painting, no text",
-  "image": "images/financial-surveillance.png"
-}

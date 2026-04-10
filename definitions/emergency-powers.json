@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Emergency Powers",
+  "description": "Authority for rapid treaty response that bypasses normal bureaucratic and legal procedures",
+  "category": "governance",
+  "color": "#16a085",
+  "image-prompt": "A treaty director activating an emergency override at a central command console, red emergency lighting flooding the operations room as rapid-response teams scramble into action around a holographic global incident map, digital painting, cinematic lighting, no text",
+  "image": "images/emergency-powers.png"
+}

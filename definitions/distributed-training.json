@@ -1,10 +1,10 @@
 {
-  "type": "event-2",
+  "type": "threat-2",
   "name": "Distributed Training",
   "label1": "0–1 failures",
-  "text1": "A group coordinated a training run across home computers in several countries. The run was slow and produced a model with limited capabilities.",
+  "text1": "A group coordinated a training run across home computers in several countries. No single country hosted the operation. The resulting model demonstrated dangerous capabilities.",
   "label2": "2+ failures",
-  "text2": "A training run was coordinated across ordinary computers in dozens of countries. No single country hosted the operation. The resulting model rivals frontier labs.",
-  "image-prompt": "A world map with hundreds of small glowing nodes connected by thin red lines forming a web, dark background, data visualization style, ominous feel, digital painting, no text",
+  "text2": "Distributed training networks span dozens of countries, combining consumer hardware with leaked weights. The resulting models rival frontier labs, and no physical facility exists to shut down.",
+  "image-prompt": "A planet-spanning web of home computers and servers all connected by pulsing data lines, each node a small warm light in a house or apartment, the combined network forming the shape of a vast neural net across the globe, digital painting, no text",
   "image": "images/distributed-training.png"
 }

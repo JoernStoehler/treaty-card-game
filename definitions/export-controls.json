@@ -1,9 +1,9 @@
 {
   "type": "treaty",
   "name": "Export Controls",
-  "description": "Block AI chip and fab equipment exports to non-signatory nations",
-  "category": "institutional",
-  "color": "#16a085",
-  "image-prompt": "A customs checkpoint with officials inspecting crates of computer hardware, X-ray scan of chips visible on monitor, border control setting, official atmosphere, digital painting, no text",
+  "description": "Restrict movement of AI hardware, expertise, and technology across borders",
+  "category": "prevention",
+  "color": "#d4a017",
+  "image-prompt": "Customs agents at a shipping port cracking open a large crate to reveal stacks of AI accelerator chips under harsh floodlights, a cargo ship silhouetted against a stormy sunset in the background, digital painting, cinematic lighting, no text",
   "image": "images/export-controls.png"
 }

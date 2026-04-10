@@ -1,10 +1,10 @@
 {
-  "type": "event-2",
+  "type": "threat-2",
   "name": "Algorithmic Breakthrough",
-  "label1": "0 failures",
-  "text1": "A major lab discovered how to train frontier models with a fraction of the usual hardware. The technique was kept internal, but two researchers left for a startup the same quarter.",
-  "label2": "1+ failures",
-  "text2": "A major lab discovered how to train frontier models with far less hardware. Similar techniques were independently reproduced using leaked research.",
-  "image-prompt": "A scientific paper on a desk with mathematical equations glowing bright red, casting alarming light across a researcher's worried face, dramatic lighting, digital painting, no text",
+  "label1": "0–1 failures",
+  "text1": "A published paper demonstrates training efficiency gains that reduce compute requirements by orders of magnitude. Multiple groups replicated the results within a week.",
+  "label2": "2+ failures",
+  "text2": "The efficiency gains mean existing consumer hardware is sufficient for frontier training. Compute-based treaty controls are obsolete. Garage-scale runs are producing capable models.",
+  "image-prompt": "A researcher staring at a whiteboard filled with equations, a single elegant diagram in the center encircled and starred, surrounding screens showing replication results confirming the breakthrough, electric atmosphere of discovery, digital painting, no text",
   "image": "images/algorithmic-breakthrough.png"
 }

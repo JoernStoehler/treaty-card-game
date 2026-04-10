@@ -1,0 +1,7 @@
+{
+  "type": "threat-1",
+  "name": "Legal Obstruction",
+  "text": "Enforcement agents arrived at a suspected facility with a warrant. The facility's legal team obtained a 72-hour injunction before entry. Operators used the window to wipe servers and relocate critical hardware.",
+  "image-prompt": "Enforcement officers in tactical gear standing outside locked datacenter doors while suited lawyers hand them legal paperwork, fluorescent lighting, tension between the two groups in a sterile industrial corridor, digital painting, no text",
+  "image": "images/legal-obstruction.png"
+}

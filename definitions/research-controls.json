@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Research Controls",
+  "description": "Registration and oversight of capability-relevant research; pre-publication review for dangerous advances",
+  "category": "prevention",
+  "color": "#d4a017",
+  "image-prompt": "A researcher presenting a paper to a stern international review board seated around a long table, classified security stamps visible on slide projections, tense spotlight atmosphere in a formal chamber, digital painting, cinematic lighting, no text",
+  "image": "images/research-controls.png"
+}

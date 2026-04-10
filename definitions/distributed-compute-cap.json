@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Distributed Compute Cap",
-  "description": "Require all compute-pooling software platforms to enforce a per-network FLOP ceiling and report aggregate usage",
-  "category": "legal",
-  "color": "#d4a017",
-  "image-prompt": "A network diagram of thousands of home computers connected by glowing lines, a large digital cap gauge in the center showing a hard limit, blue technical aesthetic, digital painting, no text",
-  "image": "images/distributed-compute-cap.png"
-}

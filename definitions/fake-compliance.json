@@ -1,7 +1,7 @@
 {
-  "type": "event-1",
-  "name": "Fake Compliance Report",
-  "text": "A declared facility falsified its chip inventory reports for months. The unaccounted chips were traced to an undeclared training operation in a neighboring country.",
-  "image-prompt": "An auditor discovering falsified records, spreadsheets with red highlighted discrepancies, stacks of paperwork on a desk, a rubber stamp reading APPROVED on fraudulent documents, investigative atmosphere, digital painting, no text",
+  "type": "threat-1",
+  "name": "Fake Compliance",
+  "text": "A declared facility falsified its compute reports for months. The unaccounted chips were traced to an undeclared training operation in a neighboring country. A training run had already completed.",
+  "image-prompt": "A split scene showing a clean official compliance report on a desk and, behind a hidden door, a vast humming server hall running at full capacity in a neighboring warehouse, stark contrast between bureaucratic neatness and industrial scale, digital painting, no text",
   "image": "images/fake-compliance.png"
 }

@@ -1,7 +1,7 @@
 {
-  "type": "event-1",
+  "type": "threat-1",
   "name": "Bioweapon Blueprint",
-  "text": "Terrorists used an open-weight model to walk them through creating a lethal bioweapon. To combat the new pandemic with more than yearlong lockdowns, the government decided to relax the treaty and enable AGI development for vaccine research.",
-  "image-prompt": "A biosafety lab with a computer screen showing molecular structures, a researcher looking alarmed at the output, biohazard symbols on the wall, sterile fluorescent lighting with an ominous undertone, digital painting, no text",
+  "text": "A research group used an AI model to generate a novel pathogen design optimized for transmissibility. The blueprint was shared in a private channel before safety filters caught it.",
+  "image-prompt": "A glowing computer terminal displaying intricate molecular diagrams and genetic sequences in a dark laboratory, biohazard warning symbols reflected on the researcher's face, ominous teal and red lighting, digital painting, no text",
   "image": "images/bioweapon-blueprint.png"
 }

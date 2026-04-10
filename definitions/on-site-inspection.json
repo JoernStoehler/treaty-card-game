@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "On-Site Inspection",
+  "description": "Authority to conduct announced and surprise inspections at any declared or suspected facility",
+  "category": "detection",
+  "color": "#27ae60",
+  "image-prompt": "A team of international inspectors in official jackets entering a heavily secured data center, badge checks and clipboards at the entrance, fluorescent-lit server corridors stretching behind them, digital painting, cinematic lighting, no text",
+  "image": "images/on-site-inspection.png"
+}

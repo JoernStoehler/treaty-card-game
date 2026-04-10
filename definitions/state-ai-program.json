@@ -1,0 +1,10 @@
+{
+  "type": "threat-2",
+  "name": "State AI Program",
+  "label1": "0–1 failures",
+  "text1": "A nation's military acquired compute through normal defense procurement. Satellite imagery shows a facility with thermal signatures consistent with frontier-scale training. The nation has classified the program.",
+  "label2": "2+ failures",
+  "text2": "Multiple nations are running classified military AI programs, each citing its rivals' programs as justification. Enforcement would require simultaneous action against several nuclear powers.",
+  "image-prompt": "A satellite thermal image overlay on a remote military facility in a desert, heat bloom radiating from a nondescript building surrounded by perimeter fencing, cold blue night sky above, intelligence analyst aesthetic, digital painting, no text",
+  "image": "images/state-ai-program.png"
+}

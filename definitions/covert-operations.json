@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Covert Operations",
+  "description": "Clandestine action to disrupt violations without public attribution",
+  "category": "enforcement",
+  "color": "#c0392b",
+  "image-prompt": "A shadowy special-operations team moving silently through the server halls of a blacked-out facility, night-vision goggles casting eerie green light, breaching charges set on critical hardware, digital painting, cinematic lighting, no text",
+  "image": "images/covert-operations.png"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Supply Chain Tracking",
+  "description": "End-to-end tracking of AI chips from fabrication through deployment, by serial number",
+  "category": "detection",
+  "color": "#27ae60",
+  "image-prompt": "A massive digital ledger showing serial numbers and locations of computer chips on a holographic display, organized grid of tracked items stretching from a fabrication plant to data centers worldwide, blue technological glow, digital painting, no text",
+  "image": "images/supply-chain-tracking.png"
+}

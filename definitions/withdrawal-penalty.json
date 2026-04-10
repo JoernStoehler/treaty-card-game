@@ -1,9 +1,9 @@
 {
   "type": "treaty",
   "name": "Withdrawal Penalty",
-  "description": "Economic sanctions and chip access revocation for any nation leaving the treaty",
-  "category": "institutional",
+  "description": "Severe, automatic consequences for nations that leave the treaty (sanctions, technology exclusion)",
+  "category": "governance",
   "color": "#16a085",
-  "image-prompt": "A symbolic scene of a broken treaty document with economic sanctions symbols like frozen bank accounts and trade barriers forming around a country outline, stern and consequential atmosphere, digital painting, no text",
+  "image-prompt": "A nation's representative tearing up a treaty document at a podium while an automated global sanctions board lights up red behind them, other nations' delegates rising in unified condemnation, marble hall atmosphere, digital painting, cinematic lighting, no text",
   "image": "images/withdrawal-penalty.png"
 }

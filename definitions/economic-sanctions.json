@@ -1,9 +1,9 @@
 {
   "type": "treaty",
   "name": "Economic Sanctions",
-  "description": "Freeze assets, restrict trade, and sever financial access for entities or nations violating the treaty",
+  "description": "Targeted financial pressure, trade restrictions, and asset freezes against violators",
   "category": "enforcement",
   "color": "#c0392b",
-  "image-prompt": "A bank vault door being sealed shut with diplomatic seals and chains, frozen accounts displayed on screens behind the vault, cold blue institutional lighting, digital painting, no text",
+  "image-prompt": "A foreign nation's financial district at dusk, its skyscrapers going dark floor by floor as asset-freeze orders propagate, a government official at a podium before an international press conference in the foreground, digital painting, cinematic lighting, no text",
   "image": "images/economic-sanctions.png"
 }

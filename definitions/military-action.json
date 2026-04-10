@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Military Action",
+  "description": "Armed force against treaty violators, from targeted raids to strikes on prohibited facilities",
+  "category": "enforcement",
+  "color": "#c0392b",
+  "image-prompt": "A precision airstrike lighting up a remote industrial complex at night, jets banking away through columns of smoke and flame, the facility's server towers collapsing in a chain of secondary explosions, digital painting, cinematic lighting, no text",
+  "image": "images/military-action.png"
+}

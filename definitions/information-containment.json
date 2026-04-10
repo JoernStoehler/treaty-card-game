@@ -1,0 +1,9 @@
+{
+  "type": "treaty",
+  "name": "Information Containment",
+  "description": "Authority to suppress, quarantine, or take down leaked model weights, training methods, and dangerous research",
+  "category": "prevention",
+  "color": "#d4a017",
+  "image-prompt": "A digital quarantine barrier visually containing a swarm of spreading data packets like a containment field in cyberspace, red warning overlays and shutdown commands cascading across a network map, dark background with vivid crimson and amber alert colors, digital painting, no text",
+  "image": "images/information-containment.png"
+}

@@ -6,7 +6,7 @@ Each run gets its own state file, enabling parallel playtests by multiple agents
 Usage:
     playtest.py new <run-id>          -- initialise a new run
     playtest.py deal <run-id> <N>     -- deal treaty cards to N players
-    playtest.py draw <run-id>         -- draw the next event/safety card
+    playtest.py draw <run-id>         -- draw the next threat/safety card
     playtest.py status <run-id>       -- print a run summary
 """
 import argparse
@@ -71,8 +71,8 @@ def cmd_new(args):
         for card in all_cards:
             f.write(json.dumps(card) + "\n")
 
-    # Build and shuffle the draw deck (event + safety cards)
-    deck = [c for c in all_cards if c.get("type") in ("event-1", "event-2", "safety")]
+    # Build and shuffle the draw deck (threat + safety cards)
+    deck = [c for c in all_cards if c.get("type") in ("threat-1", "threat-2", "safety")]
     random.shuffle(deck)
 
     state = {
@@ -169,7 +169,7 @@ def main():
     p_deal.add_argument("run_id", metavar="run-id")
     p_deal.add_argument("n", metavar="N", type=int)
 
-    p_draw = sub.add_parser("draw", help="Draw the next event/safety card")
+    p_draw = sub.add_parser("draw", help="Draw the next threat/safety card")
     p_draw.add_argument("run_id", metavar="run-id")
 
     p_status = sub.add_parser("status", help="Print a run summary")

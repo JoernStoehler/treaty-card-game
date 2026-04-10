@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Chip Registry",
-  "description": "Track every AI chip by serial number from fabrication to deployment",
-  "category": "monitoring",
-  "color": "#27ae60",
-  "image-prompt": "A massive digital ledger showing serial numbers and locations of computer chips on a holographic display, organized grid of tracked items, blue technological glow, digital painting, no text",
-  "image": "images/chip-registry.png"
-}

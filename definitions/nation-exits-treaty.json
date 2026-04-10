@@ -1,7 +1,7 @@
 {
-  "type": "event-1",
+  "type": "threat-1",
   "name": "Nation Exits Treaty",
-  "text": "A major AI power announced its withdrawal from the treaty. Its declared facilities began ramping up compute. Two allied nations signaled they may follow.",
-  "image-prompt": "A formal diplomatic table with one chair pushed back and empty, remaining delegates looking shocked, flags of nations in background, one flag being lowered, tense atmosphere, digital painting, no text",
+  "text": "A major signatory announced withdrawal from the treaty. Its declared facilities ramped up compute within days. Two allied nations signaled they would follow.",
+  "image-prompt": "A grand governmental hall with a shattered treaty document on the floor, officials leaving in formal attire as national flags are lowered from the walls, dramatic overhead lighting casting long shadows, digital painting, no text",
   "image": "images/nation-exits-treaty.png"
 }

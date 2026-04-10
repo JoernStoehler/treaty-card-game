@@ -1,7 +1,7 @@
 {
-  "type": "event-1",
+  "type": "threat-1",
   "name": "Insider Sabotage",
-  "text": "An ISIA inspector leaked facility layouts and inspection schedules to a foreign government. The intelligence was used to time hardware movements around inspections. Three facilities passed routine checks while running undeclared training at scale.",
-  "image-prompt": "A person in a suit secretly photographing classified documents in a dimly lit office, computer screens glowing in background, shadow and suspense, espionage atmosphere, digital painting, no text",
+  "text": "A senior treaty official leaked inspection schedules and facility layouts to a foreign government. Multiple sites sanitized operations before inspectors arrived. A frontier training run completed during the blind window.",
+  "image-prompt": "A government official in a dark corridor photographing classified documents with a hidden camera, the papers illuminated by a phone screen showing facility schematics, paranoid atmosphere, digital painting, no text",
   "image": "images/insider-sabotage.png"
 }

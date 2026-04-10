@@ -1,9 +1,0 @@
-{
-  "type": "treaty",
-  "name": "Research Archive Freeze",
-  "description": "Place all pre-treaty frontier AI research under treaty seal, restricting access to vetted inspectors until a safe-release determination is made",
-  "category": "consolidation",
-  "color": "#e67e22",
-  "image-prompt": "A vast archive of filing cabinets and servers sealed with orange security tape, a single treaty archivist at a desk reviewing access logs under dim light, institutional and solemn atmosphere, digital painting, no text",
-  "image": "images/research-archive-freeze.png"
-}

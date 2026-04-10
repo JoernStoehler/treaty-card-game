@@ -1,7 +1,7 @@
 {
-  "type": "event-1",
+  "type": "threat-1",
   "name": "Legacy Hardware",
-  "text": "A cloud provider grandfathered its pre-treaty GPU fleet under an exemption for existing infrastructure. A subsidiary quietly consolidated those chips into a single facility. A training run at the combined scale exceeded treaty thresholds.",
-  "image-prompt": "A vast data center filled with rows of aging server racks, some labeled with old corporate logos, workers in the background quietly moving hardware on pallets, fluorescent overhead lighting, ominous scale, digital painting, no text",
+  "text": "Pre-treaty computing infrastructure was never cataloged. A company consolidated its grandfathered GPU fleet into a single facility and launched a training run that exceeded treaty thresholds.",
+  "image-prompt": "A cavernous facility packed with aging server racks from different eras, mismatched blinking lights and tangled cables, workers reconnecting old hardware to a unified power grid, amber emergency lighting, digital painting, no text",
   "image": "images/legacy-hardware.png"
 }
