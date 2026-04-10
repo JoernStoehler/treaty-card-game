@@ -30,7 +30,10 @@ python3 generate-image.py --help    # Generate missing card illustrations
 python3 render-card.py --help       # Render card definitions to PNGs
 python3 print-layout.py --help      # Arrange cards into print-ready PDF
 python3 playtest.py --help          # Manage playtest runs (new/deal/draw/status)
+npx wrangler pages deploy playtest-web/ --project-name=treaty-playtest --branch=main  # Deploy web app
 ```
+
+**Playtest web app:** https://treaty-playtest.pages.dev
 
 ---
 
