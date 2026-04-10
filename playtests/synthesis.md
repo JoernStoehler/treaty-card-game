@@ -81,6 +81,22 @@ No existing card covers these threat categories:
 7. **Run playtests covering untested cards** — use `playtest.py` tooling for parallel runs targeting the 10 unseen cards.
 8. **Diversify personas** — test with different personality combinations and player counts (2 players, 4–5 players).
 
+## Solo Playtest Feedback (Jörn, 2026-04-10)
+
+First mobile playtest via treaty-playtest.pages.dev. Key observations:
+
+### Political-pressure events don't work
+**Corporate Lobbying Blitz** and **Public Backlash** model internal treaty politics (council being lobbied, public pressure to weaken treaty). None of the 34 clause cards are designed for this — they're all outward-facing enforcement mechanisms. Result: zero agency, auto-fail. **Decision: cut both cards.** Modeling governments as external actors that change the treaty is fine — that's what institutional cards (Withdrawal Penalty, Diplomatic Pressure) handle.
+
+### Card design process rethink (proposed)
+- **Generalize treaty cards?** Some cards (e.g., SWAT Raid) may be too narrow/concrete. More abstract cards could encourage creative argumentation ("armed enforcement response" vs. "SWAT team specifically").
+- **Use simplified treaty language** on cards to explain what adding the card to the treaty roughly implies — or leave it to player imagination (often the name is enough).
+- **Provide context for non-experts** — e.g., explain the difference between ground troops and espionage, so players unfamiliar with governance mechanisms can still argue effectively.
+- **Card count tension** — too few cards harms creativity just as too many do. Overlap between cards can be resolved through discussion, which IS the game. Need to find the sweet spot.
+- **Avoid card explosion** — resist adding cards for every gap. Better to have fewer, more versatile cards that players must creatively apply.
+
+These observations suggest a broader card redesign pass, deferred for a future session.
+
 ## Methodology Notes
 
 ### What Works Well

@@ -148,13 +148,13 @@ Tier display: each tier box shows its label and text. The currently active tier 
 - institutional (5): Diplomatic Pressure, Export Controls, Membership Incentives, Treaty Tribunal, Withdrawal Penalty
 - consolidation (3): Hardware Amnesty, Legacy Decommission, Research Archive Freeze
 
-**Event-1 cards (14):** AI-Assisted Violence, Bioweapon Blueprint, Chip Leverage, Chip Smuggling Ring, Corporate Lobbying Blitz, Economic Entanglement, Failed Raid, Fake Compliance Report, Insider Sabotage, Legacy Hardware, Nation Exits Treaty, Public Backlash, Rogue Researcher, Whistleblower Bombshell
+**Event-1 cards (12):** AI-Assisted Violence, Bioweapon Blueprint, Chip Leverage, Chip Smuggling Ring, Economic Entanglement, Failed Raid, Fake Compliance Report, Insider Sabotage, Legacy Hardware, Nation Exits Treaty, Rogue Researcher, Whistleblower Bombshell
 
 **Event-2 cards (12):** Algorithmic Breakthrough, Autonomous Agent, Cyber Attack, Distributed Training, Garage Cluster, Open-Source Weights Leak, Preprint Cascade, Pro-ASI Movement, Satellite Tip, Underground Datacenter, Weight Heist, Zero-Day Cascade
 
 **Safety cards (5):** Safety Breakthrough x5 (different art, collect 3 to win)
 
-**Event deck:** 26 events + 5 safety = 31 cards.
+**Event deck:** 24 events + 5 safety = 29 cards.
 
 Card definitions are authored by hand (not generated). Image prompts require human iteration.
 
