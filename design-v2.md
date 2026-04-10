@@ -37,7 +37,7 @@ Right side = "what's currently true." Left side = "what's settled / not yet need
 1. Read rules aloud (short — see Rules section).
 2. Split treaty cards into roughly equal hands among players. Each player reads their cards and becomes the expert on those provisions.
 3. All treaty cards go face-up into the ideas pool (left side). Players retain knowledge of what they read.
-4. Shuffle threat deck. Optionally set aside some cards face-down to vary game length (draw N of M).
+4. Shuffle threat deck. Set aside a portion face-down unseen — the game uses a subset of the deck (e.g., half). This controls game length and ensures players don't know which threats are coming.
 5. One player takes the threat deck and becomes the reader.
 
 ## Game loop
@@ -61,7 +61,7 @@ Right side = "what's currently true." Left side = "what's settled / not yet need
 
 The game ends when:
 - **Extinction:** 3+ capability cards unresolved. Loss.
-- **Deck exhausted:** All threat cards drawn and resolved/unresolved. Proceed to reflection.
+- **Deck exhausted:** All cards in the subset drawn and resolved/unresolved. Proceed to reflection.
 
 ## Post-game reflection
 
