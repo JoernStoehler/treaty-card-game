@@ -2,7 +2,7 @@
   "type": "threat-2",
   "name": "Corporate Defiance",
   "label1": "0–1 failures",
-  "text1": "A major AI lab continues frontier research, claiming compliance with treaty thresholds. A leaked internal memo reveals a trained model whose capabilities far exceed what was declared to inspectors.",
+  "text1": "A major AI lab continues frontier research, claiming compliance with treaty thresholds. A leaked internal memo reveals a trained model whose capabilities far exceed what was publicly disclosed.",
   "label2": "2+ failures",
   "text2": "Multiple labs are openly exceeding treaty limits, citing each other's defiance as justification. Frontier models are being trained and deployed commercially without treaty oversight.",
   "image-prompt": "A gleaming corporate AI campus at night with every window blazing light, servers visible through glass walls running at full tilt, a solitary inspector's car parked at the locked gate, tense atmosphere, digital painting, no text",

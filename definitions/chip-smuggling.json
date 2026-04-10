@@ -1,7 +1,7 @@
 {
   "type": "threat-1",
   "name": "Chip Smuggling",
-  "text": "AI chips were diverted through shell companies to undeclared buyers. The chips surfaced in a facility in a non-signatory nation. A training run completed before inspectors traced the shipments.",
+  "text": "AI chips were diverted through shell companies to undeclared buyers. The chips surfaced in a facility in a non-signatory nation. A frontier model was trained and the resulting weights are now for sale on encrypted channels.",
   "image-prompt": "A dimly lit shipping container being opened to reveal racks of computer hardware hidden among consumer goods, flashlight beam cutting through darkness, suspenseful atmosphere, digital painting, no text",
   "image": "images/chip-smuggling.png"
 }
