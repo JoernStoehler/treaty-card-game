@@ -10,6 +10,7 @@ A verbal card game for 1-5 players where players collectively defend a global ba
 | `render-card.py` | Render card definitions into print-ready front PNGs. Reads `definitions/*.json` + `images/`, outputs `rendered/<id>-f.png`. |
 | `print-layout.py` | Arrange rendered cards into a print-ready PDF. Requires `--color` or `--greyscale` (no default). Outputs `print/cards.pdf`. |
 | `playtest.py` | Manage playtest runs with per-run state. Subcommands: `new`, `deal`, `draw`, `status`. Enables parallel playtests. |
+| `playtest-web/` | Mobile-first solo playtest web app. Static site (html + js), deployed to Cloudflare Pages. Draw events, select treaty cards, resolve, copy transcript. |
 
 ## Directory Layout
 
@@ -19,6 +20,7 @@ images/            Generated card illustrations (committed, not regenerated)
 rendered/          Rendered card front PNGs (output of render-card.py)
 print/             Print-ready PDF (output of print-layout.py, gitignored)
 playtests/         Playtest run logs, state files, card snapshots, and synthesis
+playtest-web/      Solo playtest web app (index.html, app.js, cards.js)
 ```
 
 ## Quick Commands
