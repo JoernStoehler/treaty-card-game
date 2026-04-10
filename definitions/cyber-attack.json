@@ -2,7 +2,7 @@
   "type": "event-2",
   "name": "Cyber Attack",
   "label1": "0–1 failures",
-  "text1": "Hackers breached treaty monitoring infrastructure. Inspection schedules and facility data were compromised.",
+  "text1": "Hackers breached treaty monitoring infrastructure. Inspection schedules and facility data were compromised. Monitored facilities have been suspected of covert training runs ever since.",
   "label2": "2+ failures",
   "text2": "Hackers armed with a leaked superhuman AI model attacked treaty monitoring systems. Vulnerabilities were discovered and exploited faster than human defenders could respond.",
   "image-prompt": "Multiple computer screens showing cascading security breach warnings and red alerts, digital locks shattering, an AI visualization overwhelming network defenses like water through cracks, dark cyberpunk atmosphere, digital painting, no text",
