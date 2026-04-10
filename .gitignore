@@ -9,3 +9,6 @@ playtests/*.state.json
 # Decrypted literature (encrypted .enc source is committed; never commit the plaintext)
 literature/iabied-book.md
 
+# Wrangler cache (Cloudflare Pages deploy artifact)
+.wrangler/
+
