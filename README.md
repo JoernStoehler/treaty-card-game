@@ -88,7 +88,7 @@ Categories and border colors:
 {
   "type": "event-1",
   "name": "Chip Smuggling Ring",
-  "text": "AI chips were diverted through shell companies to undeclared buyers. The chips surfaced in a facility in a non-signatory nation. A training run is underway.",
+  "text": "AI chips were diverted through shell companies to undeclared buyers. The chips surfaced in a facility in a non-signatory nation. A training run completed before inspectors traced the shipments, and the resulting weights were offered for sale on encrypted channels.",
   "image-prompt": "...",
   "image": "images/chip-smuggling.png"
 }
