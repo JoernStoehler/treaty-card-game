@@ -4,6 +4,17 @@
 
 The `README.md` is the project manifest/spec -- the single source of truth for what the project is, what it contains, and how the pieces fit together. Keep it updated when adding components.
 
+## Current State
+
+The game is being redesigned (v2). Key files:
+- `design-v2.md` — game mechanics and rules
+- `cards-v2.md` — card definitions with design notes
+- `definitions.jsonl` — empty until we need to render/playtest; generate from `cards-v2.md`
+
+Tooling (`render-card.py`, `playtest.py`, `playtest-web/`) is from v1 and needs updating before use. Don't update tooling until card content is finalized.
+
+Legacy v1 content (`playtests/`, `handoffs/`) informed the redesign but describes old mechanics. Read for historical context only.
+
 ## Design Principles
 
 - **KISS & YAGNI**: Never create something prematurely just because somebody *may* need it in the future -- not even if it's already scheduled. Wait until "first use" to nail down what is needed and implement it then.
@@ -12,8 +23,9 @@ The `README.md` is the project manifest/spec -- the single source of truth for w
 
 ## Working Style
 
-- Use subagents (sonnet) for implementing, testing, refactoring, analyzing, writing. No reason to wait for slower opus subagents or waste valuable context window yourself.
-- Subagents can analyze a code file for you and fix minor things on the go that don't require your whole-picture-based decision.
+- Use subagents (sonnet) for reviewing, evaluating, analyzing — getting diverse feedback on work.
+- Do your own drafting and writing — you have the full context, subagents don't.
+- Don't make design decisions unilaterally. Document what the user decided, not what you think is best.
 
 ## Escalation Policy
 
@@ -26,7 +38,7 @@ Escalate whenever something is too surprising to be straightforwardly dealt with
 
 Never write the `FAL_KEY` or `CLOUDFLARE_API_TOKEN` secret envvars down anywhere in the repository.
 
-## Quick Commands
+## Quick Commands (v1 tooling — not yet updated for v2)
 
 ```bash
 python3 generate-image.py --help    # Generate missing card illustrations via FAL API
@@ -34,9 +46,7 @@ python3 render-card.py --help       # Render card definitions to print-ready PNG
 python3 print-layout.py --help      # Arrange rendered cards into print-ready PDF
 ```
 
-## Deploying playtest-web
-
-After changing files in `playtest-web/`, redeploy manually:
+## Deploying playtest-web (v1 — needs rewrite for v2)
 
 ```bash
 npx wrangler pages deploy playtest-web/ --project-name=treaty-playtest --branch=main
