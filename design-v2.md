@@ -41,21 +41,15 @@ Right side = "what's currently true." Left side = "what's settled / not yet need
 
 ## Game loop
 
-1. **Reveal threat.** Reader draws the top threat card, reads the title aloud (big, everyone sees it), reads the description if any. Card goes to the unresolved area (right side).
+1. **Reveal threat.** Reader draws the top threat card, reads the title aloud (big, everyone sees it), reads the description if any. Card goes directly to the unresolved area (right side).
 
-2. **Discuss.** Players argue: does our current treaty handle this? They can reference any treaty card in the active treaty (right side). They can also propose moving new treaty cards from the ideas pool into the active treaty to handle it.
+2. **Discuss and commit.** Players discuss all unresolved threats on the right side — not just the one just drawn. They can move treaty cards from the ideas pool into the active treaty. Treaty cards committed in previous rounds cannot be removed. Cards placed this round can be pulled back until the next threat is drawn, which locks them in.
 
-3. **Commit.** Players move treaty cards from ideas → active treaty as needed. Treaty cards committed in previous rounds cannot be removed. Cards placed this round can be pulled back until the next threat is drawn, which locks them in.
+3. **Resolve.** Players can move any threats from the right side (unresolved) to the left side (handled) if they argue the active treaty addresses them. This includes both the newly drawn threat and any previously unresolved threats. Retroactively resolving a capability card removes it from the extinction count. Decisions are by group consensus.
 
-4. **Resolve.** Group decides:
-   - **Handled:** Threat card moves to handled pile (left side). The treaty addresses this.
-   - **Unresolved:** Threat card stays on the right side. The treaty doesn't (or shouldn't, or can't) deal with this. If it's a capability card (black border), it counts toward the extinction threshold.
-   - Players can also resolve previously unresolved threats if a newly committed treaty provision covers them. Move those threats from right → left. Retroactively resolving a capability card removes it from the extinction count.
-   - Decisions are by group consensus — discuss until everyone agrees.
+4. **Check extinction.** If 3 (or N — playtest to determine) capability cards are unresolved on the right side, the game ends. Someone somewhere had enough resources to train superintelligence. Everyone dies.
 
-5. **Check extinction.** If 3 (or N — playtest to determine) capability cards are unresolved on the right side, the game ends. Someone somewhere had enough resources to train superintelligence. Everyone dies.
-
-6. **Next card.** Return to step 1.
+5. **Next card.** Return to step 1.
 
 ## Game end
 
