@@ -107,21 +107,21 @@ Provisions players can add to the active treaty. Descriptions say what the provi
 
 ## Deleted Cards (from v1)
 
-Cards from the original definitions.jsonl that were cut in v2 and why.
+Cards from the v1 definitions.jsonl that were cut or renamed in v2 and why. Old type in parentheses refers to the v1 card type (flat threat / tiered threat / treaty), not an ID.
 
 | Old card | Why cut |
 |----------|--------|
-| Bioweapon Blueprint (threat-1) | Dangerous AI application below superintelligence — valid scenario but different from what this game tests. May add back as context card. |
-| Autonomous Agent (threat-2) | Subsumed by Recursive Self-Improvement and the general capability accumulation mechanic |
-| Fake Compliance (threat-1) | Merged into Corporate Defiance |
-| Insider Sabotage (threat-1) | Merged into Bribery and Blackmail |
-| Whistleblower Bombshell (threat-1) | The old card was a whistleblower revealing corporate cheating — that's actually good for the treaty. Replaced by Whistleblower Reveals Surveillance (which is bad for the treaty) |
-| Uncontrolled Hardware (threat-1) | Split into Chip Sales (legal) and Independent Chip Factory |
-| State AI Program (threat-2) | Merged into Signatory Races to Train |
-| Weights Leak (threat-2) | Renamed to Stolen Model Weights |
-| Garage Cluster (threat-2) | Merged into Repurposed Consumer Chips and Distributed Training |
-| Open-Source Release (threat-2) | Renamed to Open-Source Weights Published, reclassified as context |
-| Cyber Attack (threat-2) | Renamed to AI-Powered Cyber Attack, reclassified as context |
+| Bioweapon Blueprint (flat threat) | Dangerous AI application below superintelligence — valid scenario but different from what this game tests. May add back as context card. |
+| Autonomous Agent (tiered threat) | Subsumed by Recursive Self-Improvement and the general capability accumulation mechanic |
+| Fake Compliance (flat threat) | Merged into Corporate Defiance |
+| Insider Sabotage (flat threat) | Merged into Bribery and Blackmail |
+| Whistleblower Bombshell (flat threat) | The old card was a whistleblower revealing corporate cheating — that's good for the treaty. Replaced by Whistleblower Reveals Surveillance (which is bad for the treaty) |
+| Uncontrolled Hardware (flat threat) | Split into Chip Sales (legal) and Independent Chip Factory |
+| State AI Program (tiered threat) | Covered by Signatory Races to Train (treaty member cheating) and context cards (non-signatory programs) |
+| Weights Leak (tiered threat) | Renamed to Stolen Model Weights |
+| Garage Cluster (tiered threat) | Merged into Repurposed Consumer Chips and Distributed Training |
+| Open-Source Release (tiered threat) | Renamed to Open-Source Weights Published, reclassified as context |
+| Cyber Attack (tiered threat) | Renamed to AI-Powered Cyber Attack, reclassified as context |
 | Legal Obstruction (threat-1) | Renamed to Legal Challenge to Treaty Authority |
 | Nation Exits Treaty (threat-1) | Renamed to Country Exits Treaty |
 | Safety Breakthrough x5 | Safety cards removed entirely — game ends when deck subset is exhausted |

@@ -15,11 +15,13 @@ Players should come away understanding:
 
 Two decks:
 
-- **Treaty cards** (~14-18): enforcement mechanisms available to include in the treaty. Examples: "On-Site Inspections," "Export Controls," "Military Strikes," "Chip Serial Tracking." Each has a bold title and a short description phrased as what it lets the treaty do.
+- **Treaty cards** (~15): enforcement mechanisms available to include in the treaty. Each has a bold title and a short description phrased as what it lets the treaty do. See `cards-v2.md` for the full list.
 
-- **Threat cards** (~15-20, shuffled): story elements representing things that could challenge the treaty over the decades it must hold. Each has a bold title (readable at table distance), optional short description for disambiguation, and an illustration.
-  - **Capability cards** (subset, ~6-8): threats that directly advance someone's ability to train superintelligence. Visually marked with a black border and corner icon. Examples: "GPU Theft," "Algorithmic Breakthrough," "Stolen Model Weights."
-  - **Context cards** (the rest): threats that degrade the treaty's political/operational environment without directly providing training capability. Examples: "Chinese Invasion of Taiwan," "Treaty Inspector Assassinated," "Country Exits Treaty."
+- **Threat cards** (~27 total, half used per game): story elements representing things that could challenge the treaty over the decades it must hold. Each has a bold title (readable at table distance), optional short description for disambiguation, and an illustration.
+  - **Capability cards** (~13): threats that directly advance someone's ability to train superintelligence. Visually marked with a black border and corner icon.
+  - **Context cards** (~14): threats that degrade the treaty's political/operational environment without directly providing training capability.
+  
+  See `cards-v2.md` for the full list with design notes.
 
 ## Table layout
 
@@ -75,22 +77,7 @@ Guided questions (printed on a reference card):
 
 Cards are story elements. They're short phrases that prompt discussion, not narrated scenarios. The card doesn't explain implications — players figure those out.
 
-Examples of capability cards:
-- "GPU Theft" — (no description needed, self-explanatory)
-- "Algorithmic Breakthrough" — "Training now requires 100x less compute"
-- "Stolen Model Weights"
-- "Underground Datacenter"
-- "Distributed Training" — "Consumer hardware coordinated across countries"
-- "Legacy Hardware Stockpile" — "Pre-treaty GPUs consolidated into one facility"
-
-Examples of context cards:
-- "Country Exits Treaty"
-- "Chinese Invasion of Taiwan"
-- "Treaty Inspector Assassinated"
-- "Whistleblower Reveals Surveillance Program"
-- "AI Company Lobbying Campaign"
-- "War in the Middle East"
-- "North Korea Wants Superintelligence"
+See `cards-v2.md` for the full card list with design notes.
 
 ## Card format: Treaty cards
 
