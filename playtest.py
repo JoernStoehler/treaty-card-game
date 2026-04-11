@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""CLI tool for managing playtest runs with per-run state.
+"""CLI tool for managing v2 playtest runs.
 
 Each run gets its own state file, enabling parallel playtests by multiple agents.
 
 Usage:
-    playtest.py new <run-id>          -- initialise a new run
-    playtest.py deal <run-id> <N>     -- deal treaty cards to N players
-    playtest.py draw <run-id>         -- draw the next threat/safety card
-    playtest.py status <run-id>       -- print a run summary
+    playtest.py new <run-id>                        -- create a new run (subsets threat deck)
+    playtest.py draw <run-id>                       -- draw the next threat card
+    playtest.py commit-treaty <run-id> <card-id>    -- move treaty card to active treaty
+    playtest.py resolve <run-id> <card-id>          -- move threat from unresolved to resolved
+    playtest.py unresolve <run-id> <card-id>        -- move threat back to unresolved
+    playtest.py status <run-id>                     -- print run summary
 """
 import argparse
 import json
@@ -18,29 +20,27 @@ import sys
 PLAYTESTS_DIR = os.path.join(os.path.dirname(__file__), "playtests")
 DEFINITIONS_FILE = os.path.join(os.path.dirname(__file__), "definitions.jsonl")
 
+EXTINCTION_THRESHOLD = 3
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
 
 def state_path(run_id):
     return os.path.join(PLAYTESTS_DIR, f"{run_id}.state.json")
 
-def cards_path(run_id):
-    return os.path.join(PLAYTESTS_DIR, f"{run_id}.cards.jsonl")
 
 def load_state(run_id):
     path = state_path(run_id)
     if not os.path.exists(path):
-        sys.exit(f"Error: no state file for run '{run_id}' ({path}). Run 'new' first.")
+        sys.exit(f"Error: no state file for run '{run_id}'. Run 'new' first.")
     with open(path) as f:
         return json.load(f)
+
 
 def save_state(run_id, state):
     with open(state_path(run_id), "w") as f:
         json.dump(state, f, indent=2)
 
-def load_all_definitions():
+
+def load_definitions():
     cards = []
     with open(DEFINITIONS_FILE) as f:
         for line in f:
@@ -49,9 +49,16 @@ def load_all_definitions():
                 cards.append(json.loads(line))
     return cards
 
-def load_cards_snapshot(run_id):
-    with open(cards_path(run_id)) as f:
-        return [json.loads(line) for line in f if line.strip()]
+
+def unresolved_capability_count(state):
+    return len([t for t in state["unresolved"] if t.get("capability")])
+
+
+def check_extinction(state):
+    count = unresolved_capability_count(state)
+    if count >= EXTINCTION_THRESHOLD:
+        return True, count
+    return False, count
 
 
 # ---------------------------------------------------------------------------
@@ -62,97 +69,165 @@ def cmd_new(args):
     os.makedirs(PLAYTESTS_DIR, exist_ok=True)
     spath = state_path(args.run_id)
     if os.path.exists(spath):
-        sys.exit(f"Error: run '{args.run_id}' already exists. Choose a unique run-id.")
+        sys.exit(f"Error: run '{args.run_id}' already exists.")
 
-    all_cards = load_all_definitions()
+    all_cards = load_definitions()
+    threats = [c for c in all_cards if c["type"] == "threat"]
+    treaty_cards = [c for c in all_cards if c["type"] == "treaty"]
 
-    # Write snapshot of all cards
-    cpath = cards_path(args.run_id)
-    with open(cpath, "w") as f:
-        for card in all_cards:
-            f.write(json.dumps(card) + "\n")
-
-    # Build and shuffle the draw deck (threat + safety cards)
-    deck = [c for c in all_cards if c.get("type") in ("threat-1", "threat-2", "safety")]
-    random.shuffle(deck)
+    # Subset: use roughly half the threat deck
+    random.shuffle(threats)
+    subset_size = len(threats) // 2
+    deck = threats[:subset_size]
+    removed = threats[subset_size:]
 
     state = {
-        "remaining_deck": deck,
-        "hands": {},
+        "deck": deck,
+        "unresolved": [],
+        "resolved": [],
+        "ideas_pool": treaty_cards,
         "active_treaty": [],
-        "failures": 0,
-        "safety": 0,
         "history": [],
+        "removed_unseen": [c["id"] for c in removed],
     }
     save_state(args.run_id, state)
-    print(f"Run '{args.run_id}' created. Draw deck: {len(deck)} cards. Snapshot: {len(all_cards)} cards total.")
 
-
-def cmd_deal(args):
-    state = load_state(args.run_id)
-    if state["hands"]:
-        sys.exit("Error: cards have already been dealt for this run.")
-
-    n = args.n
-    if n < 1:
-        sys.exit("Error: number of players must be at least 1.")
-
-    all_cards = load_cards_snapshot(args.run_id)
-    treaty_cards = [c for c in all_cards if c.get("type") == "treaty"]
-    random.shuffle(treaty_cards)
-
-    hands = {f"player{i+1}": [] for i in range(n)}
-    for idx, card in enumerate(treaty_cards):
-        player = f"player{(idx % n) + 1}"
-        hands[player].append(card)
-
-    state["hands"] = hands
-    save_state(args.run_id, state)
-
-    for player, cards in hands.items():
-        print(f"\n{player} ({len(cards)} cards):")
-        for c in cards:
-            cat = c.get("category", c.get("type", ""))
-            print(f"  - {c['name']} [{cat}]: {c['description']}")
+    print(f"Run '{args.run_id}' created.")
+    print(f"  Threat deck: {len(deck)} cards (from {len(threats)} total)")
+    print(f"  Treaty cards: {len(treaty_cards)} in ideas pool")
+    cap_in_deck = len([c for c in deck if c.get("capability")])
+    print(f"  Capability threats in deck: {cap_in_deck}")
+    print(f"  Extinction threshold: {EXTINCTION_THRESHOLD}")
 
 
 def cmd_draw(args):
     state = load_state(args.run_id)
-    if not state["remaining_deck"]:
-        print(json.dumps({"type": "deck-empty"}))
-        sys.exit(0)
 
-    card = state["remaining_deck"].pop(0)
+    if not state["deck"]:
+        extinct, cap_count = check_extinction(state)
+        print(json.dumps({
+            "event": "deck-empty",
+            "unresolved_capability": cap_count,
+            "extinct": extinct,
+        }, indent=2))
+        return
+
+    card = state["deck"].pop(0)
+    state["unresolved"].append(card)
     turn = len(state["history"]) + 1
-    state["history"].append({"turn": turn, "card": card["name"], "type": card["type"]})
+    state["history"].append({"turn": turn, "card_id": card["id"], "card_name": card["name"]})
     save_state(args.run_id, state)
-    print(json.dumps(card, indent=2))
+
+    extinct, cap_count = check_extinction(state)
+    output = {
+        "turn": turn,
+        "card": card,
+        "remaining_in_deck": len(state["deck"]),
+        "unresolved_capability": cap_count,
+        "extinct": extinct,
+    }
+    print(json.dumps(output, indent=2))
+
+
+def cmd_commit_treaty(args):
+    state = load_state(args.run_id)
+    card_id = args.card_id
+
+    pool = state["ideas_pool"]
+    match = [c for c in pool if c["id"] == card_id]
+    if not match:
+        available = [c["id"] for c in pool]
+        sys.exit(f"Error: '{card_id}' not in ideas pool. Available: {', '.join(available)}")
+
+    card = match[0]
+    state["ideas_pool"] = [c for c in pool if c["id"] != card_id]
+    state["active_treaty"].append(card)
+    save_state(args.run_id, state)
+    print(f"Committed: {card['name']}")
+    print(f"  Active treaty: {len(state['active_treaty'])} provisions")
+    print(f"  Ideas pool: {len(state['ideas_pool'])} remaining")
+
+
+def cmd_resolve(args):
+    state = load_state(args.run_id)
+    card_id = args.card_id
+
+    unresolved = state["unresolved"]
+    match = [c for c in unresolved if c["id"] == card_id]
+    if not match:
+        available = [c["id"] for c in unresolved]
+        sys.exit(f"Error: '{card_id}' not in unresolved. Available: {', '.join(available)}")
+
+    card = match[0]
+    state["unresolved"] = [c for c in unresolved if c["id"] != card_id]
+    state["resolved"].append(card)
+    save_state(args.run_id, state)
+
+    _, cap_count = check_extinction(state)
+    label = " (capability)" if card.get("capability") else " (context)"
+    print(f"Resolved: {card['name']}{label}")
+    print(f"  Unresolved capability: {cap_count}/{EXTINCTION_THRESHOLD}")
+
+
+def cmd_unresolve(args):
+    state = load_state(args.run_id)
+    card_id = args.card_id
+
+    resolved = state["resolved"]
+    match = [c for c in resolved if c["id"] == card_id]
+    if not match:
+        available = [c["id"] for c in resolved]
+        sys.exit(f"Error: '{card_id}' not in resolved. Available: {', '.join(available)}")
+
+    card = match[0]
+    state["resolved"] = [c for c in resolved if c["id"] != card_id]
+    state["unresolved"].append(card)
+    save_state(args.run_id, state)
+
+    extinct, cap_count = check_extinction(state)
+    label = " (capability)" if card.get("capability") else " (context)"
+    print(f"Unresolved: {card['name']}{label}")
+    print(f"  Unresolved capability: {cap_count}/{EXTINCTION_THRESHOLD}")
+    if extinct:
+        print(f"  EXTINCTION!")
 
 
 def cmd_status(args):
     state = load_state(args.run_id)
-    print(f"Run:              {args.run_id}")
-    print(f"Failures:         {state['failures']}")
-    print(f"Safety count:     {state['safety']}")
-    print(f"Remaining deck:   {len(state['remaining_deck'])} cards")
-    players = state.get("hands", {})
-    if players:
-        totals = ", ".join(f"{p}: {len(h)} cards" for p, h in players.items())
-        print(f"Hands dealt:      {totals}")
+    extinct, cap_count = check_extinction(state)
+
+    print(f"Run: {args.run_id}")
+    print(f"Deck remaining: {len(state['deck'])}")
+    print(f"Unresolved capability: {cap_count}/{EXTINCTION_THRESHOLD}" +
+          (" — EXTINCT" if extinct else ""))
+    print()
+
+    if state["unresolved"]:
+        print("Unresolved threats:")
+        for c in state["unresolved"]:
+            label = " [CAP]" if c.get("capability") else ""
+            print(f"  {c['name']}{label}")
     else:
-        print("Hands dealt:      (not yet dealt)")
-    active = state.get("active_treaty", [])
-    if active:
-        print(f"Active treaty:    {', '.join(active)}")
-    else:
-        print("Active treaty:    (none)")
-    history = state.get("history", [])
-    if history:
-        print(f"\nHistory ({len(history)} turns):")
-        for entry in history:
-            print(f"  Turn {entry['turn']:>2}: [{entry['type']}] {entry['card']}")
-    else:
-        print("\nHistory: (no cards drawn yet)")
+        print("Unresolved threats: (none)")
+
+    if state["resolved"]:
+        print(f"\nResolved threats ({len(state['resolved'])}):")
+        for c in state["resolved"]:
+            label = " [CAP]" if c.get("capability") else ""
+            print(f"  {c['name']}{label}")
+
+    print(f"\nActive treaty ({len(state['active_treaty'])}):")
+    for c in state["active_treaty"]:
+        print(f"  {c['name']}")
+
+    print(f"\nIdeas pool ({len(state['ideas_pool'])}):")
+    for c in state["ideas_pool"]:
+        print(f"  {c['name']}")
+
+    if state["history"]:
+        print(f"\nHistory ({len(state['history'])} turns):")
+        for entry in state["history"]:
+            print(f"  Turn {entry['turn']:>2}: {entry['card_name']}")
 
 
 # ---------------------------------------------------------------------------
@@ -160,24 +235,43 @@ def cmd_status(args):
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     sub = parser.add_subparsers(dest="command", required=True)
 
-    p_new = sub.add_parser("new", help="Initialise a new playtest run")
-    p_new.add_argument("run_id", metavar="run-id")
+    p = sub.add_parser("new", help="Create a new playtest run")
+    p.add_argument("run_id", metavar="run-id")
 
-    p_deal = sub.add_parser("deal", help="Deal treaty cards to N players")
-    p_deal.add_argument("run_id", metavar="run-id")
-    p_deal.add_argument("n", metavar="N", type=int)
+    p = sub.add_parser("draw", help="Draw the next threat card")
+    p.add_argument("run_id", metavar="run-id")
 
-    p_draw = sub.add_parser("draw", help="Draw the next threat/safety card")
-    p_draw.add_argument("run_id", metavar="run-id")
+    p = sub.add_parser("commit-treaty", help="Move treaty card to active treaty")
+    p.add_argument("run_id", metavar="run-id")
+    p.add_argument("card_id", metavar="card-id")
 
-    p_status = sub.add_parser("status", help="Print a run summary")
-    p_status.add_argument("run_id", metavar="run-id")
+    p = sub.add_parser("resolve", help="Move threat from unresolved to resolved")
+    p.add_argument("run_id", metavar="run-id")
+    p.add_argument("card_id", metavar="card-id")
+
+    p = sub.add_parser("unresolve", help="Move threat back to unresolved")
+    p.add_argument("run_id", metavar="run-id")
+    p.add_argument("card_id", metavar="card-id")
+
+    p = sub.add_parser("status", help="Print run summary")
+    p.add_argument("run_id", metavar="run-id")
 
     args = parser.parse_args()
-    {"new": cmd_new, "deal": cmd_deal, "draw": cmd_draw, "status": cmd_status}[args.command](args)
+    cmds = {
+        "new": cmd_new,
+        "draw": cmd_draw,
+        "commit-treaty": cmd_commit_treaty,
+        "resolve": cmd_resolve,
+        "unresolve": cmd_unresolve,
+        "status": cmd_status,
+    }
+    cmds[args.command](args)
 
 
 if __name__ == "__main__":

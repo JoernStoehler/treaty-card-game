@@ -1,1 +1,45 @@
-
+{"id": "chip-theft", "type": "threat", "name": "Chip Theft", "capability": true, "category": "compute"}
+{"id": "chip-smuggling", "type": "threat", "name": "Chip Smuggling", "capability": true, "category": "compute"}
+{"id": "legal-chip-sales", "type": "threat", "name": "Legal Chip Sales", "capability": true, "category": "compute"}
+{"id": "legacy-hardware-stockpile", "type": "threat", "name": "Legacy Hardware Stockpile", "capability": true, "category": "compute"}
+{"id": "repurposed-consumer-chips", "type": "threat", "name": "Repurposed Consumer Chips", "capability": true, "category": "compute"}
+{"id": "distributed-training", "type": "threat", "name": "Distributed Training", "capability": true, "category": "compute"}
+{"id": "independent-chip-factory", "type": "threat", "name": "Independent Chip Factory", "capability": true, "category": "compute"}
+{"id": "algorithmic-breakthrough", "type": "threat", "name": "Algorithmic Breakthrough", "capability": true, "category": "knowledge"}
+{"id": "stolen-model-weights", "type": "threat", "name": "Stolen Model Weights", "capability": true, "category": "knowledge"}
+{"id": "corporate-defiance", "type": "threat", "name": "Corporate Defiance", "capability": true, "category": "training-run"}
+{"id": "signatory-races-to-train", "type": "threat", "name": "Signatory Races to Train", "capability": true, "category": "training-run"}
+{"id": "new-computing-paradigm", "type": "threat", "name": "New Computing Paradigm", "capability": true, "category": "structural"}
+{"id": "recursive-self-improvement", "type": "threat", "name": "Recursive Self-Improvement", "capability": true, "category": "structural"}
+{"id": "inference-scaling", "type": "threat", "name": "Inference Scaling", "capability": true, "category": "structural"}
+{"id": "country-exits-treaty", "type": "threat", "name": "Country Exits Treaty", "capability": false, "category": "geopolitical"}
+{"id": "invasion-of-taiwan", "type": "threat", "name": "Invasion of Taiwan", "capability": false, "category": "geopolitical"}
+{"id": "anti-treaty-government", "type": "threat", "name": "Anti-Treaty Government", "capability": false, "category": "geopolitical"}
+{"id": "treaty-inspector-detained", "type": "threat", "name": "Treaty Inspector Detained", "capability": false, "category": "operational"}
+{"id": "ai-powered-cyber-attack", "type": "threat", "name": "AI-Powered Cyber Attack", "capability": false, "category": "operational"}
+{"id": "bribery-and-blackmail", "type": "threat", "name": "Bribery and Blackmail", "capability": false, "category": "operational"}
+{"id": "underground-datacenter", "type": "threat", "name": "Underground Datacenter", "capability": false, "category": "operational"}
+{"id": "weaponized-ai", "type": "threat", "name": "Weaponized AI", "capability": false, "category": "operational"}
+{"id": "whistleblower-reveals-surveillance", "type": "threat", "name": "Whistleblower Reveals Surveillance", "capability": false, "category": "political-legitimacy"}
+{"id": "pro-ai-terrorists", "type": "threat", "name": "Pro-AI Terrorists", "capability": false, "category": "political-legitimacy"}
+{"id": "anti-ai-terrorists", "type": "threat", "name": "Anti-AI Terrorists", "capability": false, "category": "political-legitimacy"}
+{"id": "treaty-rot", "type": "threat", "name": "Treaty Rot", "capability": false, "category": "political-legitimacy"}
+{"id": "legal-challenge-to-treaty-authority", "type": "threat", "name": "Legal Challenge to Treaty Authority", "capability": false, "category": "political-legitimacy"}
+{"id": "ai-prosperity-gap", "type": "threat", "name": "AI Prosperity Gap", "capability": false, "category": "political-legitimacy"}
+{"id": "open-source-weights-published", "type": "threat", "name": "Open-Source Weights Published", "capability": false, "category": "information"}
+{"id": "rogue-researcher", "type": "threat", "name": "Rogue Researcher", "capability": false, "category": "information"}
+{"id": "compute-ban", "type": "treaty", "name": "Compute Ban"}
+{"id": "declared-facilities", "type": "treaty", "name": "Declared Facilities"}
+{"id": "chip-tracking", "type": "treaty", "name": "Chip Tracking"}
+{"id": "export-controls", "type": "treaty", "name": "Export Controls"}
+{"id": "routine-inspections", "type": "treaty", "name": "Routine Inspections"}
+{"id": "surprise-inspections", "type": "treaty", "name": "Surprise Inspections"}
+{"id": "research-restrictions", "type": "treaty", "name": "Research Restrictions"}
+{"id": "researcher-monitoring", "type": "treaty", "name": "Researcher Monitoring"}
+{"id": "whistleblower-protections", "type": "treaty", "name": "Whistleblower Protections"}
+{"id": "financial-tracking", "type": "treaty", "name": "Financial Tracking"}
+{"id": "remote-monitoring", "type": "treaty", "name": "Remote Monitoring"}
+{"id": "economic-sanctions", "type": "treaty", "name": "Economic Sanctions"}
+{"id": "cyber-operations", "type": "treaty", "name": "Cyber Operations"}
+{"id": "military-strikes", "type": "treaty", "name": "Military Strikes"}
+{"id": "withdrawal-penalty", "type": "treaty", "name": "Withdrawal Penalty"}
