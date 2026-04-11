@@ -21,7 +21,7 @@ Tooling (`render-card.py`, `playtest.py`, `playtest-web/`) is from v1 and not ye
 
 ## Quick Summary of v2 Design
 
-**Two decks:** Treaty cards (~15 provisions) and Threat cards (~27 story elements, half used per game).
+**Two decks:** Treaty cards (15 provisions) and Threat cards (30 story elements, half used per game).
 
 **Setup:** Players split treaty cards for familiarization, then pool them face-up. Shuffle and set aside half the threat deck unseen.
 

@@ -23,8 +23,9 @@ Legacy v1 content (`playtests/`, `handoffs/`) informed the redesign but describe
 
 ## Working Style
 
-- Use subagents (sonnet) for reviewing, evaluating, analyzing — getting diverse feedback on work.
-- Do your own drafting and writing — you have the full context, subagents don't.
+- **Do your own thinking, analysis, drafting, and writing.** You have the full context; subagents don't and can't catch up. Don't delegate understanding.
+- Use subagents (sonnet) only for **reviewing finished work** — getting a second opinion on something you already wrote. Never for research, planning, or drafting.
+- When you do use a subagent, **tell it exactly which files to read** — subagents that aren't given explicit file paths will skip reading and hallucinate from their training data.
 - Don't make design decisions unilaterally. Document what the user decided, not what you think is best.
 
 ## Escalation Policy

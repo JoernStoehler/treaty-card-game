@@ -15,11 +15,11 @@ Players should come away understanding:
 
 Two decks:
 
-- **Treaty cards** (~15): enforcement mechanisms available to include in the treaty. Each has a bold title and a short description phrased as what it lets the treaty do. See `cards-v2.md` for the full list.
+- **Treaty cards** (15): enforcement mechanisms available to include in the treaty. Each has a bold title. See `cards-v2.md` for the full list.
 
-- **Threat cards** (~27 total, half used per game): story elements representing things that could challenge the treaty over the decades it must hold. Each has a bold title (readable at table distance), optional short description for disambiguation, and an illustration.
-  - **Capability cards** (~13): threats that directly advance someone's ability to train superintelligence. Visually marked with a black border and corner icon.
-  - **Context cards** (~14): threats that degrade the treaty's political/operational environment without directly providing training capability.
+- **Threat cards** (30 total, half used per game): story elements representing things that could challenge the treaty over the decades it must hold. Each has a bold title (readable at table distance) and an illustration.
+  - **Capability cards** (14): threats that directly advance someone's ability to train superintelligence. Visually marked with a black border and corner icon. One card (Recursive Self-Improvement) is unpreventable — no treaty provision can resolve it, and it permanently occupies an extinction slot when drawn.
+  - **Context cards** (16): threats that degrade the treaty's political/operational environment without directly providing training capability.
   
   See `cards-v2.md` for the full list with design notes.
 
@@ -43,13 +43,13 @@ Right side = "what's currently true." Left side = "what's settled / not yet need
 
 ## Game loop
 
-1. **Reveal threat.** Reader draws the top threat card, reads the title aloud (big, everyone sees it), reads the description if any. Card goes directly to the unresolved area (right side).
+1. **Reveal threat.** Reader draws the top threat card, reads the title aloud (big, everyone sees it). Card goes directly to the unresolved area (right side).
 
 2. **Discuss and commit.** Players discuss all unresolved threats on the right side — not just the one just drawn. They can move treaty cards from the ideas pool into the active treaty. Treaty cards committed in previous rounds cannot be removed. Cards placed this round can be pulled back until the next threat is drawn, which locks them in.
 
 3. **Resolve.** Players can move any threats from the right side (unresolved) to the left side (handled) if they argue the active treaty addresses them. This includes both the newly drawn threat and any previously unresolved threats. Retroactively resolving a capability card removes it from the extinction count. Decisions are by group consensus.
 
-4. **Check extinction.** If 3 (or N — playtest to determine) capability cards are unresolved on the right side, the game ends. Someone somewhere had enough resources to train superintelligence. Everyone dies.
+4. **Check extinction.** If 3 capability cards are unresolved on the right side, the game ends. Someone somewhere had enough resources to train superintelligence. Everyone dies.
 
 5. **Next card.** Return to step 1.
 
@@ -72,7 +72,7 @@ Guided questions (printed on a reference card):
 ## Card format: Threat cards
 
 - **Border:** Black border with corner icon for capability cards. Non-black border (or neutral) for context cards.
-- **Front:** Full-bleed illustration as background. Bold title across the card, large enough to read from across a table, clearly separated from background. Optional 1-2 sentence description below title for disambiguation (readable when card is picked up).
+- **Front:** Full-bleed illustration as background. Bold title across the card, large enough to read from across a table. Title only — no description text.
 - **Back:** Uniform for all threat cards (cannot distinguish capability from context by looking at the back — suspense preserved).
 
 Cards are story elements. They're short phrases that prompt discussion, not narrated scenarios. The card doesn't explain implications — players figure those out.
@@ -82,10 +82,10 @@ See `cards-v2.md` for the full card list with design notes.
 ## Card format: Treaty cards
 
 - **Border:** Category color (fluff — not mechanically meaningful, just visual grouping).
-- **Front:** Bold title, large and readable. Illustration background. Description phrased as what the treaty provision lets you do, e.g., "Enter and search any facility without advance notice" rather than "The authority to conduct unannounced inspections." This tells players what argument they can make.
+- **Front:** Bold title, large and readable. Illustration background. Title only — no description text.
 - **Back:** Uniform for all treaty cards (distinct from threat card backs so the two decks are never confused — different card layout, size, or back design).
 
-Treaty cards are also short and concrete. The name should usually be enough; the description is for players unfamiliar with the concept.
+Treaty card titles should convey what the provision lets the treaty DO. Players learn them during the familiarization phase at setup.
 
 ## Framing
 
@@ -98,24 +98,21 @@ The game is a **stress test of hypotheticals**, not a timeline. Cards represent 
 ## Design principles for writing cards
 
 ### Threat cards
-- **Story elements, not scenarios.** A card is a phrase or short concept, not a narrated chain of events. "Bunker Datacenter" not "A group built a hidden datacenter in a converted mine shaft and completed a training run."
-- **Every word must be decision-relevant.** If a detail doesn't affect which treaty mechanisms apply or how the argument goes, cut it. No numbers for atmosphere, no city names for flavor.
-- **Some cards need no description.** "GPU Theft" speaks for itself. Only add a description when the concept is non-obvious to a general audience.
-- **Descriptions disambiguate, not narrate.** One sentence max. It answers "what does this mean?" not "what happened?"
+- **Story elements, not scenarios.** A card is a phrase or short concept, not a narrated chain of events.
+- **Every word in the title must be decision-relevant.** If a word doesn't affect which treaty mechanisms apply or how the argument goes, cut it.
+- **Titles should be self-explanatory** to the target audience (rationalist meetup attendees familiar with AI governance).
 - **Capability cards represent direct training-run enablers.** Compute, algorithms, weights, operational infrastructure. Things that get someone closer to completing a training run.
 - **Context cards represent political/operational degradation.** Things that make the treaty harder to enforce, weaker politically, or less credible. They don't directly enable a training run but they change the landscape.
 - **Some cards are very hard or effectively unpreventable.** This is intentional. Not every threat is worth addressing — players can choose to let threats through if the treaty cost of preventing them is too high.
 
 ### Treaty cards
-- **Descriptions say what you CAN DO, not what the mechanism IS.** "Track every AI chip from fabrication to deployment by serial number" not "End-to-end chip supply chain tracking system."
-- **More detail than threat cards.** It's more important for players to understand treaty mechanisms correctly than to understand every nuance of a threat scenario. Treaty card descriptions inform player creativity and argument quality.
-- **Names should be plain language.** "On-Site Inspections" not "Article VII Verification Protocol."
+- **Titles say what you CAN DO, not what the mechanism IS.** "Routine Inspections" not "Article VII Verification Protocol."
+- **Names should be plain language.** Players learn what each provision means during the familiarization phase at setup.
 
 ## Open questions for playtesting
 
-- **Extinction threshold:** Is 3 capability failures right? Might need 4 or 5. Playtest to calibrate.
-- **Deck size:** Is 15 threat cards the right number for a 15-20 minute game? Depends on discussion time per card.
-- **Treaty card count:** Target around 15. Too few = not enough tools. Too many = analysis paralysis in the ideas pool.
+- **Extinction threshold:** Starting at 3. Might need 4 or 5. Playtest to calibrate.
+- **Deck subset size:** Is ~15 threat cards the right number for a 15-20 minute game? Depends on discussion time per card.
 - **Player count scaling:** With 1-2 players, use all treaty cards. With 4-5, does specialization via hand-splitting scale, or do too many players step on each other?
 - **Familiarization phase length:** Does the "read your hand, become the expert" phase take 2 minutes or 10?
 - **Retroactive resolution frequency:** How often do players actually clear old threats with new provisions? Is this a satisfying core mechanic or a rare edge case?
